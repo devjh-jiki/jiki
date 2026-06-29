@@ -52,7 +52,7 @@ Skills are labeled by verification stage:
 | [biz-opportunity-scout](./skills/business/biz-opportunity-scout) | Available | Validate a business opportunity (TAM/SAM/SOM, unit economics, PMF) with a Go/No-Go. |
 | [marketing-copy](./skills/business/marketing-copy) | Available | Turn a product/feature into Korean marketing copy. |
 | [product-spec-builder](./skills/business/product-spec-builder) | Available | Turn a rough idea into a buildable PRD. |
-| [tdd](./skills/engineering/tdd) | Review | Red-green-refactor TDD (adapted from mattpocock). |
+| [tdd](./skills/engineering/tdd) | Available | Red-green-refactor TDD (adapted from mattpocock). |
 | [diagnosing-bugs](./skills/engineering/diagnosing-bugs) | Review | Disciplined bug diagnosis loop (adapted from mattpocock). |
 | [codebase-design](./skills/engineering/codebase-design) | Review | Vocabulary for designing deep modules (adapted from mattpocock). |
 | [improve-codebase-architecture](./skills/engineering/improve-codebase-architecture) | Review | Scan for deepening opportunities + report (adapted from mattpocock). |

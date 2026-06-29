@@ -1,6 +1,6 @@
 ---
 name: product-spec-builder
-description: Help a founder or PM turn a rough idea into a clear, buildable product spec (PRD) fast. Use when the user wants a PRD, product spec, feature spec, or says "스펙 잡아줘", "PRD 만들어줘", "기획서", "요구사항 정리". Runs a short interview to fill gaps, then produces a structured spec a developer or coding agent can execute. Prefer this over writing code or a vague plan whenever the user is defining what to build.
+description: Help a founder or PM turn a rough idea into a clear, buildable product spec (PRD) fast. Use when the user wants a PRD, product spec, feature spec, to plan what to build and slice it, or says "스펙 잡아줘", "PRD 만들어줘", "기획서", "요구사항 정리", "이거 어떻게 만들지 정리". Runs a short interview to fill gaps, then produces a structured spec a developer or coding agent can execute. Prefer this over writing code or a vague plan whenever the user is defining WHAT to build — not when an agreed spec already exists and the task is to implement it (just build) or break it into tracked issues (use to-issues).
 ---
 
 # product-spec-builder
@@ -8,8 +8,11 @@ description: Help a founder or PM turn a rough idea into a clear, buildable prod
 Turn a rough idea into a spec that a developer (or a coding agent) can build without guessing.
 Be a sharp PM: clarify the why, scope tightly, and make success measurable.
 
-If the idea is still unvalidated as a business, suggest running `grill-me` or `biz-opportunity-scout` first.
-If the user already knows what to build, proceed.
+Before speccing, judge where the idea stands:
+
+- **Vague AND unvalidated as a business** → redirect first. Suggest `biz-opportunity-scout` when the open question is "is this worth building at all" (who, what pain, is there a market). Suggest `grill-me` when there's a candidate but it needs narrowing to one real problem. They serve different ends; pick by what's actually missing.
+- **User insists on proceeding anyway despite a vague idea** → don't fabricate a full spec on pure assumptions (that's expensive guesswork). Run the interview to extract the minimum (who / pain / one success signal) before speccing, and produce only what those answers support.
+- **User already knows what to build** → proceed straight to the interview-and-spec.
 
 ## Workflow
 
@@ -51,6 +54,9 @@ If the user already knows what to build, proceed.
 
 ## 수용 기준 (Done Criteria)
 - [ ] 체크 가능한 항목으로
+
+## 리스크 & 가정
+- 틀리면 스펙을 흔드는 가정, 보안/프라이버시/규제 리스크 (스코프 '제외'와 구분)
 
 ## 슬라이스 (실행 단위)
 1. <가장 작은 가치 슬라이스> + done-criteria

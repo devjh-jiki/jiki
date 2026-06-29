@@ -51,7 +51,7 @@ npx skills@latest add devjh-jiki/jiki
 | [technical-book-coach](./skills/learning/technical-book-coach) | Available | 기술 서적·문서 코칭 학습 (한글 번역 + 코칭) |
 | [biz-opportunity-scout](./skills/business/biz-opportunity-scout) | Available | 사업 기회 검증 (TAM/SAM/SOM, 유닛 이코노믹스, PMF) + Go/No-Go |
 | [marketing-copy](./skills/business/marketing-copy) | Available | 제품/기능을 한국어 마케팅 카피로 |
-| [product-spec-builder](./skills/business/product-spec-builder) | Review | 거친 아이디어를 만들 수 있는 PRD 로 |
+| [product-spec-builder](./skills/business/product-spec-builder) | Available | 거친 아이디어를 만들 수 있는 PRD 로 |
 | [tdd](./skills/engineering/tdd) | Review | 레드-그린-리팩터 테스트 주도 개발 (mattpocock 참고) |
 | [diagnosing-bugs](./skills/engineering/diagnosing-bugs) | Review | 체계적 버그 진단 루프 (mattpocock 참고) |
 | [codebase-design](./skills/engineering/codebase-design) | Review | 깊은 모듈 설계 어휘 (mattpocock 참고) |

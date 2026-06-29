@@ -12,9 +12,10 @@
     {
       "name": "writing-skills",
       "source": "./",
-      "description": "Writing skills: turn drafts/learnings into polished Korean technical blog posts (jihoon voice + SEO).",
+      "description": "Writing & decision skills: polished Korean tech blog posts, and relentless decision/idea grilling.",
       "skills": [
-        "./skills/productivity/write-blog-post"
+        "./skills/productivity/write-blog-post",
+        "./skills/productivity/grill-me"
       ]
     },
     {
@@ -24,6 +25,16 @@
       "skills": [
         "./skills/learning/open-source-reverse-engineering-coach",
         "./skills/learning/technical-book-coach"
+      ]
+    },
+    {
+      "name": "business-skills",
+      "source": "./",
+      "description": "Founder/product/marketing skills: opportunity validation, marketing copy, product spec building.",
+      "skills": [
+        "./skills/business/biz-opportunity-scout",
+        "./skills/business/marketing-copy",
+        "./skills/business/product-spec-builder"
       ]
     }
   ]

@@ -4,7 +4,11 @@
   "description": "나만의 에이전트 스킬 모음",
   "skills": [
     "./skills/productivity/write-blog-post/SKILL.md",
+    "./skills/productivity/grill-me/SKILL.md",
     "./skills/learning/open-source-reverse-engineering-coach/SKILL.md",
-    "./skills/learning/technical-book-coach/SKILL.md"
+    "./skills/learning/technical-book-coach/SKILL.md",
+    "./skills/business/biz-opportunity-scout/SKILL.md",
+    "./skills/business/marketing-copy/SKILL.md",
+    "./skills/business/product-spec-builder/SKILL.md"
   ]
 }

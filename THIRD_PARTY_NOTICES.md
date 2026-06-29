@@ -14,6 +14,10 @@ Attributions below. Where code or prose was adapted, the upstream license applie
   the `SKILL.md` format (YAML frontmatter `name` + `description`, progressive disclosure via `references/`)
   follows Anthropic's Agent Skills standard.
 
+- **[buYoung/skills](https://github.com/buYoung/skills)** (MIT) — the `biz-opportunity-scout` skill's
+  framework selection (TAM/SAM/SOM, unit economics, competitive analysis, PMF indicators) and the
+  trust-level labeling approach (Available / Review / Private) are inspired by this repository.
+
 ## Notes
 
 - This file is English-only by policy (see CLAUDE.md "한/영 문서 페어 규칙" exemptions).

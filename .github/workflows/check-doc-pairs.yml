@@ -20,14 +20,23 @@ jobs:
           missing=0
 
           # 제외: CLAUDE.md, LICENSE, THIRD_PARTY_NOTICES.md, .upstream, .git, node_modules
+          # 루트 README 는 한글 메인(README.md) + 영어(README.en.md) 로 별도 규칙 적용.
           is_exempt() {
             case "$1" in
               *CLAUDE.md|*/LICENSE|./LICENSE|*THIRD_PARTY_NOTICES.md) return 0;;
+              ./README.md|./README.en.md) return 0;;
+              *.en.md) return 0;;
               *) return 1;;
             esac
           }
 
-          # 1) 영어 원본(.md, .ko.md 아님)에 대응하는 .ko.md 존재 확인
+          # 0) 루트 README 한/영 쌍 (한글 메인)
+          if [ ! -f ./README.md ] || [ ! -f ./README.en.md ]; then
+            echo "::error::루트 README 는 README.md(한글) + README.en.md(영어) 쌍이어야 합니다"
+            missing=1
+          fi
+
+          # 1) 영어 원본(.md, .ko.md/.en.md 아님)에 대응하는 .ko.md 존재 확인
           while IFS= read -r f; do
             is_exempt "$f" && continue
             base="${f%.md}"
@@ -37,6 +46,7 @@ jobs:
             fi
           done < <(find . -name "*.md" \
                     -not -name "*.ko.md" \
+                    -not -name "*.en.md" \
                     -not -path "./.git/*" \
                     -not -path "./.upstream/*" \
                     -not -path "*/node_modules/*")

@@ -28,11 +28,14 @@ npx skills@latest add devjh-jiki/jiki
 
 **User-invoked** (run by a human only via `/command`)
 
-- _(none yet — add your first skill)_
+- [improve-codebase-architecture](./engineering/improve-codebase-architecture/SKILL.md) — Scan for deepening opportunities, HTML report, then grill through one
+- [to-prd](./engineering/to-prd/SKILL.md) — Synthesize the current conversation into a PRD (no interview)
 
 **Model-invoked** (the agent uses it automatically when it fits the task)
 
-- _(none yet)_
+- [tdd](./engineering/tdd/SKILL.md) — Red-green-refactor, one vertical slice at a time
+- [diagnosing-bugs](./engineering/diagnosing-bugs/SKILL.md) — Disciplined diagnosis loop; tight red-capable feedback loop first
+- [codebase-design](./engineering/codebase-design/SKILL.md) — Vocabulary for designing deep modules
 
 ### Productivity
 

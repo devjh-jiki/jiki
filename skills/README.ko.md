@@ -28,11 +28,14 @@ npx skills@latest add devjh-jiki/jiki
 
 **User-invoked** (사람이 `/명령`으로만 실행)
 
-- _(아직 없음 — 첫 스킬을 추가하세요)_
+- [improve-codebase-architecture](./engineering/improve-codebase-architecture/SKILL.ko.md) — 심화 기회 스캔, HTML 리포트, 하나 골라 grilling
+- [to-prd](./engineering/to-prd/SKILL.ko.md) — 현재 대화를 PRD 로 합성 (인터뷰 없음)
 
 **Model-invoked** (작업에 맞으면 에이전트가 자동 사용)
 
-- _(아직 없음)_
+- [tdd](./engineering/tdd/SKILL.ko.md) — 레드-그린-리팩터, 수직 슬라이스 단위
+- [diagnosing-bugs](./engineering/diagnosing-bugs/SKILL.ko.md) — 체계적 진단 루프; 단단한 red 가능 피드백 루프부터
+- [codebase-design](./engineering/codebase-design/SKILL.ko.md) — 깊은 모듈 설계 어휘
 
 ### Productivity
 

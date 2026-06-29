@@ -2,12 +2,16 @@
 
 > 한국어: [README.ko.md](./README.ko.md)
 
-Skills for daily coding work.
+Skills for daily code work. Several are adapted from [mattpocock/skills](https://github.com/mattpocock/skills)
+with an added owner/leadership lens. See [THIRD_PARTY_NOTICES.md](../../THIRD_PARTY_NOTICES.md).
 
-**User-invoked**
+**User-invoked** (run by a human via `/command`)
 
-- _(none yet)_
+- [improve-codebase-architecture](./improve-codebase-architecture/SKILL.md) — Scan a codebase for deepening opportunities, present an HTML report, then grill through one.
+- [to-prd](./to-prd/SKILL.md) — Synthesize the current conversation into a PRD (no interview). Complements `product-spec-builder` (which interviews first).
 
-**Model-invoked**
+**Model-invoked** (the agent uses it automatically when it fits)
 
-- _(none yet)_
+- [tdd](./tdd/SKILL.md) — Red-green-refactor, one vertical slice at a time; tests as a risk asset.
+- [diagnosing-bugs](./diagnosing-bugs/SKILL.md) — Disciplined diagnosis loop; build a tight red-capable feedback loop before theorizing.
+- [codebase-design](./codebase-design/SKILL.md) — Shared vocabulary for designing deep modules (interface, depth, seam, adapter, leverage, locality).

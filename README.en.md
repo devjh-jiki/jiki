@@ -52,6 +52,12 @@ Skills are labeled by verification stage:
 | [biz-opportunity-scout](./skills/business/biz-opportunity-scout) | Review | Validate a business opportunity (TAM/SAM/SOM, unit economics, PMF) with a Go/No-Go. |
 | [marketing-copy](./skills/business/marketing-copy) | Review | Turn a product/feature into Korean marketing copy. |
 | [product-spec-builder](./skills/business/product-spec-builder) | Review | Turn a rough idea into a buildable PRD. |
+| [tdd](./skills/engineering/tdd) | Review | Red-green-refactor TDD (adapted from mattpocock). |
+| [diagnosing-bugs](./skills/engineering/diagnosing-bugs) | Review | Disciplined bug diagnosis loop (adapted from mattpocock). |
+| [codebase-design](./skills/engineering/codebase-design) | Review | Vocabulary for designing deep modules (adapted from mattpocock). |
+| [improve-codebase-architecture](./skills/engineering/improve-codebase-architecture) | Review | Scan for deepening opportunities + report (adapted from mattpocock). |
+| [to-prd](./skills/engineering/to-prd) | Review | Synthesize a conversation into a PRD (adapted from mattpocock). |
+| [handoff](./skills/productivity/handoff) | Review | Create a session handoff doc (adapted from mattpocock). |
 
 ## Related repos (Organization)
 

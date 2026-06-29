@@ -30,12 +30,16 @@ npx skills@latest add devjh-jiki/jiki
 
 - [improve-codebase-architecture](./engineering/improve-codebase-architecture/SKILL.md) — Scan for deepening opportunities, HTML report, then grill through one
 - [to-prd](./engineering/to-prd/SKILL.md) — Synthesize the current conversation into a PRD (no interview)
+- [to-issues](./engineering/to-issues/SKILL.md) — Break a plan/PRD into vertical-slice issues
+- [grill-with-docs](./engineering/grill-with-docs/SKILL.md) — Grilling that maintains glossary + ADRs as you go
+- [prototype](./engineering/prototype/SKILL.md) — Throwaway prototype to de-risk a design
 
 **Model-invoked** (the agent uses it automatically when it fits the task)
 
 - [tdd](./engineering/tdd/SKILL.md) — Red-green-refactor, one vertical slice at a time
 - [diagnosing-bugs](./engineering/diagnosing-bugs/SKILL.md) — Disciplined diagnosis loop; tight red-capable feedback loop first
 - [codebase-design](./engineering/codebase-design/SKILL.md) — Vocabulary for designing deep modules
+- [domain-modeling](./engineering/domain-modeling/SKILL.md) — Actively build and sharpen the domain model (glossary + ADRs)
 
 ### Productivity
 
@@ -43,6 +47,8 @@ npx skills@latest add devjh-jiki/jiki
 
 - [write-blog-post](./productivity/write-blog-post/SKILL.md) — Write/refine drafts, learnings, and experiences into jihoon-style Korean technical blog posts (includes style and SEO guides)
 - [grill-me](./productivity/grill-me/SKILL.md) — Relentless interview to stress-test a plan, design, decision, or business idea (inspired by mattpocock/skills)
+- [handoff](./productivity/handoff/SKILL.md) — Compact a conversation into a handoff doc for another agent
+- [writing-great-skills](./productivity/writing-great-skills/SKILL.md) — Reference for writing/editing skills well
 
 **Model-invoked**
 

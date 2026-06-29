@@ -30,12 +30,16 @@ npx skills@latest add devjh-jiki/jiki
 
 - [improve-codebase-architecture](./engineering/improve-codebase-architecture/SKILL.ko.md) — 심화 기회 스캔, HTML 리포트, 하나 골라 grilling
 - [to-prd](./engineering/to-prd/SKILL.ko.md) — 현재 대화를 PRD 로 합성 (인터뷰 없음)
+- [to-issues](./engineering/to-issues/SKILL.ko.md) — 계획/PRD 를 수직 슬라이스 이슈로 분해
+- [grill-with-docs](./engineering/grill-with-docs/SKILL.ko.md) — 진행하며 용어집 + ADR 까지 유지하는 grilling
+- [prototype](./engineering/prototype/SKILL.ko.md) — 설계 리스크를 줄이는 throwaway 프로토타입
 
 **Model-invoked** (작업에 맞으면 에이전트가 자동 사용)
 
 - [tdd](./engineering/tdd/SKILL.ko.md) — 레드-그린-리팩터, 수직 슬라이스 단위
 - [diagnosing-bugs](./engineering/diagnosing-bugs/SKILL.ko.md) — 체계적 진단 루프; 단단한 red 가능 피드백 루프부터
 - [codebase-design](./engineering/codebase-design/SKILL.ko.md) — 깊은 모듈 설계 어휘
+- [domain-modeling](./engineering/domain-modeling/SKILL.ko.md) — 도메인 모델을 능동적으로 구축·정밀화 (용어집 + ADR)
 
 ### Productivity
 
@@ -43,6 +47,8 @@ npx skills@latest add devjh-jiki/jiki
 
 - [write-blog-post](./productivity/write-blog-post/SKILL.ko.md) — 초안·학습·경험을 jihoon 스타일 한국어 기술 블로그 글로 작성/리파인 (문체·SEO 가이드 포함)
 - [grill-me](./productivity/grill-me/SKILL.ko.md) — 계획·설계·의사결정·사업 아이디어를 스트레스 테스트하는 집요한 인터뷰 (mattpocock/skills 참고)
+- [handoff](./productivity/handoff/SKILL.ko.md) — 대화를 인계 문서로 압축해 다른 에이전트가 이어받게
+- [writing-great-skills](./productivity/writing-great-skills/SKILL.ko.md) — 스킬을 잘 쓰고 편집하는 법 레퍼런스
 
 **Model-invoked**
 

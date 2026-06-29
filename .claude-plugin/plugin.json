@@ -6,6 +6,7 @@
     "./skills/productivity/write-blog-post/SKILL.md",
     "./skills/productivity/grill-me/SKILL.md",
     "./skills/productivity/handoff/SKILL.md",
+    "./skills/productivity/writing-great-skills/SKILL.md",
     "./skills/learning/open-source-reverse-engineering-coach/SKILL.md",
     "./skills/learning/technical-book-coach/SKILL.md",
     "./skills/business/biz-opportunity-scout/SKILL.md",
@@ -14,7 +15,11 @@
     "./skills/engineering/tdd/SKILL.md",
     "./skills/engineering/diagnosing-bugs/SKILL.md",
     "./skills/engineering/codebase-design/SKILL.md",
+    "./skills/engineering/domain-modeling/SKILL.md",
     "./skills/engineering/improve-codebase-architecture/SKILL.md",
-    "./skills/engineering/to-prd/SKILL.md"
+    "./skills/engineering/to-prd/SKILL.md",
+    "./skills/engineering/to-issues/SKILL.md",
+    "./skills/engineering/grill-with-docs/SKILL.md",
+    "./skills/engineering/prototype/SKILL.md"
   ]
 }

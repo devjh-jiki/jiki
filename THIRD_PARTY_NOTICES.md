@@ -15,8 +15,13 @@ Attributions below. Where code or prose was adapted, the upstream license applie
   - `skills/engineering/codebase-design` ← engineering/codebase-design
   - `skills/engineering/improve-codebase-architecture` ← engineering/improve-codebase-architecture
   - `skills/engineering/to-prd` ← engineering/to-prd
+  - `skills/engineering/to-issues` ← engineering/to-issues
+  - `skills/engineering/domain-modeling` ← engineering/domain-modeling
+  - `skills/engineering/grill-with-docs` ← engineering/grill-with-docs
+  - `skills/engineering/prototype` ← engineering/prototype
   - `skills/productivity/handoff` ← productivity/handoff
   - `skills/productivity/grill-me` ← productivity/grill-me
+  - `skills/productivity/writing-great-skills` ← productivity/writing-great-skills
   A full snapshot of the upstream repo is kept under `.upstream/mattpocock-skills/` for reference and
   attribution tracking (not installed or distributed).
 

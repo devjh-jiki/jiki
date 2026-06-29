@@ -1,6 +1,6 @@
 ---
 name: biz-opportunity-scout
-description: Identify and validate a business opportunity with quantitative frameworks before committing. Use when the user wants to evaluate a startup idea, a new product line, a pivot, or an expansion, or says things like "이 사업 될까?", "시장 규모 분석", "사업성 검증", "TAM SAM SOM", "유닛 이코노믹스". Produces a market-size estimate, unit economics, competitive read, PMF signals, and a Go/No-Go recommendation. Prefer this over a vague opinion whenever the user is deciding where to spend real time or money.
+description: Identify and validate a business opportunity with quantitative frameworks before committing. Use when the user is deciding whether to commit real time or money to a startup idea, a new product line, a small or offline business, a side project, a pivot, or an expansion, or says things like "이 사업 될까?", "시장 규모 분석", "사업성 검증", "차릴까/팔아볼까", "TAM SAM SOM", "유닛 이코노믹스". Produces a market-size estimate, unit economics, competitive read, PMF signals, and a Go/No-Go recommendation. Prefer this over a vague opinion whenever a real go/no-go decision is at stake — but not for simply defining a term (e.g. "what does TAM mean?") or building a plain feature-comparison table, which need no full analysis.
 ---
 
 # biz-opportunity-scout
@@ -21,14 +21,14 @@ Confirm which kind of analysis this is:
 
 ## Workflow
 
-1. **Frame the opportunity**: who is the customer, what is the problem, what is the proposed solution. If any of these are vague, ask before analyzing.
+1. **Frame the opportunity**: who is the customer, what is the problem, what is the proposed solution. If these are vague and you can ask, ask one round of clarifying questions before analyzing. If you can't pause (the user clearly wants a one-shot read), don't stall — state your framing explicitly as `assumption`s, flag the most decision-critical one, and proceed.
 2. **Gather data**: use web search actively for market data, pricing, and competitors. Target specific numbers each framework needs. Label every figure as `measured`, `sourced`, or `assumption`.
 3. **Run the four frameworks** (see references/frameworks.md):
    - Market sizing (TAM / SAM / SOM)
    - Unit economics (LTV, CAC, contribution margin, payback period)
    - Competitive landscape (who, why-switch, moat)
    - PMF signals (evidence of pull, not just interest)
-4. **Score**: rate each dimension and compute a composite read.
+4. **Score**: rate each of the four frameworks 1–5 and sum to a composite out of 20 — always exactly these four dimensions, no extras. As a rough decision band (use judgment, not a hard gate): **≥15 → Go territory**, **9–14 → Conditional-Go** (a key assumption must be validated first), **≤8 → No-Go**. State the band you landed in.
 5. **Decide**: give a clear Go / No-Go / Conditional-Go with the deciding reasons and the biggest risk.
 
 ## Output
@@ -47,6 +47,7 @@ Produce a concise Korean report with these sections (HTML or Markdown per user p
 
 - Distinguish `measured` (real data), `sourced` (from a citation), and `assumption` (your estimate). Never present an assumption as fact.
 - If the data needed for a framework doesn't exist yet, say so and propose the cheapest experiment to get it (landing page, pre-sale, interviews).
+- When you have no live data and nearly everything is an `assumption`, don't let the labels become noise. Call out the one or two **load-bearing assumptions** — the ones that, if wrong, flip the decision — and make validating them the top of the next-steps list.
 - A "No-Go" or "not enough signal yet" is a valid and valuable answer. Do not manufacture optimism.
 
 ## Attribution

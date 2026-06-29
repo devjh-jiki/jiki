@@ -49,7 +49,7 @@ npx skills@latest add devjh-jiki/jiki
 | [grill-me](./skills/productivity/grill-me) | Available | 계획·의사결정·사업 아이디어를 스트레스 테스트하는 집요한 인터뷰 |
 | [open-source-reverse-engineering-coach](./skills/learning/open-source-reverse-engineering-coach) | Available | 오픈소스를 인터랙티브 역공학으로 학습 |
 | [technical-book-coach](./skills/learning/technical-book-coach) | Available | 기술 서적·문서 코칭 학습 (한글 번역 + 코칭) |
-| [biz-opportunity-scout](./skills/business/biz-opportunity-scout) | Review | 사업 기회 검증 (TAM/SAM/SOM, 유닛 이코노믹스, PMF) + Go/No-Go |
+| [biz-opportunity-scout](./skills/business/biz-opportunity-scout) | Available | 사업 기회 검증 (TAM/SAM/SOM, 유닛 이코노믹스, PMF) + Go/No-Go |
 | [marketing-copy](./skills/business/marketing-copy) | Review | 제품/기능을 한국어 마케팅 카피로 |
 | [product-spec-builder](./skills/business/product-spec-builder) | Review | 거친 아이디어를 만들 수 있는 PRD 로 |
 | [tdd](./skills/engineering/tdd) | Review | 레드-그린-리팩터 테스트 주도 개발 (mattpocock 참고) |

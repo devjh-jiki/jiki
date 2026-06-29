@@ -50,7 +50,7 @@ Skills are labeled by verification stage:
 | [open-source-reverse-engineering-coach](./skills/learning/open-source-reverse-engineering-coach) | Available | Learn an open-source project by interactive reverse-engineering. |
 | [technical-book-coach](./skills/learning/technical-book-coach) | Available | Coach-style learning from technical books/docs (KO translation + coaching). |
 | [biz-opportunity-scout](./skills/business/biz-opportunity-scout) | Available | Validate a business opportunity (TAM/SAM/SOM, unit economics, PMF) with a Go/No-Go. |
-| [marketing-copy](./skills/business/marketing-copy) | Review | Turn a product/feature into Korean marketing copy. |
+| [marketing-copy](./skills/business/marketing-copy) | Available | Turn a product/feature into Korean marketing copy. |
 | [product-spec-builder](./skills/business/product-spec-builder) | Review | Turn a rough idea into a buildable PRD. |
 | [tdd](./skills/engineering/tdd) | Review | Red-green-refactor TDD (adapted from mattpocock). |
 | [diagnosing-bugs](./skills/engineering/diagnosing-bugs) | Review | Disciplined bug diagnosis loop (adapted from mattpocock). |

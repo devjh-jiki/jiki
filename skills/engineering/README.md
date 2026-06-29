@@ -1,11 +1,13 @@
 # Engineering Skills
 
-매일 하는 코드 작업 스킬.
+> 한국어: [README.ko.md](./README.ko.md)
+
+Skills for daily coding work.
 
 **User-invoked**
 
-- _(아직 없음)_
+- _(none yet)_
 
 **Model-invoked**
 
-- _(아직 없음)_
+- _(none yet)_

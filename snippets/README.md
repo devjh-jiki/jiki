@@ -1,19 +1,21 @@
 # Snippets
 
-자주 쓰는 코드/설정 스니펫 모음. (eslint, tsconfig, CI 설정 등)
+> 한국어: [README.ko.md](./README.ko.md)
 
-| 파일 | 용도 |
+A collection of frequently used code/config snippets. (eslint, tsconfig, CI configs, etc.)
+
+| File | Purpose |
 |------|------|
-| [`discord-notify.mjs`](./discord-notify.mjs) | 디스코드 Webhook 알림 공용 모듈 (text + embed) |
+| [`discord-notify.mjs`](./discord-notify.mjs) | Shared Discord Webhook notification module (text + embed) |
 
 ## discord-notify.mjs
 
-여러 프로젝트(뉴스레터, 토스 매매 리포트, 향후 알람)에서 재사용하는 디스코드 알림 함수.
-의존성 없음 (Node 18+ 내장 `fetch`).
+A Discord notification function reused across multiple projects (newsletter, Toss trading report, future alarms).
+No dependencies (uses Node 18+ built-in `fetch`).
 
-### 준비
+### Setup
 
-디스코드에서 채널별 Webhook URL을 만들고 환경변수로 둡니다 (URL은 비밀로 취급):
+Create a per-channel Webhook URL in Discord and store it as an environment variable (treat the URL as a secret):
 
 ```
 DISCORD_WEBHOOK_NEWSLETTER=https://discord.com/api/webhooks/.../...
@@ -21,9 +23,9 @@ DISCORD_WEBHOOK_TOSS=https://discord.com/api/webhooks/.../...
 DISCORD_WEBHOOK_ALARMS=https://discord.com/api/webhooks/.../...
 ```
 
-> Webhook 생성: 채널 우클릭 → 채널 편집 → 연동 → 웹후크 → 새 웹후크 → URL 복사
+> Create a Webhook: right-click channel → Edit Channel → Integrations → Webhooks → New Webhook → Copy URL
 
-### 사용
+### Usage
 
 ```js
 import { sendDiscord, sendDiscordEmbed } from "./discord-notify.mjs";
@@ -44,9 +46,9 @@ await sendDiscordEmbed(process.env.DISCORD_WEBHOOK_TOSS, {
 });
 ```
 
-### 재사용 방법
+### How to reuse
 
-- 작은 프로젝트: 이 파일을 복사해 넣고 쓰기
-- 또는 각 레포에서 raw URL로 가져와 쓰기
+- Small projects: copy this file in and use it
+- Or pull it via raw URL from each repo
 
-색상 참고: `0x5865F2`(디스코드 블루), `0x2ecc71`(초록/수익), `0xe74c3c`(빨강/손실), `0xf1c40f`(노랑/경고).
+Color reference: `0x5865F2` (Discord blue), `0x2ecc71` (green/profit), `0xe74c3c` (red/loss), `0xf1c40f` (yellow/warning).

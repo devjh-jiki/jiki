@@ -6,34 +6,30 @@ disable-model-invocation: true
 
 # write-blog-post
 
-학습·개발 경험·초안을 **jihoon 스타일의 한국어 기술 블로그 글**로 만들거나, 기존 글을 같은 스타일로 다듬는다.
-독자가 끝까지 읽고, 검색에서 발견되고, 클릭되는 글을 목표로 한다.
+Turn a learning, development experience, or rough draft into a polished Korean technical blog post in the "jihoon" voice, or refine an existing post in the same style. The goal is a post that readers finish, that is discoverable in search, and that gets clicked.
 
-상세 문체·SEO·마크다운 규칙은 [references/style-guide.md](./references/style-guide.md) 와
-[references/seo-checklist.md](./references/seo-checklist.md) 에 있다. 글을 쓰기 전에 두 파일을 읽는다.
+Detailed voice, SEO, and Markdown rules live in [references/style-guide.md](./references/style-guide.md) and [references/seo-checklist.md](./references/seo-checklist.md). Read both before writing. (The posts themselves are written in Korean.)
 
-## 작업 순서
+## Workflow
 
-1. **주제·목적·독자 확인**: 무엇에 대한 글인지, 독자(입문/실무), 목적(학습 정리/포트폴리오/수익형)을 파악한다. 불명확하면 추측하지 말고 짧게 묻는다.
-2. **리서치**: 초안 내용만으로 쓰지 않는다. 웹 검색으로 기술적 주장(수치·동작 원리·비교)의 사실 관계를 **현재 시점 기준**으로 검증하고, 최신 버전·생태계 현황·전문가 발언을 수집한다. 확인 안 된 내용은 추측임을 명시하거나 뺀다.
-3. **구조 잡기**: 아래 기본 골격을 따른다.
-   - 도입: "이번 포스팅에서는 [주제]에 대한 이야기를 해보려고 한다." + 왜 이 주제를 다루게 됐는지 개인적 맥락
-   - 본문: 문제 → 시도 → 해결. 비유로 개념 설명 후 비유의 한계를 짚는다.
-   - 막혔던 지점과 배운 것 (진정성이 차별화 포인트)
-   - 결론: 논지 압축 + 독자에게 말 건네기 + 겸손한 불확실성
-4. **문체 적용**: [references/style-guide.md](./references/style-guide.md) 의 jihoon 문체(한다체, "필자", 질문형 소제목, 볼드만 사용, em dash 금지 등)를 따른다.
-5. **SEO 프론트매터 + 발행 전 체크**: [references/seo-checklist.md](./references/seo-checklist.md) 의 frontmatter 형식과 체크리스트(description 120~160자, seoTitle 50~60자, 내부 링크, 이미지 alt 등)를 적용한다.
-6. **저장**: 사용자가 지정한 블로그 레포/디렉토리에 저장한다. jihoon-blog 구조면 `content/YYMMDD/index.md`. 미지정 시 위치를 묻고, 미완성이면 `categories: ignore` 로 비공개 처리.
+1. **Clarify topic, goal, audience**: what the post is about, the reader (beginner/practitioner), and the purpose (learning notes / portfolio / revenue). If unclear, ask briefly rather than guessing.
+2. **Research**: do not write from the draft alone. Use web search to verify technical claims (numbers, mechanisms, comparisons) **as of the present moment**, and gather current versions, ecosystem status, and expert statements. Mark unverified content as speculation or drop it.
+3. **Structure**: follow this skeleton.
+   - Intro: "이번 포스팅에서는 [주제]에 대한 이야기를 해보려고 한다." plus personal context for why this topic.
+   - Body: problem → attempt → resolution. Explain concepts with analogies, then note the analogy's limits.
+   - What got stuck and what was learned (authenticity is the differentiator).
+   - Conclusion: compress the thesis, address the reader, end with humble uncertainty.
+4. **Apply voice**: follow the jihoon style in [references/style-guide.md](./references/style-guide.md) (한다체, "필자" as first person, question-form subheadings, bold only, no em dashes, etc.).
+5. **SEO frontmatter + pre-publish check**: apply the frontmatter format and checklist in [references/seo-checklist.md](./references/seo-checklist.md) (description 120–160 chars, seoTitle 50–60 chars, internal links, image alt text).
+6. **Save**: write to the user's blog repo/directory. For jihoon-blog that is `content/YYMMDD/index.md`. If unspecified, ask; if unfinished, mark `categories: ignore` to keep it private.
 
-## 핵심 원칙
+## Core principles
 
-- 사실과 다른 내용을 지어내지 않는다. 확신 없으면 "확인 필요"로 표시한다.
-- 코드 예시는 실제로 동작하는 형태로 작성한다.
-- 수익형 글이라도 클릭베이트·허위 정보는 쓰지 않는다.
-- 가독성과 인식의 흐름을 최우선으로 한다. 독자가 흐름이 끊기거나 어색함을 느끼는 지점이 없어야 한다.
+- Do not fabricate facts. When unsure, mark as "확인 필요" (needs verification).
+- Code examples must actually run.
+- Even for revenue posts, no clickbait or false information.
+- Prioritize readability and flow. There should be no point where the reader loses the thread or feels awkward.
 
-## 기존 글 다듬기 (refine)
+## Refining an existing post
 
-사용자가 기존 글 경로를 주며 다듬어달라고 하면, 새로 쓰지 말고 원문의 논지·구조를 유지한 채
-문체·마크다운 규칙·SEO를 위 가이드에 맞춰 교정한다. 원문에 없던 사실을 임의로 추가하지 않되,
-명백한 오류나 빠진 맥락은 리서치로 보강하고 그 사실을 사용자에게 알린다.
+When the user gives a path and asks to refine, do not rewrite. Preserve the original thesis and structure, and correct voice, Markdown rules, and SEO per the guides above. Do not invent facts not in the original, but reinforce clear errors or missing context with research and tell the user.

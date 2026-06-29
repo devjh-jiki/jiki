@@ -1,148 +1,150 @@
-# AI 학습 로드맵 (프론트엔드 개발자용)
+# AI Learning Roadmap (for Frontend Developers)
 
-프론트엔드 개발자로서 AI를 **실무에 활용**하는 것을 1차 목표로, 내부 원리는 선택 심화로 둔 학습 로드맵입니다.
-전달받은 자료를 분류하고 단계별 순서로 재구성했습니다.
+> 한국어: [README.ko.md](./README.ko.md)
 
-- 실습 기록: [`journal.md`](./journal.md)
-- 실습 코드: `ai-playground` 레포
+A learning roadmap whose primary goal is to **apply AI in practice** as a frontend developer, with internal mechanics left as optional deep dives.
+The provided materials are categorized and reorganized into a stage-by-stage sequence.
 
----
-
-## 1. 프론트엔드 개발자가 우선 얻을 것 (실무 직결순)
-
-1. **프롬프트 엔지니어링** — LLM 호출 품질 결정. UI에서 LLM 쓸 때 필수
-2. **에이전트 / 도구 호출** — AI 기능을 프론트에 붙이는 아키텍처
-3. **MCP** — 에디터/앱에 도구 연결 (MCP 모음집과 직결)
-4. **벡터DB / 임베딩** — RAG, 검색 기능 구현
-5. **에이전트 메모리** — 대화형 UI 상태 관리
+- Practice log: [`journal.md`](./journal.md)
+- Practice code: `ai-playground` repo
 
 ---
 
-## 2. 단계별 학습 순서
+## 1. What a frontend developer should get first (ordered by practical relevance)
 
-> 단계 5까지가 프론트엔드 실무의 ~80%. 6은 깊이 파고 싶을 때 + 블로그 소재.
+1. **Prompt engineering** — Determines LLM call quality. Essential when using LLMs in the UI
+2. **Agents / tool calling** — Architecture for attaching AI features to the frontend
+3. **MCP** — Connecting tools to editors/apps (directly tied to the MCP collection)
+4. **Vector DB / embeddings** — Implementing RAG and search features
+5. **Agent memory** — State management for conversational UIs
 
-### 단계 0 — 개념 잡기
+---
 
-- LLM Introduction (영상)
+## 2. Stage-by-stage learning order
+
+> Through Stage 5 covers ~80% of frontend practice. Stage 6 is for when you want to go deep + blog material.
+
+### Stage 0 — Grasp the concepts
+
+- LLM Introduction (video)
 - Awesome Generative AI Guide
-- **산출물**: 용어 정리 노트
+- **Output**: terminology notes
 
-### 단계 1 — 활용 기초 (프롬프트)
+### Stage 1 — Application basics (prompts)
 
 - Prompt Engineering Guide
-- Chain-of-Thought Prompting (논문)
-- **산출물**: 프롬프트 패턴 모음 → [`prompts/`](../../prompts) 에 반영
+- Chain-of-Thought Prompting (paper)
+- **Output**: a collection of prompt patterns → reflected in [`prompts/`](../../prompts)
 
-### 단계 2 — 첫 통합 (앱에서 LLM 호출)
+### Stage 2 — First integration (calling an LLM from an app)
 
 - OpenAI's Practical Guide to Building Agents
 - Building Effective Agents (Anthropic)
-- **산출물**: 간단한 챗 UI (ai-playground)
+- **Output**: a simple chat UI (ai-playground)
 
-### 단계 3 — 에이전트 (도구 호출 / 루프)
+### Stage 3 — Agents (tool calling / loop)
 
-- Building an Agent from Scratch (영상)
-- ReAct (논문), Toolformer (논문)
+- Building an Agent from Scratch (video)
+- ReAct (paper), Toolformer (paper)
 - HuggingFace Agent Course
 - Microsoft AI Agents for Beginners
-- **산출물**: 도구를 쓰는 에이전트
+- **Output**: an agent that uses tools
 
-### 단계 4 — MCP (도구 표준 연결)
+### Stage 4 — MCP (standard tool connection)
 
-- Building Agents with MCP (영상)
-- MCP with Anthropic (코스)
-- AI Agents with MCP — Kyle Stratis (책)
-- **산출물**: MCP 서버 1개 → [`mcp/`](../../mcp) 에 반영
+- Building Agents with MCP (video)
+- MCP with Anthropic (course)
+- AI Agents with MCP — Kyle Stratis (book)
+- **Output**: one MCP server → reflected in [`mcp/`](../../mcp)
 
-### 단계 5 — RAG / 메모리
+### Stage 5 — RAG / memory
 
 - Building Vector Databases with Pinecone
 - Vector Databases: from Embeddings to Applications
-- Agent Memory (코스)
-- **산출물**: RAG 데모
+- Agent Memory (course)
+- **Output**: a RAG demo
 
-### 단계 6 — 심화 (선택, 블로그 소재)
+### Stage 6 — Deep dive (optional, blog material)
 
-- LLMs from Scratch / Building an LLM from Scratch (책·영상)
-- Understanding Deep Learning (책)
-- AI Engineering (책)
-- The LLM Engineering Handbook (책)
-- Designing Machine Learning Systems (책)
-- **산출물**: 기술 블로그 글 (write-blog-post 스킬 활용)
+- LLMs from Scratch / Building an LLM from Scratch (book·video)
+- Understanding Deep Learning (book)
+- AI Engineering (book)
+- The LLM Engineering Handbook (book)
+- Designing Machine Learning Systems (book)
+- **Output**: a technical blog post (using the write-blog-post skill)
 
 ---
 
-## 3. 전달받은 자료 전체 분류
+## 3. Full categorization of provided materials
 
 ### Videos
-- LLM Introduction → 단계 0
-- LLMs from Scratch → 단계 6
-- Agentic AI Overview (Stanford) → 단계 2~3
-- Building and Evaluating Agents → 단계 3
-- Building Effective Agents → 단계 2
-- Building Agents with MCP → 단계 4
-- Building an Agent from Scratch → 단계 3
-- Philo Agents → 단계 3
+- LLM Introduction → Stage 0
+- LLMs from Scratch → Stage 6
+- Agentic AI Overview (Stanford) → Stage 2~3
+- Building and Evaluating Agents → Stage 3
+- Building Effective Agents → Stage 2
+- Building Agents with MCP → Stage 4
+- Building an Agent from Scratch → Stage 3
+- Philo Agents → Stage 3
 
 ### Repos
-- GenAI Agents → 단계 3 (실습)
-- Microsoft's AI Agents for Beginners → 단계 3
-- Prompt Engineering Guide → 단계 1
-- Hands-On Large Language Models → 단계 2~6
-- Made with ML → 단계 2~5 (MLOps 관점)
-- Hands-On AI Engineering → 단계 2~5
-- Awesome Generative AI Guide → 단계 0 (인덱스)
-- Designing Machine Learning Systems → 단계 6
-- Machine Learning for Beginners (Microsoft) → 단계 0~1
-- LLM Course → 단계 1~3
+- GenAI Agents → Stage 3 (practice)
+- Microsoft's AI Agents for Beginners → Stage 3
+- Prompt Engineering Guide → Stage 1
+- Hands-On Large Language Models → Stage 2~6
+- Made with ML → Stage 2~5 (MLOps perspective)
+- Hands-On AI Engineering → Stage 2~5
+- Awesome Generative AI Guide → Stage 0 (index)
+- Designing Machine Learning Systems → Stage 6
+- Machine Learning for Beginners (Microsoft) → Stage 0~1
+- LLM Course → Stage 1~3
 
 ### Guides
-- Google's Agent Whitepaper / Agent Companion → 단계 3
-- Building Effective Agents (Anthropic) → 단계 2 ★ 강추
-- Claude Code Best Agentic Coding Practices → 단계 2~4 ★ 실무 직결
-- OpenAI's Practical Guide to Building Agents → 단계 2 ★ 강추
+- Google's Agent Whitepaper / Agent Companion → Stage 3
+- Building Effective Agents (Anthropic) → Stage 2 ★ highly recommended
+- Claude Code Best Agentic Coding Practices → Stage 2~4 ★ directly practical
+- OpenAI's Practical Guide to Building Agents → Stage 2 ★ highly recommended
 
 ### Books
-- Understanding Deep Learning → 단계 6
-- Building an LLM from Scratch → 단계 6
-- The LLM Engineering Handbook → 단계 6
-- AI Agents: The Definitive Guide (Nicole Koenigstein) → 단계 3
-- Building Applications with AI Agents (Michael Albada) → 단계 3~5
-- AI Agents with MCP (Kyle Stratis) → 단계 4
-- AI Engineering → 단계 6
+- Understanding Deep Learning → Stage 6
+- Building an LLM from Scratch → Stage 6
+- The LLM Engineering Handbook → Stage 6
+- AI Agents: The Definitive Guide (Nicole Koenigstein) → Stage 3
+- Building Applications with AI Agents (Michael Albada) → Stage 3~5
+- AI Agents with MCP (Kyle Stratis) → Stage 4
+- AI Engineering → Stage 6
 
 ### Papers
-- ReAct → 단계 3 ★ 에이전트 핵심
-- Generative Agents → 단계 3~5
-- Toolformer → 단계 3
-- Chain-of-Thought Prompting → 단계 1 ★ 프롬프트 핵심
+- ReAct → Stage 3 ★ agent core
+- Generative Agents → Stage 3~5
+- Toolformer → Stage 3
+- Chain-of-Thought Prompting → Stage 1 ★ prompt core
 
 ### Courses
-- HuggingFace's Agent Course → 단계 3
-- MCP with Anthropic → 단계 4
-- Building Vector Databases with Pinecone → 단계 5
-- Vector Databases from Embeddings to Apps → 단계 5
-- Agent Memory → 단계 5
+- HuggingFace's Agent Course → Stage 3
+- MCP with Anthropic → Stage 4
+- Building Vector Databases with Pinecone → Stage 5
+- Vector Databases from Embeddings to Apps → Stage 5
+- Agent Memory → Stage 5
 
-> 원본 단축 URL(t.co)은 깨질 수 있으니, 각 자료를 실제로 열 때 정식 URL로 교체해 두세요.
-
----
-
-## 4. 추가로 모으면 좋은 자료 (목록에 빠진 것)
-
-프론트엔드 실무에 특히 유용한데 원본 목록에 없던 것들:
-
-- **Vercel AI SDK 문서** — 프론트에서 가장 실용적인 LLM 통합 라이브러리 ★ 최우선 추천
-- **Anthropic Cookbook / OpenAI Cookbook** — 실전 코드 레시피
-- **LangChain JS / LlamaIndex TS 문서** — RAG 구현
-- **patterns.dev** — 프론트엔드 아키텍처 패턴
-- **MCP 공식 문서** (modelcontextprotocol.io) — 단계 4 레퍼런스
+> Original shortened URLs (t.co) may break, so replace each with the canonical URL when you actually open the material.
 
 ---
 
-## 5. 학습 운영 방식
+## 4. Materials worth collecting (missing from the list)
 
-- 각 단계마다 **읽기 → 작은 실습 → 기록** 사이클.
-- 실습은 `ai-playground` 레포에 단계별 폴더로.
-- 기록은 [`journal.md`](./journal.md) 에 날짜별로. 블로그감이 되면 `write-blog-post` 스킬로 글 작성.
+Things especially useful for frontend practice that were not in the original list:
+
+- **Vercel AI SDK docs** — The most practical LLM integration library for the frontend ★ top recommendation
+- **Anthropic Cookbook / OpenAI Cookbook** — Real-world code recipes
+- **LangChain JS / LlamaIndex TS docs** — RAG implementation
+- **patterns.dev** — Frontend architecture patterns
+- **MCP official docs** (modelcontextprotocol.io) — Stage 4 reference
+
+---
+
+## 5. How learning is run
+
+- A **read → small practice → log** cycle for each stage.
+- Practice goes into the `ai-playground` repo in per-stage folders.
+- Logging goes into [`journal.md`](./journal.md) by date. When something is blog-worthy, write it up with the `write-blog-post` skill.

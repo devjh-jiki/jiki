@@ -1,10 +1,10 @@
-# Learning Prompts
+# 학습용 프롬프트
 
-> 한국어: [learning.ko.md](./learning.ko.md)
+> English: [learning.md](./learning.md)
 
-### Quickly understand a concept
+### 개념 빠르게 이해하기
 
-Purpose: when you want a new concept explained at a frontend developer's level
+용도: 새 개념을 프론트엔드 개발자 눈높이로 설명받을 때
 
 ```
 나는 프론트엔드 개발자야. <개념>을 (1) 한 줄 비유, (2) 왜 필요한지,
@@ -12,9 +12,9 @@ Purpose: when you want a new concept explained at a frontend developer's level
 모르는 용어는 그때그때 풀어서.
 ```
 
-### Summarize material + create a practice task
+### 자료 요약 + 실습 과제 만들기
 
-Purpose: when learning from a video/doc/paper
+용도: 영상/문서/논문을 학습할 때
 
 ```
 다음 자료를 학습하려고 해: <링크 또는 제목>.
@@ -22,9 +22,9 @@ Purpose: when learning from a video/doc/paper
 (3) 내가 직접 만들어볼 작은 실습 과제 1개를 제안해줘.
 ```
 
-### Debugging mentor for where you're stuck
+### 막힌 부분 디버깅 멘토
 
-Purpose: when you're stuck during learning (don't give the answer directly — guide instead)
+용도: 학습 중 막혔을 때 (답을 바로 주지 말고 유도)
 
 ```
 나는 <상황>에서 막혔어. 정답을 바로 알려주지 말고,

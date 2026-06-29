@@ -1,52 +1,52 @@
-# SEO 프론트매터 + 발행 전 체크리스트
+# SEO Frontmatter + Pre-publish Checklist
 
-write-blog-post 스킬의 SEO 규칙. SKILL.md 에서 참조한다.
+SEO rules for the write-blog-post skill. Referenced from SKILL.md. Posts target Korean search.
 
-## 프론트매터 형식
+## Frontmatter format
 
 ```yaml
 ---
-emoji: [적절한 이모지]
-title: '[짧고 명확한 제목]'
-seoTitle: '[선택: 검색엔진용 긴 제목, 50~60자, 핵심 키워드 포함]'
+emoji: [a fitting emoji]
+title: '[short, clear title]'
+seoTitle: '[optional: long search title, 50-60 chars, includes key keywords]'
 date: '[YYYY-MM-DD]'
-categories: [공백으로 구분된 카테고리]
-description: '[메타 디스크립션, 120~160자, 핵심 키워드 포함]'
-keywords: '[쉼표로 구분된 검색 타겟 키워드 5~8개, 롱테일 위주]'
+categories: [space-separated categories]
+description: '[meta description, 120-160 chars, includes key keywords]'
+keywords: '[comma-separated target keywords, 5-8, long-tail focused]'
 ---
 ```
 
-## 각 필드 작성법
+## Field guidance
 
-- **title**: 사이트 H1/카드 제목. 짧고 본질적으로. 예: `"추상화"`, `"도메인 모델"`
-- **seoTitle** (선택): 짧은 title로 사이트 가독성을 지키면서 검색엔진엔 키워드를 노출하고 싶을 때.
-  - `<title>`, OG, 트위터, JSON-LD `alternativeHeadline` 에 반영됨
-  - 50~60자 권장 (구글 결과에서 안 잘리는 길이)
-  - 메인 키워드 + 보조 키워드 + 액션/혜택 패턴. 예: `"프론트엔드 추상화, 좋은 코드를 위한 설계 원칙"`
-  - 미지정 시 title이 자동 대체되므로 키워드 강화가 필요한 글에만 추가
-- **description**: 글의 핵심과 독자가 얻을 가치를 명확히. 주요 검색 키워드 자연스럽게 포함.
-- **keywords**: 구체적이고 검색량 있는 롱테일 위주. 한글/영문 혼용 가능. (예: "React Fiber, React 렌더링 원리")
+- **title**: site H1/card title. Short and essential. e.g. `"추상화"`, `"도메인 모델"`.
+- **seoTitle** (optional): use when you want a short title for site readability but rich keywords for search engines.
+  - Reflected in `<title>`, OG, Twitter, JSON-LD `alternativeHeadline`.
+  - 50-60 chars recommended (not truncated in Google results).
+  - Pattern: main keyword + secondary keyword + action/benefit. e.g. `"프론트엔드 추상화, 좋은 코드를 위한 설계 원칙"`.
+  - Falls back to title when omitted, so add only for posts needing keyword reinforcement.
+- **description**: convey the core and reader value clearly; include main search keywords naturally.
+- **keywords**: concrete long-tail keywords with real search volume. Korean/English mix OK. (e.g. "React Fiber, React 렌더링 원리")
 
-## 발행 전 체크리스트 (필수)
+## Pre-publish checklist (required)
 
-실제 운영 데이터상 `description`/`keywords`가 비면 노출은 되어도 클릭이 0에 수렴한다. 메타데이터 누락은 곧 트래픽 손실이다.
+In real operational data, when `description`/`keywords` are empty, impressions still occur but clicks converge to zero. Missing metadata equals lost traffic.
 
-- [ ] **description 120~160자**: 한글은 스니펫 픽셀 폭이 커 160자 이전에 잘릴 수 있으므로 초과 금지.
-- [ ] **seoTitle 50~60자**: 구글 결과 제목이 안 잘리는 길이. 메인 키워드를 앞쪽에.
-- [ ] **title과 seoTitle 역할 분리**: title은 짧은 표시용, seoTitle은 긴 검색용.
-- [ ] **keywords는 실제 검색 쿼리 기반**: 가능하면 GSC 데이터로 실제 유입 쿼리 반영.
-- [ ] **본문 첫 문단에 핵심 쿼리 자연 배치**: 구글 스니펫이 본문에서 생성되므로.
-- [ ] **내부 링크 1개 이상**: 같은 카테고리 기존 글로 키워드 앵커 링크. topical authority 신호.
-- [ ] **이미지 alt 텍스트**: 모든 본문 이미지에 설명 alt 작성.
+- [ ] **description 120-160 chars**: Korean takes more pixel width in snippets and may truncate before 160; do not exceed.
+- [ ] **seoTitle 50-60 chars**: length that won't truncate in Google result titles. Put the main keyword near the front.
+- [ ] **title vs seoTitle role split**: title = short display, seoTitle = long search.
+- [ ] **keywords based on real search queries**: where possible, reflect actual incoming queries from GSC.
+- [ ] **core query naturally in the first paragraph**: Google generates the snippet from the body.
+- [ ] **at least one internal link**: keyword-anchor link to an existing post in the same category. Inter-post linking is a key topical-authority signal.
+- [ ] **image alt text**: descriptive alt for every body image.
 
-## 비공개(임시 저장) 처리
+## Private (draft) handling
 
-- 미완성 글은 프론트매터 `categories`에 `ignore` 를 넣는다.
-- `ignore`면 sitemap·RSS·목록·검색·개별 페이지·llms.txt 에서 완전 제외 + `noindex`.
-- 발행 시 `ignore`를 실제 카테고리로 교체.
+- Unfinished posts put `ignore` in frontmatter `categories`.
+- With `ignore`, the post is fully excluded from sitemap, RSS, list, search, individual page, and llms.txt, with `noindex` applied.
+- On publish, replace `ignore` with the real category.
 
-## GSC 데이터 활용 (jihoon-blog 기준)
+## Using GSC data (jihoon-blog)
 
-- `pnpm gsc`로 최근 28일 vs 직전 28일 검색 데이터 수집 (`.gsc-data/`에 CSV + Quick Win/Cannibalization 분류).
-- **Quick Win**: position 5~20 + 노출 높음 + CTR 낮은 쿼리 → 해당 글 seoTitle/description/첫 문단을 그 쿼리에 맞게 개선하면 즉시 효과.
-- keywords는 추측이 아니라 GSC에서 실제 노출되는 쿼리를 우선 반영.
+- `pnpm gsc` collects last-28-days vs prior-28-days search data (CSV in `.gsc-data/` + Quick Win / Cannibalization classification).
+- **Quick Win**: queries at position 5-20 with high impressions and low CTR. Improving that post's seoTitle/description/first-paragraph for that query yields immediate effect.
+- Base `keywords` on queries actually shown in GSC, not guesses.

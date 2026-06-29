@@ -1,11 +1,13 @@
 # Productivity Skills
 
-코드와 무관한 일상 워크플로우 스킬.
+> 한국어: [README.ko.md](./README.ko.md)
+
+Skills for everyday workflows unrelated to code.
 
 **User-invoked**
 
-- [write-blog-post](./write-blog-post/SKILL.md) — 학습/개발 내용을 한국어 기술 블로그 글 초안으로 작성
+- [write-blog-post](./write-blog-post/SKILL.md) — Turn learning/development notes into a Korean technical blog post draft
 
 **Model-invoked**
 
-- _(아직 없음)_
+- _(none yet)_

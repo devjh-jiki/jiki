@@ -1,16 +1,18 @@
-# AI 학습 기록 (Journal)
+# AI Learning Journal
 
-단계별 학습/실습 기록. 날짜 역순으로 위에 추가합니다.
+> 한국어: [journal.ko.md](./journal.ko.md)
 
-> 템플릿:
+Per-stage learning/practice log. Add new entries at the top in reverse-chronological order.
+
+> Template:
 >
-> ## YYYY-MM-DD — 단계 N: 주제
-> - **학습**: 무엇을 읽었나 (링크)
-> - **실습**: 무엇을 만들었나 (ai-playground 경로)
-> - **배운 것**: 핵심 3줄
-> - **막힌 것 / 다음 할 것**:
-> - **블로그감?**: Y/N — (Y면 어떤 각도)
+> ## YYYY-MM-DD — Stage N: Topic
+> - **Learned**: what you read (link)
+> - **Practiced**: what you built (ai-playground path)
+> - **Takeaways**: key 3 lines
+> - **Blockers / next steps**:
+> - **Blog-worthy?**: Y/N — (if Y, what angle)
 
 ---
 
-<!-- 여기부터 기록 시작 -->
+<!-- Start logging from here -->

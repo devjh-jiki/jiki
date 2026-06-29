@@ -1,20 +1,22 @@
 # Prompts
 
-자주 쓰는 프롬프트 명령어 모음. 단발성 복붙용입니다.
+> 한국어: [README.ko.md](./README.ko.md)
 
-> **승격 규칙**: 같은 프롬프트를 반복 절차로 쓰게 되면 [`skills/`](../skills) 의
-> 스킬로 승격하세요. ("매번 같은 절차면 skill, 한번 쓰고 버리면 prompt")
+A collection of frequently used prompt commands. For one-off copy-paste use.
 
-## 카테고리
+> **Promotion rule**: When you start using the same prompt as a repeated procedure, promote it
+> to a skill in [`skills/`](../skills). ("Same procedure every time → skill; use once and toss → prompt")
 
-| 파일 | 용도 |
+## Categories
+
+| File | Purpose |
 |------|------|
-| [`learning.md`](./learning.md) | 개인 학습용 프롬프트 |
-| _(추가)_ | 블로그/리뷰/리팩토링 등 |
+| [`learning.md`](./learning.md) | Personal learning prompts |
+| _(add)_ | Blogging/review/refactoring, etc. |
 
-## 형식
+## Format
 
-각 프롬프트는 아래처럼 제목 + 용도 + 본문으로 적습니다.
+Write each prompt as title + purpose + body, like below.
 
 ````markdown
 ### 개념 빠르게 이해하기

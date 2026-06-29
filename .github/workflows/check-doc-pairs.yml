@@ -1,0 +1,60 @@
+name: Check doc pairs
+
+# 모든 README.md / SKILL.md 계열 문서는 영어 원본 + 한국어 .ko.md 쌍으로 관리한다.
+# 한쪽만 있고 다른 쪽이 없으면 빌드를 실패시켜 동기화 누락을 막는다.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch: {}
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify EN/KO pairs
+        run: |
+          set -euo pipefail
+          missing=0
+
+          # 제외: CLAUDE.md, LICENSE, THIRD_PARTY_NOTICES.md, .upstream, .git, node_modules
+          is_exempt() {
+            case "$1" in
+              *CLAUDE.md|*/LICENSE|./LICENSE|*THIRD_PARTY_NOTICES.md) return 0;;
+              *) return 1;;
+            esac
+          }
+
+          # 1) 영어 원본(.md, .ko.md 아님)에 대응하는 .ko.md 존재 확인
+          while IFS= read -r f; do
+            is_exempt "$f" && continue
+            base="${f%.md}"
+            if [ ! -f "${base}.ko.md" ]; then
+              echo "::error file=$f::영어 원본 $f 에 대응하는 ${base}.ko.md 가 없습니다"
+              missing=1
+            fi
+          done < <(find . -name "*.md" \
+                    -not -name "*.ko.md" \
+                    -not -path "./.git/*" \
+                    -not -path "./.upstream/*" \
+                    -not -path "*/node_modules/*")
+
+          # 2) .ko.md 에 대응하는 영어 원본 존재 확인
+          while IFS= read -r f; do
+            base="${f%.ko.md}"
+            if [ ! -f "${base}.md" ]; then
+              echo "::error file=$f::한국어 $f 에 대응하는 ${base}.md 가 없습니다"
+              missing=1
+            fi
+          done < <(find . -name "*.ko.md" \
+                    -not -path "./.git/*" \
+                    -not -path "./.upstream/*" \
+                    -not -path "*/node_modules/*")
+
+          if [ "$missing" -ne 0 ]; then
+            echo "한/영 문서 쌍이 맞지 않습니다. CLAUDE.md 의 '한/영 문서 페어 규칙' 을 확인하세요."
+            exit 1
+          fi
+          echo "모든 한/영 문서 쌍이 맞습니다."

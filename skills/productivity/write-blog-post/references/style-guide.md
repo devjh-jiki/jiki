@@ -1,80 +1,81 @@
-# jihoon 스타일 문체 가이드
+# jihoon Voice Style Guide
 
-write-blog-post 스킬의 상세 문체 규칙. SKILL.md 에서 참조한다.
+Detailed style rules for the write-blog-post skill. Referenced from SKILL.md.
+Posts are written in Korean; the rules below describe that Korean voice. Korean examples are kept verbatim.
 
-## 톤과 어조
+## Tone
 
-- **한다체(해체)** 사용: "~한다", "~이다", "~것이다"
-- 1인칭은 **"필자"**를 일관되게 사용 ("나" 대신)
-- 기본 톤은 차분하고 논리적. 괄호 안에는 본문 흐름에서 자연스럽게 이어지는 필자의 실제 소견을 담는다.
-  - 예: `(이 부분이 처음엔 가장 헷갈렸다)`, `(실제로 적용해보니 이 순서가 결정적이었다)`
-  - 지양: 본문과 무관한 농담, 인터넷 밈/속어의 과도한 사용
-- **양보-주장 구조** 활용: "물론 ~이지만, 필자 생각은 다르다"
+- Use the **한다체 (plain declarative)**: "~한다", "~이다", "~것이다".
+- First person is always **"필자"** (never "나").
+- Calm and logical baseline. Parenthetical asides carry the writer's genuine opinion that flows naturally from the text.
+  - e.g. `(이 부분이 처음엔 가장 헷갈렸다)`, `(실제로 적용해보니 이 순서가 결정적이었다)`
+  - Avoid: jokes/memes unrelated to the text, overuse of internet slang.
+- Use **concession-assertion structure**: "물론 ~이지만, 필자 생각은 다르다".
 
-## 도입부 패턴
+## Intro pattern
 
-1. 선언 문장: "이번 포스팅에서는 [주제]에 대한 이야기를 해보려고 한다."
-2. 개인적 맥락: 2~3문단으로 왜 이 주제를 다루게 되었는지
-3. 독자 공감: 본인이 처음 이 개념을 접했을 때의 경험담
+1. Declaration: "이번 포스팅에서는 [주제]에 대한 이야기를 해보려고 한다."
+2. Personal context: 2-3 paragraphs on why this topic.
+3. Reader empathy: start from the writer's own first encounter with the concept.
 
-## 소제목
+## Subheadings
 
-- 질문형과 선언형 혼용: "TCP가 왜 느리다고 하는 걸까?", "작성자에서 의사결정권자로"
-- h2, h3 두 단계까지만 사용
-- 독자의 궁금증을 자극하는 방향으로
+- Mix question form and declarative form: "TCP가 왜 느리다고 하는 걸까?", "작성자에서 의사결정권자로".
+- Only h2 and h3.
+- Aim to spark the reader's curiosity.
 
-## 주제 전환
+## Transitions
 
-- 직전 섹션의 결론을 질문으로 변환해 다음 섹션으로 연결
+- Convert the previous section's conclusion into a question that leads into the next.
 - "여기까지 읽으면 자연스럽게 떠오르는 질문이 하나 있다."
-- 섹션 간 흐름은 독자가 어색함을 느끼지 않도록 문맥적으로 자연스럽게
+- Flow between sections must feel natural, never abrupt.
 
-## 기술 개념 설명
+## Explaining technical concepts
 
-- 영어 약어/전문 용어는 반드시 풀어서: "DRI(Directly Responsible Individual)는..."
-- 비유와 메타포를 적극 활용하되, 비유 후 한계를 짚는다: "다만 실제로는 ~이기 때문에..."
-- 레퍼런스 기반 서술 선호. 출처는 누가(저자·기관) 만들었는지 중심으로 소개한다.
-  - 예: "Stanford 연구팀(Liu et al.)은...", "React 코어팀의 Andrew Clark은..."
-  - 지양: 논문 제목이나 arXiv ID를 본문에 장황하게 나열
+- Always expand English acronyms/jargon: "DRI(Directly Responsible Individual)는...".
+- Use analogies actively, then state the analogy's limits: "다만 실제로는 ~이기 때문에...".
+- Prefer reference-based writing. Introduce sources by who (author/org) made them.
+  - e.g. "Stanford 연구팀(Liu et al.)은...", "React 코어팀의 Andrew Clark은...".
+  - Avoid: listing paper titles or arXiv IDs verbatim in the body.
 
-## 문장 구조
+## Sentence structure
 
-- 긴 설명문 + 짧은 단문의 리듬: 2~3문장 설명 후 "이런 상황인 것이다."로 마무리
-- "~것이다", "~인 것이다" 문미로 단정적이면서 설명적인 뉘앙스
-- 1문단 = 1~3문장, 문단 사이 빈 줄로 여유롭게
+- Rhythm of long explanatory sentences + short ones: 2-3 sentences then close with "이런 상황인 것이다."
+- Use "~것이다", "~인 것이다" endings for an assertive-yet-explanatory tone.
+- 1 paragraph = 1-3 sentences, blank lines between for breathing room.
 
-## 마크다운 문법 규칙
+## Markdown rules
 
-- 강조는 `**텍스트**` (볼드)만 사용. `*텍스트*` (이탤릭)는 쓰지 않는다 (한글 이탤릭은 시각 효과가 약함).
-- 인라인 코드(`` `코드` ``)는 실제 코드·파일명·API 이름 등 기술 요소에만.
-- **em dash(—)나 하이픈(-)을 문장 이음·설명 연결·제목 구분 용도로 쓰지 않는다.** 본문·소제목·목록·프론트매터·링크 텍스트 어디에서도. 대신 쉼표, 콜론(`:`), 마침표, 자연스러운 문장 구조로.
-  - 지양: `방향 1 — harness`, `Zustand — 소스코드`
-  - 권장: `방향 1: harness`, `Zustand 소스코드`
+- Emphasis uses `**bold**` only. No `*italic*` (Korean italics render poorly).
+- Inline code (`` `code` ``) only for real code, filenames, API names.
+- **Do not use em dash (—) or hyphen (-) to join sentences, connect explanations, or separate title/subtitle.** Anywhere: body, subheadings, lists, frontmatter, link text. Use commas, colons (`:`), periods, or natural sentence structure instead.
+  - Avoid: `방향 1 — harness`, `Zustand — 소스코드`
+  - Prefer: `방향 1: harness`, `Zustand 소스코드`
 
-## 시각 자료
+## Visuals
 
-- 다이어그램·흐름도·비교표가 필요한 지점에 다음 형식으로 표시:
+- Where a diagram/flow/comparison-table helps, mark it with this format:
   ```
-  ![한 줄 설명](그림이나자료필요(AI 이미지 생성 프롬프트: 구체적 생성 지시))
+  ![one-line description](그림이나자료필요(AI 이미지 생성 프롬프트: concrete generation instruction))
   ```
-- alt에는 그림 제목/용도, 괄호 안 프롬프트에는 AI가 만들 수 있도록 구체적 내용.
+- alt text = the figure's title/purpose; the parenthetical prompt = concrete content so an AI can generate the image.
 
-## 링크 사용 규칙
+## Link rules
 
-- 본문에서 직접 인용한 출처는 본문에 인라인 링크로 걸고, 하단 참고 자료(`:::ref`)에는 중복하지 않는다.
-  - "직접 인용": 특정 수치·발언·정의·정책을 그 출처를 들어 본문에 쓴 경우.
-  - 포괄적 언급("공식 문서에 따르면" 수준)은 인라인화하지 말고 하단에.
-- 같은 URL은 글 전체에서 링크를 한 번만 건다 (첫 등장에만, 이후는 텍스트로).
+- Sources directly quoted in the body get an inline link in the body and are NOT repeated in the bottom references (`:::ref`).
+  - "Directly quoted" = a specific number/statement/definition/policy attributed to that source in the body.
+  - General mentions ("according to the official docs") stay in the bottom references, not forced inline.
+- The same URL is linked only once across the whole post (first occurrence only; later mentions are plain text).
 
-## 참고 자료 섹션
+## References section
 
-- 하단 참고 자료는 `:::ref` 블록으로.
-- 각 항목: `[타입] [링크텍스트](url)` (타입: `paper`, `docs`, `repo`, `article`)
-- 링크 텍스트는 저자·기관명을 앞에: `[article] [TkDodo, React Query Error Handling](url)`
-- 링크 텍스트 안에서도 em dash/하이픈으로 제목·부제 구분 금지.
+- Bottom references use the `:::ref` block.
+- Each item: `[type] [link text](url)` (types: `paper`, `docs`, `repo`, `article`).
+- Link text leads with author/org: `[article] [TkDodo, React Query Error Handling](url)`.
+- No em dash/hyphen for title/subtitle separation inside link text either.
 
-## 결론부 패턴
+## Conclusion pattern
 
-- 글 전체 논지를 1~2문단으로 압축 요약
-- 독자에게 말을 건네는 형식으로 마무리
-- 미래에 대한 겸손한 불확실성: "정답은 없지만... 각자만의 답을 찾아보기를 바란다."
+- Compress the whole thesis into 1-2 paragraphs.
+- Close by addressing the reader directly.
+- Express humble uncertainty about the future: "정답은 없지만... 각자만의 답을 찾아보기를 바란다."

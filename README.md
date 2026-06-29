@@ -1,37 +1,67 @@
-# devjh-jiki
+# jiki
 
-개발자로서 활용하는 모든 자산을 한곳에서 찾고 관리하는 **공개 메타레포 / 인덱스 허브**입니다.
-"그거 어디 적어뒀더라"를 없애는 것이 목표입니다.
+> 한국어: [README.ko.md](./README.ko.md)
 
-> 비공개 자산(사이드 프로젝트 wiki, 일상/여행 기록, 공개하기 애매한 학습 노트)은 별도
-> 프라이빗 레포 `vault` 에서 관리합니다. 이 레포에는 공개 가능한 것만 둡니다.
+A public meta-repo / index hub for everything I use as a developer.
+The goal is to eliminate "where did I write that down again?".
 
-## 인덱스
+> Private assets (side-project wiki, daily/travel notes, learning notes not for publishing)
+> live in a separate private repo, `vault`. Only publishable things go here.
 
-| 영역 | 위치 | 설명 |
-|------|------|------|
-| 🧩 Skills | [`skills/`](./skills) | 매일 쓰는 나만의 에이전트 스킬. 버저닝 + upstream 자동 동기화 |
-| 🔌 MCP | [`mcp/`](./mcp) | 도구별 MCP 세팅 모음. 어디에나 복붙 가능 |
-| 💬 Prompts | [`prompts/`](./prompts) | 자주 쓰는 프롬프트 명령어 모음 |
-| 📚 Learning / AI | [`learning/ai/`](./learning/ai) | 프론트엔드 개발자 관점 AI 학습 로드맵 + 자료 + 기록 |
-| ✂️ Snippets | [`snippets/`](./snippets) | 자주 쓰는 코드/설정 스니펫 |
+## Index
 
-## 관련 레포 (Organization)
+| Area | Path | Description |
+|------|------|-------------|
+| Skills | [`skills/`](./skills) | My own agent skills. Versioned + upstream auto-sync. Installable as a Claude Code plugin. |
+| MCP | [`mcp/`](./mcp) | MCP setups per tool. Copy-paste anywhere. |
+| Prompts | [`prompts/`](./prompts) | Frequently used prompt commands. |
+| Learning / AI | [`learning/ai/`](./learning/ai) | AI learning roadmap + resources + log, from a frontend developer's view. |
+| Snippets | [`snippets/`](./snippets) | Frequently used code/config snippets. |
 
-| 레포 | 공개 | 설명 |
-|------|------|------|
-| [`jiki`](https://github.com/devjh-jiki/jiki) (이 레포) | 공개 | 인덱스 허브 |
-| [`trending-newsletter`](https://github.com/devjh-jiki/trending-newsletter) | 공개 | GitHub trending 한글 번역 뉴스레터 (3관점: 프론트/창업/마케팅) |
-| [`ai-playground`](https://github.com/devjh-jiki/ai-playground) | 공개 | AI 학습하며 만든 실습 프로젝트 |
-| `vault` | 비공개 | 사이드 wiki + 일상/여행 기록 + 학습 노트 |
+## Skills marketplace
 
-## 원칙
+Skills are installable as a Claude Code plugin.
 
-- **문서·복붙 자산은 모은다** (skills/mcp/prompts/learning → 이 레포)
-- **자동 실행·배포·독립성이 필요한 것만 떼어낸다** (newsletter, playground → 독립 레포)
-- **비공개는 분리한다** (wiki/일상 → vault)
-- **프롬프트가 반복 절차가 되면 skill 로 승격한다**
+```
+/plugin marketplace add devjh-jiki/jiki
+/plugin install learning-skills@jiki-skills
+/plugin install writing-skills@jiki-skills
+```
 
-## 라이선스
+Or with the skills CLI:
 
-[MIT](./LICENSE)
+```bash
+npx skills@latest add devjh-jiki/jiki
+```
+
+### Trust levels
+
+Skills are labeled by verification stage:
+
+- **Available** — personally tested and verified. Recommended for external install.
+- **Review** — under evaluation; promoted to Available once verified.
+- **Private** — personal-setup only; not in the marketplace.
+
+| Skill | Level | Description |
+|-------|-------|-------------|
+| [write-blog-post](./skills/productivity/write-blog-post) | Available | Turn a draft/learning into a polished Korean tech blog post in the jihoon voice (style + SEO guides). |
+| [open-source-reverse-engineering-coach](./skills/learning/open-source-reverse-engineering-coach) | Available | Learn an open-source project by interactive reverse-engineering. |
+| [technical-book-coach](./skills/learning/technical-book-coach) | Available | Coach-style learning from technical books/docs (KO translation + coaching). |
+
+## Related repos (Organization)
+
+| Repo | Public | Description |
+|------|--------|-------------|
+| [`jiki`](https://github.com/devjh-jiki/jiki) (this repo) | Public | Index hub |
+| [`trending-newsletter`](https://github.com/devjh-jiki/trending-newsletter) | Public | GitHub trending KO newsletter (3 lenses: dev / founder / marketing) |
+| [`ai-playground`](https://github.com/devjh-jiki/ai-playground) | Public | Practice projects from AI learning |
+| `vault` | Private | Side-project wiki + daily/travel + learning notes |
+
+## Documentation policy
+
+All docs are managed as **English original + Korean `.ko.md` pair** (English is the source of truth).
+Editing one side requires updating the other. CI checks for missing pairs. See [CLAUDE.md](./CLAUDE.md).
+
+## License
+
+[MIT](./LICENSE) · Third-party attributions: [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md)

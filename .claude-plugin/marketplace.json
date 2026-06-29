@@ -1,0 +1,30 @@
+{
+  "name": "jiki-skills",
+  "owner": {
+    "name": "devjh-jiki",
+    "url": "https://github.com/devjh-jiki"
+  },
+  "metadata": {
+    "description": "jiki agent skills marketplace",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "writing-skills",
+      "source": "./",
+      "description": "Writing skills: turn drafts/learnings into polished Korean technical blog posts (jihoon voice + SEO).",
+      "skills": [
+        "./skills/productivity/write-blog-post"
+      ]
+    },
+    {
+      "name": "learning-skills",
+      "source": "./",
+      "description": "Learning coach skills: reverse-engineer open source and learn from technical books interactively.",
+      "skills": [
+        "./skills/learning/open-source-reverse-engineering-coach",
+        "./skills/learning/technical-book-coach"
+      ]
+    }
+  ]
+}

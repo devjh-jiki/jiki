@@ -1,28 +1,39 @@
 ---
 name: write-blog-post
-description: 학습한 내용이나 개발 경험을 한국어 기술 블로그 글 초안으로 작성한다. 사용자가 "블로그 글 써줘", "이거 글로 정리해줘", "기술 블로그", "수익형 글"을 요청할 때 사용한다.
+description: Use when the user wants to turn a draft, learning, or experience into a polished Korean technical blog post in the "jihoon" voice, or refine an existing post. Trigger whenever the user says things like "블로그 글 써줘", "이거 글로 정리해줘", "기술 블로그", "포스팅 작성", "글 다듬어줘", or pastes a rough draft and wants it shaped into a publishable post. Also use when the user wants SEO frontmatter (title/seoTitle/description/keywords) for a post. Prefer this over a generic writing response whenever the target is a technical blog article meant for real readers.
 disable-model-invocation: true
 ---
 
 # write-blog-post
 
-학습/개발 내용을 독자가 끝까지 읽는 한국어 기술 블로그 글 초안으로 만든다.
+학습·개발 경험·초안을 **jihoon 스타일의 한국어 기술 블로그 글**로 만들거나, 기존 글을 같은 스타일로 다듬는다.
+독자가 끝까지 읽고, 검색에서 발견되고, 클릭되는 글을 목표로 한다.
 
-## 절차
+상세 문체·SEO·마크다운 규칙은 [references/style-guide.md](./references/style-guide.md) 와
+[references/seo-checklist.md](./references/seo-checklist.md) 에 있다. 글을 쓰기 전에 두 파일을 읽는다.
 
-1. **주제·독자 확인**: 무엇에 대한 글인지, 독자가 누구인지(입문자/실무자), 글의 목적(학습 정리/포트폴리오/수익형)을 먼저 질문한다. 불명확하면 추측하지 말고 물어본다.
-2. **구조 잡기**: 다음 골격을 기본으로 한다.
-   - 후킹 도입 (왜 이 글을 읽어야 하는가 / 어떤 문제를 겪었는가)
-   - 배경·맥락 (최소한으로)
-   - 본문 (문제 → 시도 → 해결, 코드/예시 포함)
-   - 막혔던 지점과 배운 것 (진정성 = 차별화 포인트)
-   - 마무리 + 다음에 할 것
-3. **초안 작성**: 짧은 문단, 능동태, 구체적 예시. 코드 블록에는 언어 명시. 과장·이모지 금지(요청 시 예외).
-4. **SEO/제목 후보**: 제목 3개와 한 줄 요약(메타 description)을 제안한다.
-5. **저장**: 사용자가 지정한 블로그 레포/디렉토리에 `YYYY-MM-DD-slug.md` 로 저장한다. 미지정 시 위치를 묻는다.
+## 작업 순서
 
-## 원칙
+1. **주제·목적·독자 확인**: 무엇에 대한 글인지, 독자(입문/실무), 목적(학습 정리/포트폴리오/수익형)을 파악한다. 불명확하면 추측하지 말고 짧게 묻는다.
+2. **리서치**: 초안 내용만으로 쓰지 않는다. 웹 검색으로 기술적 주장(수치·동작 원리·비교)의 사실 관계를 **현재 시점 기준**으로 검증하고, 최신 버전·생태계 현황·전문가 발언을 수집한다. 확인 안 된 내용은 추측임을 명시하거나 뺀다.
+3. **구조 잡기**: 아래 기본 골격을 따른다.
+   - 도입: "이번 포스팅에서는 [주제]에 대한 이야기를 해보려고 한다." + 왜 이 주제를 다루게 됐는지 개인적 맥락
+   - 본문: 문제 → 시도 → 해결. 비유로 개념 설명 후 비유의 한계를 짚는다.
+   - 막혔던 지점과 배운 것 (진정성이 차별화 포인트)
+   - 결론: 논지 압축 + 독자에게 말 건네기 + 겸손한 불확실성
+4. **문체 적용**: [references/style-guide.md](./references/style-guide.md) 의 jihoon 문체(한다체, "필자", 질문형 소제목, 볼드만 사용, em dash 금지 등)를 따른다.
+5. **SEO 프론트매터 + 발행 전 체크**: [references/seo-checklist.md](./references/seo-checklist.md) 의 frontmatter 형식과 체크리스트(description 120~160자, seoTitle 50~60자, 내부 링크, 이미지 alt 등)를 적용한다.
+6. **저장**: 사용자가 지정한 블로그 레포/디렉토리에 저장한다. jihoon-blog 구조면 `content/YYMMDD/index.md`. 미지정 시 위치를 묻고, 미완성이면 `categories: ignore` 로 비공개 처리.
+
+## 핵심 원칙
 
 - 사실과 다른 내용을 지어내지 않는다. 확신 없으면 "확인 필요"로 표시한다.
 - 코드 예시는 실제로 동작하는 형태로 작성한다.
 - 수익형 글이라도 클릭베이트·허위 정보는 쓰지 않는다.
+- 가독성과 인식의 흐름을 최우선으로 한다. 독자가 흐름이 끊기거나 어색함을 느끼는 지점이 없어야 한다.
+
+## 기존 글 다듬기 (refine)
+
+사용자가 기존 글 경로를 주며 다듬어달라고 하면, 새로 쓰지 말고 원문의 논지·구조를 유지한 채
+문체·마크다운 규칙·SEO를 위 가이드에 맞춰 교정한다. 원문에 없던 사실을 임의로 추가하지 않되,
+명백한 오류나 빠진 맥락은 리서치로 보강하고 그 사실을 사용자에게 알린다.

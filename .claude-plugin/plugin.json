@@ -1,0 +1,8 @@
+{
+  "name": "dev-hub-skills",
+  "version": "0.1.0",
+  "description": "나만의 에이전트 스킬 모음",
+  "skills": [
+    "./skills/productivity/write-blog-post/SKILL.md"
+  ]
+}

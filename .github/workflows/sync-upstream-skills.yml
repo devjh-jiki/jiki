@@ -1,0 +1,71 @@
+name: Sync upstream skills
+
+# 검증된 외부 skills 레포(mattpocock/skills 등)의 변경을 주기적으로 감지해
+# 변경분을 .upstream/ 에 반영하고 PR로 제안한다. 사람이 검토 후 선별 머지한다.
+#
+# 동작 방식:
+#   1. 매주 월요일 + 수동 트리거
+#   2. 각 upstream 레포의 skills/ 를 .upstream/<owner>-<repo>/ 로 복사
+#   3. 변경이 있으면 create-pull-request 가 PR 생성
+#   4. PR 본문에 어떤 파일이 바뀌었는지 표시
+#
+# 머지 정책: 자동 머지하지 않는다. 내 기준에 맞는 변경만 골라 내 skills/ 로 반영한다.
+
+on:
+  schedule:
+    - cron: "0 0 * * 1" # 매주 월요일 00:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        upstream:
+          - owner: mattpocock
+            repo: skills
+            ref: main
+            path: skills
+          # 추가하고 싶은 검증된 레포를 여기 등록
+          # - owner: anthropics
+          #   repo: skills
+          #   ref: main
+          #   path: .
+    steps:
+      - name: Checkout dev-hub
+        uses: actions/checkout@v4
+
+      - name: Fetch upstream snapshot
+        run: |
+          set -euo pipefail
+          DEST=".upstream/${{ matrix.upstream.owner }}-${{ matrix.upstream.repo }}"
+          rm -rf "$DEST"
+          mkdir -p "$DEST"
+          git clone --depth 1 --branch "${{ matrix.upstream.ref }}" \
+            "https://github.com/${{ matrix.upstream.owner }}/${{ matrix.upstream.repo }}.git" /tmp/upstream
+          cp -R "/tmp/upstream/${{ matrix.upstream.path }}/." "$DEST/"
+          rm -rf "$DEST/.git"
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: "sync/${{ matrix.upstream.owner }}-${{ matrix.upstream.repo }}"
+          commit-message: "chore(sync): ${{ matrix.upstream.owner }}/${{ matrix.upstream.repo }} 업데이트"
+          title: "🔄 upstream 동기화: ${{ matrix.upstream.owner }}/${{ matrix.upstream.repo }}"
+          body: |
+            ## upstream 변경 감지
+
+            **레포**: [`${{ matrix.upstream.owner }}/${{ matrix.upstream.repo }}`](https://github.com/${{ matrix.upstream.owner }}/${{ matrix.upstream.repo }})
+            **위치**: `.upstream/${{ matrix.upstream.owner }}-${{ matrix.upstream.repo }}/`
+
+            아래 변경 파일을 검토하고, **내 기준에 맞는 것만** `skills/` 로 직접 옮기세요.
+            이 PR 자체를 그대로 머지할 필요는 없습니다. (스냅샷 보관 용도)
+
+            > 자동 생성된 PR입니다. 선별 반영 후 닫아도 됩니다.
+          labels: |
+            upstream-sync
+          delete-branch: true

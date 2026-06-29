@@ -20,9 +20,9 @@
 
 | 레포 | 공개 | 설명 |
 |------|------|------|
-| `dev-hub` (이 레포) | 공개 | 인덱스 허브 |
-| `trending-newsletter` | 공개 | GitHub trending 한글 번역 뉴스레터 (3관점: 프론트/창업/마케팅) |
-| `ai-playground` | 공개 | AI 학습하며 만든 실습 프로젝트 |
+| [`jiki`](https://github.com/devjh-jiki/jiki) (이 레포) | 공개 | 인덱스 허브 |
+| [`trending-newsletter`](https://github.com/devjh-jiki/trending-newsletter) | 공개 | GitHub trending 한글 번역 뉴스레터 (3관점: 프론트/창업/마케팅) |
+| [`ai-playground`](https://github.com/devjh-jiki/ai-playground) | 공개 | AI 학습하며 만든 실습 프로젝트 |
 | `vault` | 비공개 | 사이드 wiki + 일상/여행 기록 + 학습 노트 |
 
 ## 원칙

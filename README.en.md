@@ -56,11 +56,11 @@ Skills are labeled by verification stage:
 | [diagnosing-bugs](./skills/engineering/diagnosing-bugs) | Available | Disciplined bug diagnosis loop (adapted from mattpocock). |
 | [codebase-design](./skills/engineering/codebase-design) | Available | Vocabulary for designing deep modules (adapted from mattpocock). |
 | [improve-codebase-architecture](./skills/engineering/improve-codebase-architecture) | Review | Scan for deepening opportunities + report (adapted from mattpocock). |
-| [to-prd](./skills/engineering/to-prd) | Review | Synthesize a conversation into a PRD (adapted from mattpocock). |
-| [to-issues](./skills/engineering/to-issues) | Review | Break a plan/PRD into vertical-slice issues (adapted from mattpocock). |
+| [to-prd](./skills/engineering/to-prd) | Available | Synthesize a conversation into a PRD (adapted from mattpocock). |
+| [to-issues](./skills/engineering/to-issues) | Available | Break a plan/PRD into vertical-slice issues (adapted from mattpocock). |
 | [domain-modeling](./skills/engineering/domain-modeling) | Review | Build domain model, glossary, ADRs (adapted from mattpocock). |
 | [grill-with-docs](./skills/engineering/grill-with-docs) | Review | Grilling that also produces docs (adapted from mattpocock). |
-| [prototype](./skills/engineering/prototype) | Review | Throwaway prototype to de-risk a design (adapted from mattpocock). |
+| [prototype](./skills/engineering/prototype) | Available | Throwaway prototype to de-risk a design (adapted from mattpocock). |
 | [handoff](./skills/productivity/handoff) | Review | Create a session handoff doc (adapted from mattpocock). |
 | [writing-great-skills](./skills/productivity/writing-great-skills) | Review | Reference for writing great skills (adapted from mattpocock). |
 

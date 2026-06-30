@@ -10,13 +10,15 @@ This skill takes the current conversation context and codebase understanding and
 
 **Relationship to `product-spec-builder`:** `to-prd` assumes the thinking is already done in this conversation and only *writes it up* — no questions. `product-spec-builder` is the opposite: it *interviews first* to fill gaps before drafting. If you find yourself with big unknowns, you want `product-spec-builder`, not this skill.
 
+Litmus for "big unknown vs gap": if you'd have to *invent* the Problem Statement, the primary user, or the success criterion, that's a big unknown — stop and redirect to `product-spec-builder`. If the frame is settled and only details are open (a default value, exact copy, a secondary edge case), that's a gap — note it under Further Notes as an open question and synthesize anyway. The redirect is itself a checkpoint: tell the user why, and offer to proceed if they actually have the answers and just didn't write them down.
+
 ## Process
 
 1. Explore the repo to understand the current state of the codebase, if you haven't already. If the project has a context doc (e.g. `CONTEXT.md`) or recorded architecture decisions, use that domain vocabulary throughout the PRD and respect decisions in the area you're touching.
 
 2. Sketch out the seams at which you're going to test the feature. Existing seams should be preferred to new ones. Use the highest seam possible. If new seams are needed, propose them at the highest point you can. The fewer seams across the codebase, the better — the ideal number is one.
 
-   Check with the user that these seams match their expectations.
+   Check with the user that these seams match their expectations. If the user clearly wants the PRD in one shot, don't block — state your seam choice as an assumption in Implementation Decisions and let them correct it.
 
 3. Write the PRD using the template below as **Markdown**. Then **offer to persist it** — don't assume any particular tool:
    - Ask whether to save it as a file (and where), and/or

@@ -34,6 +34,10 @@ Break the plan into **tracer bullet** items. Each item is a thin vertical slice 
 
 </vertical-slice-rules>
 
+A **prefactor** item is the one allowed exception to "demoable on its own" — it opens a seam without changing user behavior, so its acceptance is "existing behavior unchanged, tests still pass." Mark it clearly as a prefactor; don't dress it up as a feature slice.
+
+If a stakeholder demands horizontal (by-layer) slices, push back with the rationale (nothing demoable until the end; integration risk surfaces last) and offer the compromise that still meets their real goal: **parallelize across slices, not layers.** A feature that lives behind a single seam often can't be sliced into independent parallel work — its slices form an incremental chain, each demoable on its own but building on the last. That's inherent to one-seam features, not a slicing failure; say so rather than forcing false independence.
+
 ### 4. Quiz the user
 
 Present the proposed breakdown as a numbered list. For each slice, show:
@@ -48,7 +52,7 @@ Ask the user:
 - Are the dependency relationships correct?
 - Should any slices be merged or split further?
 
-Iterate until the user approves the breakdown.
+Iterate until the user approves the breakdown. If the user wants the breakdown in one shot (no back-and-forth), don't block — state your granularity and dependency assumptions, deliver the slices, and invite corrections.
 
 ### 5. Output and (optionally) publish
 

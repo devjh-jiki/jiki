@@ -56,11 +56,11 @@ npx skills@latest add devjh-jiki/jiki
 | [diagnosing-bugs](./skills/engineering/diagnosing-bugs) | Available | 체계적 버그 진단 루프 (mattpocock 참고) |
 | [codebase-design](./skills/engineering/codebase-design) | Available | 깊은 모듈 설계 어휘 (mattpocock 참고) |
 | [improve-codebase-architecture](./skills/engineering/improve-codebase-architecture) | Review | 아키텍처 심화 기회 스캔 + 리포트 (mattpocock 참고) |
-| [to-prd](./skills/engineering/to-prd) | Review | 대화를 PRD 로 합성 (mattpocock 참고) |
-| [to-issues](./skills/engineering/to-issues) | Review | 계획/PRD 를 수직 슬라이스 이슈로 분해 (mattpocock 참고) |
+| [to-prd](./skills/engineering/to-prd) | Available | 대화를 PRD 로 합성 (mattpocock 참고) |
+| [to-issues](./skills/engineering/to-issues) | Available | 계획/PRD 를 수직 슬라이스 이슈로 분해 (mattpocock 참고) |
 | [domain-modeling](./skills/engineering/domain-modeling) | Review | 도메인 모델·용어집·ADR 구축 (mattpocock 참고) |
 | [grill-with-docs](./skills/engineering/grill-with-docs) | Review | 문서까지 만드는 grilling (mattpocock 참고) |
-| [prototype](./skills/engineering/prototype) | Review | 설계 검증용 throwaway 프로토타입 (mattpocock 참고) |
+| [prototype](./skills/engineering/prototype) | Available | 설계 검증용 throwaway 프로토타입 (mattpocock 참고) |
 | [handoff](./skills/productivity/handoff) | Review | 세션 인계 문서 생성 (mattpocock 참고) |
 | [writing-great-skills](./skills/productivity/writing-great-skills) | Review | 스킬을 잘 쓰는 법 레퍼런스 (mattpocock 참고) |
 

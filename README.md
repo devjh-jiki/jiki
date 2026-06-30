@@ -53,7 +53,7 @@ npx skills@latest add devjh-jiki/jiki
 | [marketing-copy](./skills/business/marketing-copy) | Available | 제품/기능을 한국어 마케팅 카피로 |
 | [product-spec-builder](./skills/business/product-spec-builder) | Available | 거친 아이디어를 만들 수 있는 PRD 로 |
 | [tdd](./skills/engineering/tdd) | Available | 레드-그린-리팩터 테스트 주도 개발 (mattpocock 참고) |
-| [diagnosing-bugs](./skills/engineering/diagnosing-bugs) | Review | 체계적 버그 진단 루프 (mattpocock 참고) |
+| [diagnosing-bugs](./skills/engineering/diagnosing-bugs) | Available | 체계적 버그 진단 루프 (mattpocock 참고) |
 | [codebase-design](./skills/engineering/codebase-design) | Review | 깊은 모듈 설계 어휘 (mattpocock 참고) |
 | [improve-codebase-architecture](./skills/engineering/improve-codebase-architecture) | Review | 아키텍처 심화 기회 스캔 + 리포트 (mattpocock 참고) |
 | [to-prd](./skills/engineering/to-prd) | Review | 대화를 PRD 로 합성 (mattpocock 참고) |

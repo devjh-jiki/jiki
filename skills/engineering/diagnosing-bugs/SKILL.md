@@ -30,8 +30,10 @@ Treat the loop as a product: make it faster (cache setup, narrow scope), sharper
 ### Non-deterministic bugs
 Goal is a higher reproduction rate, not a clean repro. Loop 100×, parallelize, add stress, narrow timing windows. Raise a 1% flake to debuggable.
 
+Those tactics target *runtime* entropy (threads, timers, async). But many flakes have zero runtime entropy — the variation enters from **input ordering, hash/iteration order, locale, or env** upstream. So first ask: **what differs between a failing run and a passing run?** Then inject that variation directly. A seeded RNG is not only for pinning things deterministic — it can be the *fuzzer* that explores the input space: seed a shuffle of the input and loop it to turn a rare flake into a 100%-red signal that is itself reproducible.
+
 ### Completion criterion
-Phase 1 is done when you can name **one command** you have **already run** that is red-capable (asserts the user's exact symptom), deterministic, fast, and agent-runnable. **No red-capable command, no Phase 2.**
+Phase 1 is done when you can name **one command** you have **already run** that is red-capable (asserts the user's exact symptom), deterministic, fast, and agent-runnable. **No red-capable command, no Phase 2.** A "sometimes / occasionally" report is often not truly random — convert it into a deterministic enumerator (walk all pages, all sizes, all input orders) before chasing flakiness.
 
 ## Phase 2 — Reproduce + minimize
 Run the loop; watch it go red. Confirm it's the **user's** failure, not a nearby one. Then shrink to the smallest scenario that still goes red, cutting inputs/callers/config one at a time. Done when every remaining element is load-bearing.
@@ -40,10 +42,12 @@ Run the loop; watch it go red. Confirm it's the **user's** failure, not a nearby
 Generate **3-5 ranked, falsifiable hypotheses** before testing any. Format: "If X is the cause, then changing Y makes the bug disappear." Show the ranked list to the user (they often re-rank instantly with domain knowledge). Don't block if they're away.
 
 ## Phase 4 — Instrument
-Each probe maps to a specific prediction. Change one variable at a time. Prefer debugger/REPL over logs; targeted boundary logs over "log everything". **Tag every debug log** with a unique prefix (e.g. `[DEBUG-a4f2]`) so cleanup is one grep. For perf: measure first (baseline, profiler, query plan), then bisect.
+Each probe maps to a specific prediction. Change one variable at a time. Prefer debugger/REPL over logs; targeted boundary logs over "log everything". **Tag every debug log** with a unique prefix (e.g. `[DEBUG-a4f2]`) so cleanup is one grep. If the Phase-1 failing assertion already localizes the defect, you don't need extra instrumentation — skip the `console.log` ceremony.
+
+For perf: measure first (baseline, profiler, query plan). **Bisect is for regressions over time or a large surface (`git bisect`); for a localized hot loop there's nothing to binary-search — profile to find the hot frame instead.** Use a size sweep that reports *per-element* (amortized) cost across sizes, not wall-clock at a single size, so super-linear scaling is visible as a curve.
 
 ## Phase 5 — Fix + regression test
-Write the regression test **before the fix**, but only if a correct seam exists (one that exercises the real bug pattern at the call site). If no correct seam exists, **that is itself the finding** — note it; the architecture is preventing lock-down. Otherwise: failing test → watch fail → fix → watch pass → re-run the original (un-minimized) loop.
+Write the regression test **before the fix**, but only if a correct seam exists (one that exercises the real bug pattern at the call site). If no correct seam exists, **that is itself the finding** — note it; the architecture is preventing lock-down. Otherwise: failing test → watch fail → fix → watch pass → re-run the original (un-minimized) loop. For a **perf fix**, the biggest risk is silently changing the output — pair the timing assertion with an **output-equivalence test** (golden output, or a property test diffing the new implementation against the old) so you prove behavior is unchanged, not just faster. For a **flaky bug**, verify the regression test is *reliably* red against the buggy code (run it against the old version), not occasionally red.
 
 ## Phase 6 — Cleanup + post-mortem
 - [ ] Original repro no longer reproduces

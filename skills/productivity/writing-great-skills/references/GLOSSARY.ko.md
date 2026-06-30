@@ -146,6 +146,12 @@ _Avoid_: done condition, exit condition, stopping rule
 
 _Avoid_: scope, effort, diligence, coverage
 
+### Input Contract
+
+스킬 _시작_ 지점의 조건 — **completion criterion** 의 앞단 거울. 스킬이 돌기 전에 필요한 것(데이터셋 _과_ 그 규칙; PRD _와_ 코드베이스)과 그 필요가 빠졌을 때 할 일(묻거나, 그것을 채우는 스킬로 리다이렉트, 절대 지어내지 않기)을 명명한다. completion criterion 이 출구를 지키듯 input contract 는 입구를 지킨다; 빠진 입력을 조용히 지어내는 스킬은 자신만만한 쓰레기를 낳는다 — **premature completion** 의 앞단 쌍둥이. 실제 스킬의 반복되는 약점은 모호한 "묻기 vs 진행" 경계다: 명시하라 — 어떤 빈틈이 스킬을 멈추고 어떤 빈틈은 명시한 가정으로 채우는지.
+
+_Avoid_: precondition, guard, prerequisite, entry check
+
 ### Post-Completion Steps
 
 현재 step 을 뒤따르는 **step** 들. 보이면 에이전트를 **premature completion** 으로 앞당긴다 — 많이 볼수록 당김이 강하다; 방어는 step 의 연속을 둘로 쪼개 그것들을 숨기는 것.

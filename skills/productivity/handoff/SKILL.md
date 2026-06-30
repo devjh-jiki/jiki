@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # handoff
 
-Write a handoff document summarising the current conversation so a fresh agent can continue the work. Save it to the temporary directory of the user's OS — not the current workspace. Resolve the temp dir from `$TMPDIR`, falling back to `/tmp` (or `%TEMP%` on Windows), and write to `<tmpdir>/handoff-<timestamp>.md`. Tell the user the absolute path.
+Write a handoff document summarising the current conversation so a fresh agent can continue the work. Save it to the temporary directory of the user's OS — not the current workspace. Resolve the temp dir from `$TMPDIR`, falling back to `/tmp` (or `%TEMP%` on Windows), and write to `<tmpdir>/handoff-<timestamp>.md`. Tell the user the absolute path, and — because a fresh agent won't know to look in the temp dir — offer to drop a one-line pointer to that path where the next session will actually start (a `NEXT.md`, a task tracker, or the commit/PR description). The handoff is only useful if the next session can find it.
 
 Include a **"Suggested skills"** section listing the skills the next agent should invoke (e.g. `to-prd`, `improve-codebase-architecture`, `diagnosing-bugs`, `grill-me`).
 

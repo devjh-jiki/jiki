@@ -146,6 +146,12 @@ The work an agent does behind the scenes within a single step — reading files,
 
 _Avoid_: scope, effort, diligence, coverage
 
+### Input Contract
+
+The condition at the _start_ of a skill — the **completion criterion**'s mirror at the front. It names what the skill needs before it can run (the dataset _and_ its rules; the PRD _and_ the codebase) and what to do when a need is missing: ask, or redirect to the skill that fills it — never invent it. Where the completion criterion guards the exit, the input contract guards the entry; a skill that silently fabricates a missing input produces confident garbage, the front-end twin of **premature completion**. The recurring weak spot in real skills is a fuzzy "ask vs. proceed" boundary: state it explicitly — which gaps stop the skill and which it may fill with a stated assumption.
+
+_Avoid_: precondition, guard, prerequisite, entry check
+
 ### Post-Completion Steps
 
 The **steps** that follow the current step. Visible, they pull the agent forward into **premature completion** — the more it sees, the stronger the tug; the defence is to hide them by splitting the sequence of steps into two.

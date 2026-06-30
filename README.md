@@ -61,8 +61,8 @@ npx skills@latest add devjh-jiki/jiki
 | [domain-modeling](./skills/engineering/domain-modeling) | Available | 도메인 모델·용어집·ADR 구축 (mattpocock 참고) |
 | [grill-with-docs](./skills/engineering/grill-with-docs) | Available | 문서까지 만드는 grilling (mattpocock 참고) |
 | [prototype](./skills/engineering/prototype) | Available | 설계 검증용 throwaway 프로토타입 (mattpocock 참고) |
-| [handoff](./skills/productivity/handoff) | Review | 세션 인계 문서 생성 (mattpocock 참고) |
-| [writing-great-skills](./skills/productivity/writing-great-skills) | Review | 스킬을 잘 쓰는 법 레퍼런스 (mattpocock 참고) |
+| [handoff](./skills/productivity/handoff) | Available | 세션 인계 문서 생성 (mattpocock 참고) |
+| [writing-great-skills](./skills/productivity/writing-great-skills) | Available | 스킬을 잘 쓰는 법 레퍼런스 (mattpocock 참고) |
 
 ## 관련 레포 (Organization)
 

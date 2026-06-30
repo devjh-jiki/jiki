@@ -61,8 +61,8 @@ Skills are labeled by verification stage:
 | [domain-modeling](./skills/engineering/domain-modeling) | Available | Build domain model, glossary, ADRs (adapted from mattpocock). |
 | [grill-with-docs](./skills/engineering/grill-with-docs) | Available | Grilling that also produces docs (adapted from mattpocock). |
 | [prototype](./skills/engineering/prototype) | Available | Throwaway prototype to de-risk a design (adapted from mattpocock). |
-| [handoff](./skills/productivity/handoff) | Review | Create a session handoff doc (adapted from mattpocock). |
-| [writing-great-skills](./skills/productivity/writing-great-skills) | Review | Reference for writing great skills (adapted from mattpocock). |
+| [handoff](./skills/productivity/handoff) | Available | Create a session handoff doc (adapted from mattpocock). |
+| [writing-great-skills](./skills/productivity/writing-great-skills) | Available | Reference for writing great skills (adapted from mattpocock). |
 
 ## Related repos (Organization)
 

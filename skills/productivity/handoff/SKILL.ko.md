@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # handoff
 
-새 에이전트가 작업을 이어갈 수 있도록 현재 대화를 요약한 인계 문서를 작성하라. 현재 워크스페이스가 아니라 사용자 OS 의 임시 디렉토리에 저장하라. 임시 디렉토리는 `$TMPDIR` 에서 해결하고 `/tmp`(Windows 는 `%TEMP%`)로 폴백하며, `<tmpdir>/handoff-<timestamp>.md` 에 써라. 사용자에게 절대 경로를 알려줘라.
+새 에이전트가 작업을 이어갈 수 있도록 현재 대화를 요약한 인계 문서를 작성하라. 현재 워크스페이스가 아니라 사용자 OS 의 임시 디렉토리에 저장하라. 임시 디렉토리는 `$TMPDIR` 에서 해결하고 `/tmp`(Windows 는 `%TEMP%`)로 폴백하며, `<tmpdir>/handoff-<timestamp>.md` 에 써라. 사용자에게 절대 경로를 알려주고 — 새 에이전트는 임시 디렉토리를 들여다볼 줄 모르므로 — 다음 세션이 실제로 시작될 곳(`NEXT.md`, 작업 트래커, 또는 커밋/PR 설명)에 그 경로를 가리키는 한 줄 포인터를 남길지 제안하라. 인계 문서는 다음 세션이 찾을 수 있어야만 쓸모가 있다.
 
 다음 에이전트가 실행해야 할 스킬을 나열하는 **"Suggested skills"** 섹션을 포함하라(예: `to-prd`, `improve-codebase-architecture`, `diagnosing-bugs`, `grill-me`).
 

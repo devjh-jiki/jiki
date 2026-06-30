@@ -62,7 +62,7 @@ npx skills@latest add devjh-jiki/jiki
 | [domain-modeling](./skills/engineering/domain-modeling) | Available | 도메인 모델·용어집·ADR 구축 (mattpocock 참고) |
 | [grill-with-docs](./skills/engineering/grill-with-docs) | Available | 문서까지 만드는 grilling (mattpocock 참고) |
 | [prototype](./skills/engineering/prototype) | Available | 설계 검증용 throwaway 프로토타입 (mattpocock 참고) |
-| [design-system](./skills/engineering/design-system) | Review | 토큰 기반 UI 디자인 시스템 설계·구현·리뷰 (Astryx 베이스, 모든 스택) |
+| [design-system](./skills/engineering/design-system) | Available | 토큰 기반 UI 디자인 시스템 설계·구현·리뷰 (Astryx 베이스, 모든 스택) |
 | [implement](./skills/engineering/implement) | Available | PRD/이슈/슬라이스를 커밋된 테스트 코드로 구현 (mattpocock 참고) |
 | [resolving-merge-conflicts](./skills/engineering/resolving-merge-conflicts) | Available | merge/rebase 충돌을 의도 복원으로 해소 (mattpocock 참고) |
 | [webapp-testing](./skills/engineering/webapp-testing) | Available | Playwright로 로컬 웹앱 테스트 (anthropics 참고) |

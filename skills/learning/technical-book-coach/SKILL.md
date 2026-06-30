@@ -309,6 +309,10 @@ Do not create, clone, commit, or push until the user explicitly approves.
 
 Once configured, remember the repository or folder for the current thread and use it for later captures.
 
+### Across sessions
+
+Learning compounds across sessions. When the user returns to a source or topic they've studied before, **read the existing artifacts first** (prior `books/<source>/*.md`, `patterns/`, `diagnostics/`) to recall what judgment they already extracted — then aim the new session just past their current edge (their zone of proximal development) instead of re-deriving settled takeaways. A corrected over-generalization or a newly earned heuristic belongs in the saved artifact so the next session builds on it rather than repeating it.
+
 Suggested artifact locations:
 
 - Book or article sessions: `books/<source>/<YYYY-MM-DD>-<topic>.md`

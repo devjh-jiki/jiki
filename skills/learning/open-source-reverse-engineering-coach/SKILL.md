@@ -244,6 +244,10 @@ Do not create, clone, commit, or push until the user explicitly approves.
 
 Once configured, remember the repository or folder for the current thread and use it for later captures.
 
+### Across sessions
+
+Learning compounds across sessions, not just within one. At the start of a session on a topic the user has studied before, **read the existing artifacts first** (the prior `open-source/<project>/*.md`, `patterns/`, `diagnostics/`) to see what they already established — then aim the new session at the next thing just past their current edge (their zone of proximal development), rather than re-teaching settled ground. When a session closes a real gap or corrects a mental model, that belongs in the saved artifact so the next session can build on it.
+
 Suggested artifact locations:
 
 - Open source sessions: `open-source/<project>/<YYYY-MM-DD>-<topic>.md`

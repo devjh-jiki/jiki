@@ -55,7 +55,7 @@ description: Set up a Claude Code PreToolUse hook that blocks dangerous git comm
 
 ### 4. 커스터마이즈 묻기
 
-막을 패턴을 추가/제거할지 묻고, 복사한 스크립트를 그에 맞게 편집한다. 스크립트는 tool input 파싱에 `jq` 를 쓴다 — `jq` 가 없으면 hook 이 fail open 한다(아무것도 안 막음). 설치하거나 알려라.
+막을 패턴을 추가/제거할지 묻고, 복사한 스크립트를 그에 맞게 편집한다. 스크립트는 tool input 파싱에 `jq` 를 쓴다. 스크립트는 **fail closed** 로 작성돼 있다 — `jq` 가 없으면 모든 명령을 슬쩍 통과시키지 않고, 명령을 막은 뒤 jq 를 설치하라고 알린다. `jq` 가 설치돼 있는지(`command -v jq`) 확인해, hook 이 전부 거부만 하지 않고 제 역할을 하게 한다.
 
 ### 5. 검증
 
@@ -66,6 +66,14 @@ echo '{"tool_input":{"command":"git push origin main"}}' | <스크립트-경로>
 ```
 
 종료 코드 `2` 와 stderr 의 `BLOCKED` 메시지가 나와야 한다. 테스트 안 한 hook 은 없는 hook 이다.
+
+그다음 **fail-closed** 동작도 확인한다: `jq` 가 없을 때도 스크립트는 통과시키지 않고 막아야(종료 `2`) 한다. `jq` 를 못 찾도록 빈 `PATH` 로 돌려 증명한다:
+
+```bash
+echo '{"tool_input":{"command":"git status"}}' | PATH="$(mktemp -d)" /bin/bash <스크립트-경로>; echo "exit=$?"
+```
+
+평소 안전한 `git status` 가 이제 종료 `2` 와 "requires 'jq'" 메시지를 내야 한다 — 이게 가드레일이 fail open 대신 눈먼 채로 도는 걸 거부하는 모습이다.
 
 ## 오너 / 리더십 렌즈
 

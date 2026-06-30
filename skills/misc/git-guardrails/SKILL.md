@@ -55,7 +55,7 @@ Merge into the appropriate settings file's `hooks.PreToolUse` array — don't ov
 
 ### 4. Ask about customization
 
-Ask whether to add or remove any patterns from the blocked list, and edit the copied script accordingly. The script depends on `jq` to parse the tool input — if `jq` is missing, install it or the hook fails open (blocks nothing).
+Ask whether to add or remove any patterns from the blocked list, and edit the copied script accordingly. The script depends on `jq` to parse the tool input. It is written to **fail closed** — if `jq` is missing, the hook blocks the command and tells the user to install jq, rather than silently waving every command through. Confirm `jq` is installed (`command -v jq`) so the hook does its real job instead of just refusing everything.
 
 ### 5. Verify
 
@@ -66,6 +66,14 @@ echo '{"tool_input":{"command":"git push origin main"}}' | <path-to-script>
 ```
 
 Must exit `2` and print a `BLOCKED` message to stderr. A hook you didn't test is a hook you don't have.
+
+Then confirm the **fail-closed** behaviour holds: with `jq` unavailable the script must still block (exit `2`), never pass through. Prove it by running with an empty `PATH` so `jq` can't be found:
+
+```bash
+echo '{"tool_input":{"command":"git status"}}' | PATH="$(mktemp -d)" /bin/bash <path-to-script>; echo "exit=$?"
+```
+
+A normally-safe command like `git status` should now exit `2` with the "requires 'jq'" message — that's the guardrail refusing to run blind rather than failing open.
 
 ## Owner / leadership lens
 

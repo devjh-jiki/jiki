@@ -12,6 +12,7 @@
 - [to-issues](./to-issues/SKILL.ko.md) — 계획/PRD 를 독립적으로 잡을 수 있는 수직 슬라이스 이슈로 분해. `to-prd` 산출물을 소비.
 - [grill-with-docs](./grill-with-docs/SKILL.ko.md) — 진행하며 용어집 + ADR 까지 유지하는 grilling 인터뷰 (`grill-me` + `domain-modeling`).
 - [prototype](./prototype/SKILL.ko.md) — 설계 리스크를 줄이는 throwaway 프로토타입 (로직 터미널 앱, 또는 UI 변형).
+- [design-system](./design-system/SKILL.ko.md) — 토큰 기반 UI 디자인 시스템을 설계·구현·리뷰. Meta의 Astryx를 기본 베이스로(어떤 스택에도 일반화), 기존 시스템이 있으면 그것을 존중.
 
 **Model-invoked** (맥락이 맞으면 에이전트가 자동 사용)
 

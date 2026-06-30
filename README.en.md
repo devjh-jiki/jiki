@@ -62,6 +62,7 @@ Skills are labeled by verification stage:
 | [domain-modeling](./skills/engineering/domain-modeling) | Available | Build domain model, glossary, ADRs (adapted from mattpocock). |
 | [grill-with-docs](./skills/engineering/grill-with-docs) | Available | Grilling that also produces docs (adapted from mattpocock). |
 | [prototype](./skills/engineering/prototype) | Available | Throwaway prototype to de-risk a design (adapted from mattpocock). |
+| [design-system](./skills/engineering/design-system) | Review | Design/implement/review a token-based UI design system (Astryx-based, any stack). |
 | [implement](./skills/engineering/implement) | Available | Implement a PRD/issues/slices into committed, tested code (adapted from mattpocock). |
 | [resolving-merge-conflicts](./skills/engineering/resolving-merge-conflicts) | Available | Resolve merge/rebase conflicts by recovering intent (adapted from mattpocock). |
 | [webapp-testing](./skills/engineering/webapp-testing) | Available | Test a local web app with Playwright (adapted from anthropics). |

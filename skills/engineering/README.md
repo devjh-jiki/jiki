@@ -12,6 +12,7 @@ with an added owner/leadership lens. See [THIRD_PARTY_NOTICES.md](../../THIRD_PA
 - [to-issues](./to-issues/SKILL.md) — Break a plan/PRD into independently-grabbable vertical-slice issues. Consumes `to-prd` output.
 - [grill-with-docs](./grill-with-docs/SKILL.md) — Grilling interview that also maintains glossary + ADRs as you go (`grill-me` + `domain-modeling`).
 - [prototype](./prototype/SKILL.md) — Build a throwaway prototype to de-risk a design (logic terminal app, or UI variations).
+- [design-system](./design-system/SKILL.md) — Design, implement, and review a token-based UI design system, using Meta's Astryx as the default foundation (generalized to any stack); respects an existing system when present.
 
 **Model-invoked** (the agent uses it automatically when it fits)
 

@@ -35,6 +35,7 @@
         "./skills/engineering/to-issues",
         "./skills/engineering/grill-with-docs",
         "./skills/engineering/prototype",
+        "./skills/engineering/design-system",
         "./skills/engineering/implement",
         "./skills/engineering/resolving-merge-conflicts",
         "./skills/engineering/webapp-testing"

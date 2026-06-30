@@ -34,6 +34,7 @@ npx skills@latest add devjh-jiki/jiki
 - [to-issues](./engineering/to-issues/SKILL.ko.md) — 계획/PRD 를 수직 슬라이스 이슈로 분해
 - [grill-with-docs](./engineering/grill-with-docs/SKILL.ko.md) — 진행하며 용어집 + ADR 까지 유지하는 grilling
 - [prototype](./engineering/prototype/SKILL.ko.md) — 설계 리스크를 줄이는 throwaway 프로토타입
+- [design-system](./engineering/design-system/SKILL.ko.md) — 토큰 기반 UI 디자인 시스템 설계/구현/리뷰 (Astryx 베이스, 모든 스택)
 - [implement](./engineering/implement/SKILL.ko.md) — 합의된 PRD/이슈/슬라이스를 커밋된 테스트 코드로 구현
 
 **Model-invoked** (작업에 맞으면 에이전트가 자동 사용)

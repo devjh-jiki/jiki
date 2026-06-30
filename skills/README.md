@@ -34,6 +34,7 @@ npx skills@latest add devjh-jiki/jiki
 - [to-issues](./engineering/to-issues/SKILL.md) — Break a plan/PRD into vertical-slice issues
 - [grill-with-docs](./engineering/grill-with-docs/SKILL.md) — Grilling that maintains glossary + ADRs as you go
 - [prototype](./engineering/prototype/SKILL.md) — Throwaway prototype to de-risk a design
+- [design-system](./engineering/design-system/SKILL.md) — Design/implement/review a token-based UI design system (Astryx-based, any stack)
 - [implement](./engineering/implement/SKILL.md) — Implement an agreed PRD/issues/slices into committed, tested code
 
 **Model-invoked** (the agent uses it automatically when it fits the task)

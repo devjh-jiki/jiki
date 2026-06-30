@@ -94,17 +94,24 @@
   .prose li { margin: var(--space-2) 0; }
   .prose code {
     font-family: var(--font-mono); font-size: .9em;
-    background: var(--color-surface-sunken); color: var(--color-text-primary);
+    background: var(--color-surface-sunken); color: var(--code-inline);
     padding: 2px 6px; border-radius: var(--radius-sm);
   }
   .prose pre {
-    background: var(--color-surface-raised);
+    background: var(--code-bg);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     padding: var(--space-4); overflow-x: auto; margin: var(--space-4) 0;
     box-shadow: var(--elevation-1);
   }
-  .prose pre code { background: none; padding: 0; font-size: var(--fs-small); line-height: 1.6; }
+  .prose pre code { background: none; padding: 0; color: var(--code-text); font-size: var(--fs-small); line-height: 1.6; }
+  /* syntax tokens — wrap spans in these classes (or let a highlighter emit them) */
+  .tok-comment { color: var(--code-comment); }
+  .tok-keyword { color: var(--code-keyword); }
+  .tok-string  { color: var(--code-string); }
+  .tok-fn      { color: var(--code-function); }
+  .tok-num     { color: var(--code-number); }
+  .tok-type    { color: var(--code-type); }
   .prose blockquote {
     border-left: 3px solid var(--color-border-strong);
     padding: var(--space-1) var(--space-4); margin: var(--space-4) 0;
@@ -198,6 +205,10 @@
 
         <h2 id="quick-start">Quick start</h2>
         <p>The three-column shell gives you section navigation on the left, readable prose in the center (capped at a comfortable line length), and an on-page table of contents on the right that tracks your scroll position.</p>
+        <pre><code><span class="tok-comment">// code blocks use a separate GitHub/Primer syntax palette</span>
+<span class="tok-keyword">import</span> { createDocs } <span class="tok-keyword">from</span> <span class="tok-string">'./docs'</span>;
+
+<span class="tok-keyword">const</span> site = <span class="tok-fn">createDocs</span>({ theme: <span class="tok-string">'tokens.css'</span>, port: <span class="tok-num">3000</span> });</code></pre>
         <ul>
           <li>Left sidebar groups pages by section.</li>
           <li>Center column holds the markdown-style prose.</li>

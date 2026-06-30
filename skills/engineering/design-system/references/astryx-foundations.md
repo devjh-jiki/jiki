@@ -8,6 +8,7 @@ The default token structure, scales, and principles for designing a system, grou
 - [Spacing](#spacing)
 - [Typography](#typography)
 - [Color](#color)
+- [Palette for technical docs](#palette-for-technical-docs)
 - [Shape / radius](#shape--radius)
 - [Elevation](#elevation)
 - [Motion](#motion)
@@ -76,6 +77,32 @@ Build the palette as base tokens, then map roles. Minimum semantic roles every s
 Discipline: **one accent**, used sparingly, beats three competing brand colors. A warm or cool neutral surface + a single confident accent reads as more designed than a rainbow. Define both light and dark by swapping the semantic layer — don't fork components.
 
 **Contrast is non-negotiable (WCAG AA):** body text 4.5:1, large text (≥24px or ≥19px bold) 3:1, UI components/graphics 3:1. Check every text-on-surface pair before shipping.
+
+## Palette for technical docs
+
+A documentation site is a specific design problem: long-form prose plus a lot of code, read for hours, often by developers. The 2026 norm — what GitHub, Stripe, Linear, Vercel, and TanStack converge on — is a **cool-neutral base + one restrained accent + a separate code-syntax palette.** Use this as the default for any docs/reference surface (it's what the bundled `assets/docs-template/tokens.css` ships with).
+
+### Base: cool-neutral, not warm
+Pick a gray ramp with a faint *cool* (slightly blue) tint rather than a warm beige/cream one. Cool neutrals read as precise and technical, give code blocks cleaner contrast, and don't tint toward "lifestyle blog." Warm neutrals are great for editorial/marketing, but for docs the cool base is the safer default.
+
+- Light surface: near-white with a faint cool tint (e.g. `#fbfcfd`), wells `#f1f3f5`, borders `#e3e6ea`, primary text `#1a1d21` (~16:1), secondary `#5c636e` (~5.9:1).
+- Dark surface: a cool near-black (GitHub-style `#0e1116`), raised `#161b22`, text `#e6e9ee`, secondary `#9aa4b2`. Avoid warm charcoals.
+
+### Accent: one hue, quarantined
+The lesson from TanStack (which uses a dozen+ accent hues without chaos): **a single shared neutral carries ~95% of every surface, and each accent is restricted to one role/object.** For a single docs site that means *one* accent used only on links, active nav, focus rings, and the TOC indicator — never as large fills or backgrounds.
+
+Good 2026 docs accents (all clear WCAG AA on the cool surface): **indigo `#4f5bd5`** (default — reads "developer tool," strong contrast headroom), **teal `#0e7c74`** (calmer, more neutral), **emerald/green** (fresh, but watch contrast), **blue `#3b6fd4`** (classic but generic). Lighten one step in dark mode (e.g. indigo → `#8b93f8`) to hold contrast against the dark surface. Avoid the AI-slop default purple→blue gradient.
+
+### Code: a separate syntax palette
+Keep code-block colors **independent from the marketing accent.** Don't tint syntax toward your brand hue — readability and developer familiarity beat brand consistency here. The safe, recognized default is the **GitHub/Primer** scheme (what TanStack uses):
+
+- Light (`#fff`/`#24292f`): keyword `#cf222e`, string `#0a7f64`, function `#8250df`, number/attr `#0550ae`, type/inline `#953800`, comment `#6e7781`.
+- Dark (`#0e1116`/`#d4d4d4`): keyword `#ff7b72`, string `#a5d6ff`, function `#d2a8ff`, number `#79c0ff`, type/inline `#ffa657`, comment `#a3a3a3`.
+
+Store these as their own `--code-*` tokens (the template does), so a brand-color change never touches code legibility.
+
+### Why this combination
+Restraint by structure is what makes it work: one disciplined neutral foundation means the accent never has to fight the surface, long reading sessions stay comfortable, and code — the thing developers actually scan — gets a palette tuned for scanning rather than for branding. A docs site that picks a warm base, tints its code blocks to match the brand, and sprinkles the accent everywhere looks busy and tiring; the cool-neutral + one-accent + separate-code formula looks like a tool you'd trust.
 
 ## Shape / radius
 

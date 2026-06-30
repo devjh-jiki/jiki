@@ -6,6 +6,9 @@ Templates, linking patterns, and a readability checklist for producing high-qual
 
 - [Document-type templates](#document-type-templates)
 - [Linking patterns](#linking-patterns)
+- [Developer-documentation craft](#developer-documentation-craft)
+- [Tone for technical docs](#tone-for-technical-docs)
+- [Admonitions and visual emphasis](#admonitions-and-visual-emphasis--use-sparingly)
 - [Readability checklist](#readability-checklist)
 - [Markdown mechanics checklist](#markdown-mechanics-checklist)
 
@@ -140,7 +143,27 @@ Patterns that the best developer docs (Stripe, Twilio, the good parts of cloud-p
 - **Tell the reader how to try it safely.** A test/sandbox/dry-run path, sample data, or "this won't charge anything" note lowers the cost of following along. The reader is more likely to actually run your steps if step one isn't "risk something real."
 - **Layer by depth, link between layers.** Developer docs work as a ladder: a quickstart that gets *something* working in minutes, then a fuller guide, then exhaustive reference. Keep each rung at one depth and link up/down rather than cramming all three into one page. A quickstart that tries to be complete stops being quick.
 
-## Readability checklist
+## Tone for technical docs
+
+A technical doc earns trust by being calm, specific, and consistent. The reader is trying to *do* or *understand* something — match that.
+
+- **State, don't sell.** "Returns 404 when the resource is missing" beats "This powerful endpoint robustly handles missing resources!" Drop superlatives (powerful, seamless, robust, blazing-fast) and hype; let the facts carry the weight.
+- **Address the reader directly and consistently.** Pick one stance — usually imperative ("Run the migration") or second person ("You run the migration") — and hold it. Don't drift between "we," "you," "the user," and "one" in the same doc.
+- **Prefer the active voice and a concrete subject.** "The scheduler retries the job" tells the reader who acts; "the job gets retried" hides it.
+- **Be consistent with terms and casing.** One name per concept (don't alternate "user" / "account" / "member" for the same thing). Keep identifiers in code font (`retryCount`), prose terms in plain text. Match the casing of APIs, products, and codes exactly.
+- **Caveats are sentences, not decorations.** A real limitation deserves a clear sentence ("This doesn't support pagination beyond 1,000 rows") over a pile of bold and emoji. Reserve any visual alarm for genuine danger (data loss, security, billing/legal exposure).
+- **Quantify instead of intensifying.** "~12× slower (1.2s vs 100ms)" is information; "way slower" is not. When you have the number, use it; when you don't, say so.
+
+## Admonitions and visual emphasis — use sparingly
+
+Callout boxes (Docusaurus `:::note/:::tip/:::caution/:::danger`, GitHub alerts) are powerful *because* they're rare. When every third paragraph is a colored box, the page turns into noise and the genuinely important warning gets lost in the wallpaper. They're also platform-specific syntax — they don't render on plain GitHub.
+
+- **Reserve callouts for the exception, not the narrative.** Use them for what the reader *must not miss*: a destructive action, a billing/legal/security trap, a correction to a common misconception. Ordinary explanation, examples, and asides belong in normal prose, lists, or tables.
+- **A page with ten callouts has none.** If a doc is dense with admonitions, most of them are doing a job a sentence or a table row would do better. Demote them: keep the one or two real warnings, fold the rest into the body.
+- **Pick the type by severity, honestly.** `danger` = data loss / irreversible / legal exposure. `caution` = easy-to-make mistake with real cost. `note`/`tip` = genuinely helpful aside. Don't dress a neutral fact as a `caution` for visual weight.
+- **If the doc must stay portable, avoid them entirely** and use a bold lead-in (`**Warning:** …`) or a blockquote, which render everywhere. Only reach for `:::` syntax when the target is confirmed to be a platform that supports it.
+
+
 
 Run this as the target reader during **refine**.
 
@@ -153,6 +176,8 @@ Run this as the target reader during **refine**.
 - [ ] No filler: throat-clearing intros, "in this section we will," redundant restatements — cut.
 - [ ] Headings are parallel in grammar and scannable as an outline on their own.
 - [ ] Jargon is defined on first use, or linked to where it's defined.
+- [ ] Tone is calm and specific: no hype/superlatives, consistent voice and terms, caveats written as sentences.
+- [ ] Emphasis and callouts are rare and load-bearing: `**bold**` marks only the key phrase; admonitions are reserved for genuine warnings, not narration.
 
 ## Markdown mechanics checklist
 
@@ -165,5 +190,8 @@ The things that silently break rendering or trust.
 - [ ] Heading levels are consistent and don't skip (no `#` jumping to `###`).
 - [ ] Images have alt text; paths resolve.
 - [ ] No platform-specific syntax unless that platform is the target (Obsidian `[[wikilinks]]`, Docusaurus `:::note` admonitions, etc.).
+- [ ] **No accidental strikethrough.** A `~` or `~~` around text triggers GFM strikethrough. A range like `2~15` renders as "2​~​15" with part struck through. Write numeric ranges with a hyphen/en-dash (`2-15`, `10-19분`) or the word ("2 to 15"); reserve `~` for "approximately" only where it can't touch another `~` and never wrap a span. If you truly need a literal tilde next to text, escape it (`2\~15`).
+- [ ] **Tildes for "approximately" don't pair up.** `~$47` alone is fine, but two on one line (`~$47 ... ~$52`) can be parsed as a strikethrough span on some renderers. Prefer "약 $47" / "approx. $47" / "≈ $47" in prose; keep bare `~` out of spans.
+- [ ] **Emphasis isn't a layout tool.** `**bold**` marks the one phrase that carries the sentence, not every other clause. If half a paragraph is bold, nothing is emphasized — cut it back to the load-bearing term. Don't bold whole sentences or stack `**` on list items by reflex.
 - [ ] Long docs (past ~2 screens) have a table of contents.
 - [ ] Line-level: no trailing whitespace artifacts, consistent list markers, blank line around code blocks and tables so they render.

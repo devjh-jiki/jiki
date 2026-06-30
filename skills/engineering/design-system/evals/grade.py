@@ -81,13 +81,6 @@ def grade(name, outdir):
                 ("Fixed HTML removes emoji icons", len(EMOJI.findall(html))==0, f"{len(EMOJI.findall(html))} emoji"),
                 ("Fixed HTML removes purple-blue gradient", not has_purple_blue(html), "no purple/blue"),
                 ("Fixed HTML uses token system", var_refs(html)>=20, f"{var_refs(html)} var refs")]
-    elif name == "docusaurus-theme":
-        css = read(glob.glob(os.path.join(outdir,"custom.css"))[0]) if glob.glob(os.path.join(outdir,"custom.css")) else ""
-        shades = len(set(re.findall(r"--ifm-color-primary(?:-(?:dark|darker|darkest|light|lighter|lightest))?", css)))
-        res += [("Maps onto Infima --ifm-* variables (not parallel system)", css.count("--ifm-")>=8, f"{css.count('--ifm-')} ifm vars"),
-                ("Provides 7 primary shades", shades>=7, f"{shades} primary shades"),
-                ("Has a [data-theme='dark'] block", "data-theme" in css and "dark" in css, "dark block"),
-                ("Targets stable theme class names", bool(re.search(r"theme-doc-markdown|theme-admonition|\.navbar|\.menu",css)), "stable classes")]
     return res
 
 summary = {}

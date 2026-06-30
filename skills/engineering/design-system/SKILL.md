@@ -28,7 +28,7 @@ Astryx is the **default for greenfield or undefined** design surfaces — not an
 - **"Build / restyle this component or page"** → if tokens exist, start at **Implement**; if not, do a quick **Design** pass for the tokens you need, then implement.
 - **"Review / improve this UI"** → start at **Review**, score against the rubric, then implement the fixes that matter.
 
-When the stack is React/Next, mention that Astryx ships as real packages (`@astryxdesign/core`, a theme, `@astryxdesign/cli`) and `npx astryx init` sets up agent docs — using the real thing beats reimplementing it. On other stacks, port Astryx's *token structure and scales* (below) into that stack's idiom. For how the same two-tier system lands in each stack you use — plain CSS, React (CSS variables), Tailwind, StyleX/Astryx native, and **Docusaurus** (where Infima's `--ifm-*` variables *are* the semantic layer and the deliverable is a `src/css/custom.css`, not a from-scratch system) — read `references/stacks.md`.
+When the stack is React/Next, mention that Astryx ships as real packages (`@astryxdesign/core`, a theme, `@astryxdesign/cli`) and `npx astryx init` sets up agent docs — using the real thing beats reimplementing it. On other stacks, port Astryx's *token structure and scales* (below) into that stack's idiom. For how the same two-tier system lands in each stack you use — plain CSS, React (CSS variables), Tailwind, StyleX/Astryx native, and a **static docs site** (a bundled self-contained docs template you theme via one `tokens.css`, no framework) — read `references/stacks.md`.
 
 ## The pipeline
 
@@ -54,7 +54,7 @@ Turn tokens into components and pages that feel intentional.
 - **Build on the existing context first.** Find the nearest existing component and match it before inventing a new pattern. Consistency reads as quality.
 - **Placeholder over bad asset.** A clean gray box beats an AI-generated SVG or a stock-y gradient. Don't fill space with noise.
 
-Match the stack: real Astryx components on React/StyleX; the equivalent token-referencing components in the project's framework otherwise. For the concrete way to express tokens per stack (React/Tailwind/StyleX) and especially for **Docusaurus** (map our roles onto Infima `--ifm-*` variables in `custom.css`, target stable theme class names, 996px breakpoint, swizzle only when CSS can't reach), read `references/stacks.md`. Read `references/anti-slop-and-review.md` before styling — it lists the patterns that make UI look AI-generated and what to do instead.
+Match the stack: real Astryx components on React/StyleX; the equivalent token-referencing components in the project's framework otherwise. For the concrete way to express tokens per stack (React/Tailwind/StyleX) read `references/stacks.md`. **When the deliverable is a documentation site** (sidebar nav + prose + on-page TOC), don't stand up a framework — use the bundled self-contained template at `assets/docs-template/` and theme its `tokens.css` from the design system; see `references/docs-template-guide.md`. Read `references/anti-slop-and-review.md` before styling — it lists the patterns that make UI look AI-generated and what to do instead.
 
 ### 3. Review — score against the bar
 

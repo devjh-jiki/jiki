@@ -1,6 +1,6 @@
 {
   "skill_name": "design-system",
-  "notes": "Verification with REAL rendered UI. Each run must emit a self-contained HTML (inline CSS, no external build) so outputs can be viewed in a browser. Scenario 2 is the skill's unique failure mode: must respect an existing Tailwind design system, NOT impose Astryx. Scenario 3 is a review+fix of an anti-slop-laden page. The docusaurus-theme eval verifies the stacks.md Docusaurus/Infima guidance.",
+  "notes": "Verification with REAL rendered UI. Each run must emit a self-contained HTML (inline CSS, no external build) so outputs can be viewed in a browser. Scenario 2 is the skill's unique failure mode: must respect an existing Tailwind design system, NOT impose Astryx. Scenario 3 is a review+fix of an anti-slop-laden page. For docs sites the skill bundles a self-contained docs template (assets/docs-template/) themed via one tokens.css — no framework.",
   "verification_history": {
     "iteration-1": {
       "setup": "3 scenarios x with_skill + baseline, real rendered HTML outputs",
@@ -8,8 +8,8 @@
       "human_review": "viewed rendered UI side-by-side via iframe review page; with_skill respected existing Lumen tokens (even remapped accent->accent-hover for WCAG AA), scored the slop page 14/50 and replaced emoji with SVG icons"
     },
     "iteration-2": {
-      "setup": "added Docusaurus/Infima stack guidance (stacks.md); verified with a docusaurus-theme run",
-      "result": "produced a correct src/css/custom.css mapping our roles onto --ifm-* (not a parallel system), 7 primary shades, [data-theme='dark'] block, stable theme class names (.theme-doc-markdown etc.), 996px breakpoint, WCAG-AA contrast computed (light 4.77:1 / dark 9.49:1)"
+      "setup": "docs delivery: replaced the framework-coupling approach with a bundled self-contained docs template (assets/docs-template/) themed via one tokens.css",
+      "result": "template renders standalone (3-column shell, dark toggle, scroll-spy), 81 var() refs, fully token-driven; the skill points to it for documentation-site deliverables instead of standing up a framework"
     }
   },
   "evals": [

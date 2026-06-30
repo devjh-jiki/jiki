@@ -28,7 +28,7 @@ Astryx는 **그린필드나 미정의 영역의 기본값**이지, 이미 결정
 - **"이 컴포넌트·페이지 만들어/다시 스타일"** → 토큰 있으면 **구현**부터, 없으면 필요한 토큰만 빠르게 **설계**한 뒤 구현.
 - **"이 UI 리뷰/개선"** → **리뷰**부터, 루브릭으로 점수 매기고, 중요한 것부터 구현.
 
-스택이 React/Next면 Astryx가 실제 패키지(`@astryxdesign/core`, 테마, `@astryxdesign/cli`)로 제공되고 `npx astryx init`이 agent docs를 세팅한다는 걸 언급하라 — 재구현보다 실물을 쓰는 게 낫다. 다른 스택이면 Astryx의 *토큰 구조와 스케일*(아래)을 그 스택 관용구로 옮긴다. 같은 2층 시스템이 각 스택에 어떻게 안착하는지 — 순수 CSS, React(CSS 변수), Tailwind, StyleX/Astryx 네이티브, 그리고 **Docusaurus**(Infima의 `--ifm-*` 변수가 *곧* 시맨틱 층이고 산출물은 처음부터 짠 시스템이 아니라 `src/css/custom.css`) — 는 `references/stacks.md` 를 읽어라.
+스택이 React/Next면 Astryx가 실제 패키지(`@astryxdesign/core`, 테마, `@astryxdesign/cli`)로 제공되고 `npx astryx init`이 agent docs를 세팅한다는 걸 언급하라 — 재구현보다 실물을 쓰는 게 낫다. 다른 스택이면 Astryx의 *토큰 구조와 스케일*(아래)을 그 스택 관용구로 옮긴다. 같은 2층 시스템이 각 스택에 어떻게 안착하는지 — 순수 CSS, React(CSS 변수), Tailwind, StyleX/Astryx 네이티브, 그리고 **정적 docs 사이트**(`tokens.css` 하나로 테마하는 번들된 자립형 docs 템플릿, 프레임워크 없이) — 는 `references/stacks.md` 를 읽어라.
 
 ## 파이프라인
 
@@ -54,7 +54,7 @@ Astryx는 **그린필드나 미정의 영역의 기본값**이지, 이미 결정
 - **기존 맥락 위에 먼저 짓는다.** 새 패턴을 짓기 전에 가장 가까운 기존 컴포넌트를 찾아 맞춘다. 일관성이 곧 품질로 읽힌다.
 - **나쁜 에셋보다 플레이스홀더.** 깔끔한 회색 박스가 AI 생성 SVG나 스톡 느낌 그래디언트보다 낫다. 빈 공간을 소음으로 채우지 마라.
 
-스택에 맞춘다: React/StyleX면 실제 Astryx 컴포넌트, 그 외엔 프로젝트 프레임워크의 토큰 참조 컴포넌트. 스택별로 토큰을 표현하는 구체적 방법(React/Tailwind/StyleX)과 특히 **Docusaurus**(우리 역할을 `custom.css`의 Infima `--ifm-*` 변수에 매핑, 안정적 theme class name 타겟, 996px 브레이크포인트, CSS로 안 될 때만 swizzle)는 `references/stacks.md` 를 읽어라. 스타일링 전에 `references/anti-slop-and-review.md` 를 읽어라 — UI를 AI 생성처럼 보이게 하는 패턴과 대안 목록이다.
+스택에 맞춘다: React/StyleX면 실제 Astryx 컴포넌트, 그 외엔 프로젝트 프레임워크의 토큰 참조 컴포넌트. 스택별로 토큰을 표현하는 구체적 방법(React/Tailwind/StyleX)은 `references/stacks.md` 를 읽어라. **산출물이 문서 사이트**(사이드바 내비 + 산문 + 페이지 내 TOC)면 프레임워크를 세우지 말고 — 번들된 자립형 템플릿 `assets/docs-template/`를 쓰고 그 `tokens.css`를 디자인 시스템으로 테마하라; `references/docs-template-guide.md` 참고. 스타일링 전에 `references/anti-slop-and-review.md` 를 읽어라 — UI를 AI 생성처럼 보이게 하는 패턴과 대안 목록이다.
 
 ### 3. 리뷰 — 기준으로 점수 매긴다
 

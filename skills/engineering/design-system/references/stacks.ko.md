@@ -10,7 +10,7 @@
 - [React (Vite/Next, CSS 변수)](#react-vitenext-css-변수)
 - [React + Tailwind](#react--tailwind)
 - [React + StyleX (Astryx 네이티브)](#react--stylex-astryx-네이티브)
-- [Docusaurus (Infima)](#docusaurus-infima)
+- [정적 docs 사이트 (프레임워크 없이)](#정적-docs-사이트-프레임워크-없이)
 
 ## 순수 CSS / 모든 프레임워크
 
@@ -92,54 +92,19 @@ const s = stylex.create({ save: { alignSelf: 'flex-end', marginTop: 16 } });
 
 `npx astryx component <Name>`과 `npx astryx docs tokens`로 추측 대신 실제 props·토큰 값을 조회하라. 네이티브 Astryx에선 시맨틱 토큰 규율이 이미 강제돼 있다 — 네 일은 그걸 *깨지 않는 것*(인라인 hex 금지, 하드코딩 spacing 금지, raw HTML보다 컴포넌트).
 
-## Docusaurus (Infima)
+## 정적 docs 사이트 (프레임워크 없이)
 
-Docusaurus 사이트는 테마가 **Infima CSS 변수**로 구동되는 SPA React 앱이다. Infima의 `--ifm-*` 변수가 *곧* 시맨틱 층이다 — 평행 시스템을 새로 짓지 말고 우리 역할을 거기에 매핑하라. 이게 정확히 "기존 시스템 존중" 규칙이다: Docusaurus엔 이미 시스템이 있다.
+목표가 **문서 사이트** — 사이드바 내비, 콘텐츠 컬럼, 페이지 내 목차(TOC), 라이트/다크 — 라면 Docusaurus 같은 프레임워크가 필요 없다. 스킬은 `assets/docs-template/`에 의존성 없는 자립형 docs 템플릿을 번들한다. design-system 토큰을 검증된 docs 레이아웃에 이미 연결해 둔 것(구조는 Docusaurus/Stripe 스타일 docs를 참조했으나, 빌드 없이 브라우저에서 열리는 순수 HTML/CSS).
 
-**어디에 두나:**
-- 전역 토큰 + 오버라이드 → `src/css/custom.css` (`docusaurus.config.js`의 `themeConfig.customCss`에 등록).
-- 컴포넌트별 스타일 → CSS 모듈(`*.module.css`), 같은 변수 참조.
+**docs 골격을 처음부터 짓지 말고 템플릿을 써라.** "반복 산출은 자산으로 번들" 원칙이다: docs 셸은 매번 같으니, 프로젝트마다 재설계할 게 아니라 고정 자산이다.
 
-**우리 시맨틱 역할 → Infima 변수 매핑** (`custom.css`의 `:root`에서 오버라이드):
+적용법(전체 안내는 `references/docs-template-guide.md`):
 
-```css
-/* src/css/custom.css */
-:root {
-  /* Infima primary = 우리 accent. Infima는 7단계 셰이드를 쓴다 —
-     hover/active 상태가 일관되도록 생성하라(docusaurus.io 스타일링 도구 / ColorBox). */
-  --ifm-color-primary: #0d7d77;          /* 우리 --color-accent */
-  --ifm-color-primary-dark: #0b716c;
-  --ifm-color-primary-darker: #0a6a65;
-  --ifm-color-primary-darkest: #085853;
-  --ifm-color-primary-light: #0f8983;
-  --ifm-color-primary-lighter: #109089;
-  --ifm-color-primary-lightest: #13a59d;
+1. `assets/docs-template/`를 프로젝트에 복사.
+2. `tokens.css`를 열어 시맨틱 토큰을 프로젝트 시스템에 맞게 설정 — 네가 설계한 *같은* `--color-surface`, `--color-accent`, 타입 램프, spacing. 테마하는 파일은 이것 하나뿐이고, 레이아웃은 여기서 읽는다.
+3. 페이지 템플릿에 콘텐츠 투입(사이드바 링크 + 마크다운식 콘텐츠 컬럼). docs 사이트 대부분이 산문이므로, 템플릿의 산문 스타일(제목 리듬, 코드블록, 콜아웃, 링크 어포던스, 줄 길이)은 이미 튜닝돼 있다.
+4. 다중 페이지면 페이지 셸을 문서별로 복제하고 사이드바/TOC를 일관되게 유지.
 
-  --ifm-background-color: #fafafa;        /* 우리 --color-surface */
-  --ifm-font-color-base: #1c1c1c;         /* 우리 --color-text-primary */
-  --ifm-font-family-base: "Inter", system-ui, sans-serif;
-  --ifm-heading-font-family: "Fraunces", Georgia, serif;
-  --ifm-code-font-size: 95%;
-  --ifm-spacing-horizontal: 16px;         /* 우리 4px 스케일에 맞춤 */
-  --ifm-global-radius: 8px;               /* 우리 --radius-md */
-}
-```
+산출물은 Docusaurus 설정이 아니라 테마 적용된 템플릿 사본이다. `design-system.md` 스펙이 여전히 구동하며 — 템플릿의 `tokens.css`가 그 토큰이 안착하는 자리일 뿐이다.
 
-**다크모드** — Docusaurus는 `<html>`에 `data-theme="dark"`를 단다. 거기서 같은 Infima 변수를 오버라이드(다른 셰이드 사용; 한 색이 두 모드에서 다 통하는 경우는 드물다):
-
-```css
-[data-theme='dark'] {
-  --ifm-color-primary: #4fd1c5;
-  --ifm-background-color: #161616;
-  --ifm-font-color-base: #f0f0f0;
-}
-```
-
-**Docusaurus 핵심 특수성:**
-- **안정적인 theme class name을 타겟**하라, Infima 내부나 해시 붙은 CSS-모듈 이름 말고. `.theme-doc-markdown`, `.theme-admonition`, `.navbar`, `.menu` 같은 이름(`ThemeClassNames` 목록). 불가피하지 않으면 `[class*='codeBlockContainer']` 식 해시 핵 피하기.
-- **대비: primary 색은 WCAG-AA 목표** — 라이트·다크 배경 양쪽에서. Docusaurus 자체 스타일링 도구가 등급을 매긴다; 문서 배경에서 떨어지는 primary를 출시하지 마라.
-- **모바일 브레이크포인트는 `996px`**(768 아님). 반응형 규칙 추가 시 맞춰라. 바꾸려면 `useWindowSize` 쓰는 컴포넌트 swizzle 필요.
-- **더 깊은 변경 = swizzling.** CSS 너머 DOM/구조 변경은 셀렉터와 싸우지 말고 컴포넌트를 swizzle(`npm run swizzle`). CSS 오버라이드를 먼저, swizzle은 구조를 꼭 바꿔야 할 때만.
-- **MDX 중심 콘텐츠:** Docusaurus 사이트의 대부분은 렌더된 마크다운이다. 가장 임팩트 큰 스타일링은 산문 자체 — 제목 리듬, 코드블록 대비, admonition 색, 링크 어포던스, 줄 길이. 맞춤 컴포넌트 스타일링을 쫓기 전에 `--ifm-*` 타이포와 `.theme-doc-markdown` 스코프를 튜닝하라.
-
-Docusaurus 프로젝트의 산출물은 `custom.css`(토큰 오버라이드 + theme-class-name 규칙) + 필요시 `*.module.css` 몇 개이지, 처음부터 짠 새 시스템이 아니다. design-system.md 스펙은 여전히 적용되며, Infima 변수 값으로 풀릴 뿐이다.
+> 여기서 docs 프레임워크를 안 쓰는 건 의도적이다: 정적 토큰 구동 템플릿이 올바르게 테마하기 쉽고(`tokens.css` 하나), 빌드/의존성 표면이 0이며, 이식성이 높다. 프로젝트가 *이미* Docusaurus 등 docs 프레임워크를 쓰고 있다면 "기존 시스템 존중" 규칙으로 — 교체 말고 그 프레임워크 테마 변수에 design-system 역할을 매핑하라.

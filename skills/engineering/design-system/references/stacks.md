@@ -10,7 +10,7 @@ The rule that never changes: **define values once, reference semantic tokens in 
 - [React (Vite/Next, CSS variables)](#react-vitenext-css-variables)
 - [React + Tailwind](#react--tailwind)
 - [React + StyleX (Astryx native)](#react--stylex-astryx-native)
-- [Docusaurus (Infima)](#docusaurus-infima)
+- [Static docs site (no framework)](#static-docs-site-no-framework)
 
 ## Plain CSS / any framework
 
@@ -92,54 +92,19 @@ const s = stylex.create({ save: { alignSelf: 'flex-end', marginTop: 16 } });
 
 Use `npx astryx component <Name>` and `npx astryx docs tokens` to discover real props and token values rather than guessing. On native Astryx the semantic-token discipline is already enforced — your job is to *not break it* (no inline hex, no hardcoded spacing, use components over raw HTML).
 
-## Docusaurus (Infima)
+## Static docs site (no framework)
 
-A Docusaurus site is a single-page React app whose theme is driven by **Infima CSS variables**. Infima's `--ifm-*` variables *are* the semantic layer — map our roles onto them rather than inventing a parallel system. This is exactly the "respect the existing system" rule: Docusaurus already has one.
+When the goal is a **documentation site** — sidebar navigation, a content column, an on-page table of contents, light/dark — you don't need a framework like Docusaurus. The skill bundles a self-contained, dependency-free docs template at `assets/docs-template/` that already wires the design-system tokens into a proven docs layout (structure modeled on Docusaurus/Stripe-style docs, but plain HTML/CSS that opens in a browser with no build).
 
-**Where things go:**
-- Global tokens + overrides → `src/css/custom.css` (registered via `themeConfig.customCss` in `docusaurus.config.js`).
-- Per-component styles → CSS Modules (`*.module.css`), referencing the same variables.
+**Use the template instead of building docs chrome from scratch.** It's the "bundle the repeated artifact" principle: a docs shell is the same every time, so it's a fixed asset, not something to redesign per project.
 
-**Map our semantic roles → Infima variables** (override in `:root` of `custom.css`):
+How to apply it (see `references/docs-template-guide.md` for the full walkthrough):
 
-```css
-/* src/css/custom.css */
-:root {
-  /* Infima primary = our accent. Infima uses 7 shades — generate them
-     (docusaurus.io styling tool / ColorBox) so hover/active states are consistent. */
-  --ifm-color-primary: #0d7d77;          /* our --color-accent */
-  --ifm-color-primary-dark: #0b716c;
-  --ifm-color-primary-darker: #0a6a65;
-  --ifm-color-primary-darkest: #085853;
-  --ifm-color-primary-light: #0f8983;
-  --ifm-color-primary-lighter: #109089;
-  --ifm-color-primary-lightest: #13a59d;
+1. Copy `assets/docs-template/` into the project.
+2. Open `tokens.css` and set the semantic tokens to the project's system — the *same* `--color-surface`, `--color-accent`, type ramp, spacing you designed. This is the only file you theme; the layout reads from it.
+3. Drop content into the page template (sidebar links + the markdown-style content column). The template's prose styles (heading rhythm, code blocks, callouts, link affordance, line length) are already tuned, since most of a docs site is prose.
+4. For a multi-page site, duplicate the page shell per doc and keep the sidebar/TOC consistent.
 
-  --ifm-background-color: #fafafa;        /* our --color-surface */
-  --ifm-font-color-base: #1c1c1c;         /* our --color-text-primary */
-  --ifm-font-family-base: "Inter", system-ui, sans-serif;
-  --ifm-heading-font-family: "Fraunces", Georgia, serif;
-  --ifm-code-font-size: 95%;
-  --ifm-spacing-horizontal: 16px;         /* align to our 4px scale */
-  --ifm-global-radius: 8px;               /* our --radius-md */
-}
-```
+The deliverable is a themed copy of the template, not a Docusaurus config. The `design-system.md` spec still drives it — the template's `tokens.css` is just where those tokens land.
 
-**Dark mode** — Docusaurus sets `data-theme="dark"` on `<html>`. Override the same Infima vars there (use different shades; one color rarely works in both modes):
-
-```css
-[data-theme='dark'] {
-  --ifm-color-primary: #4fd1c5;
-  --ifm-background-color: #161616;
-  --ifm-font-color-base: #f0f0f0;
-}
-```
-
-**Key Docusaurus specifics:**
-- **Target stable theme class names**, not Infima internals or hashed CSS-module names. Use names like `.theme-doc-markdown`, `.theme-admonition`, `.navbar`, `.menu` (the `ThemeClassNames` list). Avoid `[class*='codeBlockContainer']`-style hash hacks unless unavoidable.
-- **Contrast: aim for WCAG-AA on the primary color** against both light and dark backgrounds — Docusaurus' own styling tool rates this; don't ship a primary that fails on the doc background.
-- **Mobile breakpoint is `996px`** (not 768). If you add responsive rules, match it. Changing it means swizzling components that use `useWindowSize`.
-- **Deeper changes = swizzling.** For DOM/structure changes beyond CSS, swizzle the component (`npm run swizzle`) rather than fighting selectors. Prefer CSS overrides first; swizzle only when structure must change.
-- **MDX-heavy content:** most of a Docusaurus site is rendered markdown. The highest-leverage styling is the prose itself — heading rhythm, code-block contrast, admonition colors, link affordance, line length. Tune `--ifm-*` typography and the `.theme-doc-markdown` scope before chasing bespoke component styling.
-
-The deliverable for a Docusaurus project is a `custom.css` (the token overrides + theme-class-name rules) plus, if needed, a few `*.module.css` files — not a fresh from-scratch system. The design-system.md spec still applies; it just resolves into Infima variable values.
+> Not using a docs framework here is deliberate: a static, token-driven template is easier to theme correctly (one `tokens.css`), has zero build/dependency surface, and stays portable. If a project *already* runs Docusaurus or another docs framework, fall back to the "respect the existing system" rule — map the design-system roles onto that framework's theme variables rather than replacing it.

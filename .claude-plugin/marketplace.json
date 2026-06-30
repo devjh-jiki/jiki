@@ -12,9 +12,10 @@
     {
       "name": "writing-skills",
       "source": "./",
-      "description": "Writing & decision skills: polished Korean tech blog posts, decision/idea grilling, session handoffs, and writing great skills.",
+      "description": "Writing & decision skills: polished Korean tech blog posts, high-quality Markdown documentation with research, decision/idea grilling, session handoffs, and writing great skills.",
       "skills": [
         "./skills/productivity/write-blog-post",
+        "./skills/productivity/document-with-research",
         "./skills/productivity/grill-me",
         "./skills/productivity/handoff",
         "./skills/productivity/writing-great-skills"

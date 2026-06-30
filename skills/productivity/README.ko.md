@@ -13,4 +13,4 @@
 
 **Model-invoked**
 
-- _(아직 없음)_
+- [document-with-research](./document-with-research/SKILL.ko.md) — 고품질 마크다운 문서 산출: 오픈데이터 조사, 주장 검증, 구조 설계, 작성, 그리고 기존 자료를 가독성·문서 간 연결 관점에서 다듬기

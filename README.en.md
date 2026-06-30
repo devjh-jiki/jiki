@@ -46,6 +46,7 @@ Skills are labeled by verification stage:
 | Skill | Level | Description |
 |-------|-------|-------------|
 | [write-blog-post](./skills/productivity/write-blog-post) | Available | Turn a draft/learning into a polished Korean tech blog post in the jihoon voice (style + SEO guides). |
+| [document-with-research](./skills/productivity/document-with-research) | Available | Produce high-quality Markdown docs — from researching/verifying open data to designing structure, writing, and refining existing material. |
 | [grill-me](./skills/productivity/grill-me) | Available | Relentless interview to stress-test a plan, decision, or business idea before committing. |
 | [open-source-reverse-engineering-coach](./skills/learning/open-source-reverse-engineering-coach) | Available | Learn an open-source project by interactive reverse-engineering. |
 | [technical-book-coach](./skills/learning/technical-book-coach) | Available | Coach-style learning from technical books/docs (KO translation + coaching). |

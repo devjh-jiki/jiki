@@ -56,7 +56,7 @@ npx skills@latest add devjh-jiki/jiki
 
 **Model-invoked**
 
-- _(none yet)_
+- [document-with-research](./productivity/document-with-research/SKILL.md) — Produce high-quality Markdown docs: research open data, verify claims, design structure, write, and refine existing material for readability and cross-document linking
 
 ### Learning
 

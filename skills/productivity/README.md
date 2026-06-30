@@ -13,4 +13,4 @@ Skills for everyday workflows unrelated to code.
 
 **Model-invoked**
 
-- _(none yet)_
+- [document-with-research](./document-with-research/SKILL.md) — Produce high-quality Markdown docs: research open data, verify claims, design structure, write, and refine existing material for readability and cross-document linking

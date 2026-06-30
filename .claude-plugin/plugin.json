@@ -4,6 +4,7 @@
   "description": "나만의 에이전트 스킬 모음",
   "skills": [
     "./skills/productivity/write-blog-post/SKILL.md",
+    "./skills/productivity/document-with-research/SKILL.md",
     "./skills/productivity/grill-me/SKILL.md",
     "./skills/productivity/handoff/SKILL.md",
     "./skills/productivity/writing-great-skills/SKILL.md",

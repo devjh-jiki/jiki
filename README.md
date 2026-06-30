@@ -46,6 +46,7 @@ npx skills@latest add devjh-jiki/jiki
 | 스킬 | 단계 | 설명 |
 |------|------|------|
 | [write-blog-post](./skills/productivity/write-blog-post) | Available | 초안·학습을 jihoon 스타일 한국어 기술 블로그 글로 작성 (문체·SEO 가이드) |
+| [document-with-research](./skills/productivity/document-with-research) | Available | 오픈데이터 조사·검증부터 구조 설계·작성·기존 문서 다듬기까지, 고품질 마크다운 문서 산출 |
 | [grill-me](./skills/productivity/grill-me) | Available | 계획·의사결정·사업 아이디어를 스트레스 테스트하는 집요한 인터뷰 |
 | [open-source-reverse-engineering-coach](./skills/learning/open-source-reverse-engineering-coach) | Available | 오픈소스를 인터랙티브 역공학으로 학습 |
 | [technical-book-coach](./skills/learning/technical-book-coach) | Available | 기술 서적·문서 코칭 학습 (한글 번역 + 코칭) |

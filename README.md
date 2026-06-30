@@ -63,6 +63,8 @@ npx skills@latest add devjh-jiki/jiki
 | [prototype](./skills/engineering/prototype) | Available | 설계 검증용 throwaway 프로토타입 (mattpocock 참고) |
 | [handoff](./skills/productivity/handoff) | Available | 세션 인계 문서 생성 (mattpocock 참고) |
 | [writing-great-skills](./skills/productivity/writing-great-skills) | Available | 스킬을 잘 쓰는 법 레퍼런스 (mattpocock 참고) |
+| [git-guardrails](./skills/misc/git-guardrails) | Available | 위험한 git 명령 차단 hook (Claude Code 전용, mattpocock 참고) |
+| [setup-pre-commit](./skills/misc/setup-pre-commit) | Available | Husky pre-commit hook 설치 (JS/TS 전용, mattpocock 참고) |
 
 ## 관련 레포 (Organization)
 

@@ -20,6 +20,8 @@
     "./skills/engineering/to-prd/SKILL.md",
     "./skills/engineering/to-issues/SKILL.md",
     "./skills/engineering/grill-with-docs/SKILL.md",
-    "./skills/engineering/prototype/SKILL.md"
+    "./skills/engineering/prototype/SKILL.md",
+    "./skills/misc/git-guardrails/SKILL.md",
+    "./skills/misc/setup-pre-commit/SKILL.md"
   ]
 }

@@ -22,6 +22,8 @@ Attributions below. Where code or prose was adapted, the upstream license applie
   - `skills/productivity/handoff` ← productivity/handoff
   - `skills/productivity/grill-me` ← productivity/grill-me
   - `skills/productivity/writing-great-skills` ← productivity/writing-great-skills
+  - `skills/misc/git-guardrails` ← misc/git-guardrails-claude-code (includes the `block-dangerous-git.sh` script, copied verbatim)
+  - `skills/misc/setup-pre-commit` ← misc/setup-pre-commit
   A full snapshot of the upstream repo is kept under `.upstream/mattpocock-skills/` for reference and
   attribution tracking (not installed or distributed).
 

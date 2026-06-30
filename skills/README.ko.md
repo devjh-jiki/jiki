@@ -18,6 +18,7 @@ npx skills@latest add devjh-jiki/jiki
 | `productivity/` | 비코드 워크플로우(블로그 등) | O |
 | `learning/` | AI·기술 지식 학습 코치 | O |
 | `business/` | 창업·제품·마케팅 | O |
+| `misc/` | 일회성 환경 설정 | O |
 | `personal/` | 내 셋업 전용 | X |
 | `in-progress/` | 미완성 초안 | X |
 | `deprecated/` | 더 이상 안 씀 | X |
@@ -61,13 +62,20 @@ npx skills@latest add devjh-jiki/jiki
 - [open-source-reverse-engineering-coach](./learning/open-source-reverse-engineering-coach/SKILL.ko.md) — 오픈소스를 역공학하며 아키텍처·인터페이스·트레이드오프를 배우는 코치
 - [technical-book-coach](./learning/technical-book-coach/SKILL.ko.md) — 기술 서적·문서를 코칭으로 학습 (영문 붙여넣기 시 한글 번역 + 코칭 분리)
 
-### Business (Review)
+### Business
 
 **Model-invoked**
 
 - [biz-opportunity-scout](./business/biz-opportunity-scout/SKILL.ko.md) — 사업 기회 검증 (TAM/SAM/SOM, 유닛 이코노믹스, 경쟁, PMF) + 정직한 Go/No-Go
 - [marketing-copy](./business/marketing-copy/SKILL.ko.md) — 제품/기능을 한국어 마케팅 카피로
 - [product-spec-builder](./business/product-spec-builder/SKILL.ko.md) — 짧은 인터뷰로 거친 아이디어를 만들 수 있는 PRD 로
+
+### Misc
+
+**Model-invoked**
+
+- [git-guardrails](./misc/git-guardrails/SKILL.ko.md) — 위험한 git 명령을 막는 Claude Code hook 설치 (Claude Code 전용)
+- [setup-pre-commit](./misc/setup-pre-commit/SKILL.ko.md) — lint-staged/Prettier/타입체크/테스트를 도는 Husky pre-commit hook 설치 (JS/TS 전용)
 
 ## upstream 동기화
 

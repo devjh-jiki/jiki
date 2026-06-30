@@ -18,6 +18,7 @@ npx skills@latest add devjh-jiki/jiki
 | `productivity/` | Non-code workflows (blogging, etc.) | O |
 | `learning/` | AI / technical knowledge learning coaches | O |
 | `business/` | Founder / product / marketing | O |
+| `misc/` | One-off environment setup | O |
 | `personal/` | My setup only | X |
 | `in-progress/` | Unfinished drafts | X |
 | `deprecated/` | No longer used | X |
@@ -61,13 +62,20 @@ npx skills@latest add devjh-jiki/jiki
 - [open-source-reverse-engineering-coach](./learning/open-source-reverse-engineering-coach/SKILL.md) — A coach for learning architecture, interfaces, and trade-offs by reverse-engineering open source
 - [technical-book-coach](./learning/technical-book-coach/SKILL.md) — Learn technical books and docs through coaching (when English text is pasted, separates Korean translation + coaching)
 
-### Business (Review)
+### Business
 
 **Model-invoked**
 
 - [biz-opportunity-scout](./business/biz-opportunity-scout/SKILL.md) — Validate a business opportunity (TAM/SAM/SOM, unit economics, competitive, PMF) with an honest Go/No-Go
 - [marketing-copy](./business/marketing-copy/SKILL.md) — Turn a product/feature into Korean marketing copy
 - [product-spec-builder](./business/product-spec-builder/SKILL.md) — Turn a rough idea into a buildable PRD via a short interview
+
+### Misc
+
+**Model-invoked**
+
+- [git-guardrails](./misc/git-guardrails/SKILL.md) — Set up a Claude Code hook that blocks dangerous git commands (Claude Code only)
+- [setup-pre-commit](./misc/setup-pre-commit/SKILL.md) — Set up Husky pre-commit hooks with lint-staged/Prettier/typecheck/tests (JS/TS only)
 
 ## Upstream sync
 

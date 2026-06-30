@@ -54,6 +54,15 @@
         "./skills/business/marketing-copy",
         "./skills/business/product-spec-builder"
       ]
+    },
+    {
+      "name": "misc-skills",
+      "source": "./",
+      "description": "Environment setup skills: Claude Code git guardrails (block dangerous commands) and Husky pre-commit hooks (adapted from mattpocock/skills).",
+      "skills": [
+        "./skills/misc/git-guardrails",
+        "./skills/misc/setup-pre-commit"
+      ]
     }
   ]
 }

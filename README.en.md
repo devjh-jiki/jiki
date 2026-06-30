@@ -63,6 +63,8 @@ Skills are labeled by verification stage:
 | [prototype](./skills/engineering/prototype) | Available | Throwaway prototype to de-risk a design (adapted from mattpocock). |
 | [handoff](./skills/productivity/handoff) | Available | Create a session handoff doc (adapted from mattpocock). |
 | [writing-great-skills](./skills/productivity/writing-great-skills) | Available | Reference for writing great skills (adapted from mattpocock). |
+| [git-guardrails](./skills/misc/git-guardrails) | Available | Block dangerous git commands via a hook (Claude Code only, adapted from mattpocock). |
+| [setup-pre-commit](./skills/misc/setup-pre-commit) | Available | Set up Husky pre-commit hooks (JS/TS only, adapted from mattpocock). |
 
 ## Related repos (Organization)
 

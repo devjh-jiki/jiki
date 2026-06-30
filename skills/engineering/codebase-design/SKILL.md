@@ -7,6 +7,8 @@ description: Shared vocabulary for designing deep modules. Use when the user wan
 
 Design **deep modules**: a lot of behaviour behind a small interface, placed at a clean seam, testable through that interface. Use this language and these principles wherever code is being designed or restructured. The aim is leverage for callers, locality for maintainers, and testability for everyone.
 
+This skill works at the scale of *one module's shape and interface*. It runs two ways: on its own when someone is designing or judging a single module, and as the shared vocabulary another skill reaches for (e.g. `improve-codebase-architecture` uses these terms while restructuring). Two boundaries keep it in its lane: if there's no concrete module in view yet — just a vague "improve the architecture" — pin down which module or seam is in question before applying the vocabulary, rather than inventing one. And if the real task is a multi-module restructure of an existing codebase (mapping deepening opportunities across many seams, sequencing the work), hand off to `improve-codebase-architecture`, which drives that at the right scale using this same language.
+
 ## Glossary
 
 Use these terms exactly — don't substitute "component," "service," "API," or "boundary." Consistent language is the whole point.

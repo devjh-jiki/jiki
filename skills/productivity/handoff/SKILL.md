@@ -6,7 +6,9 @@ disable-model-invocation: true
 
 # handoff
 
-Write a handoff document summarising the current conversation so a fresh agent can continue the work. Save it to the temporary directory of the user's OS — not the current workspace. Resolve the temp dir from `$TMPDIR`, falling back to `/tmp` (or `%TEMP%` on Windows), and write to `<tmpdir>/handoff-<timestamp>.md`. Tell the user the absolute path, and — because a fresh agent won't know to look in the temp dir — offer to drop a one-line pointer to that path where the next session will actually start (a `NEXT.md`, a task tracker, or the commit/PR description). The handoff is only useful if the next session can find it.
+Write a handoff document summarising the current conversation so a fresh agent can continue the work. Save it to the temporary directory of the user's OS — not the current workspace. Resolve the temp dir from `$TMPDIR`, falling back to `/tmp` (or `%TEMP%` on Windows), and write to `<tmpdir>/handoff-<timestamp>.md`. Tell the user the absolute path, and — because a fresh agent won't know to look in the temp dir — drop a one-line pointer to that path where the next session will actually start. Pick that location from where work resumes, don't just offer a generic list: an open PR or branch → the PR/commit description; an active task tracker → the relevant ticket; otherwise a `NEXT.md` at the repo root. If you can't tell where the next session begins, ask the user in one line rather than guessing. The handoff is only useful if the next session can find it.
+
+First, check there's actually something to hand off. A handoff distils decisions made, work in progress, and the next action — if the conversation is empty, trivial, or holds none of those (e.g. a couple of one-off questions), say so and ask what to capture rather than padding a document with thin context. A handoff that re-derives nothing is worse than none, because the next agent trusts it.
 
 Include a **"Suggested skills"** section listing the skills the next agent should invoke (e.g. `to-prd`, `improve-codebase-architecture`, `diagnosing-bugs`, `grill-me`).
 

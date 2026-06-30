@@ -18,6 +18,13 @@ Set up a Husky pre-commit hook that runs lint-staged (Prettier) on staged files,
 
 ## Steps
 
+### 0. Check what's already there
+
+Before touching anything, look for an existing setup: a `.husky/` directory (especially `.husky/pre-commit`), a `prepare: "husky"` script, a `lint-staged` config (`.lintstagedrc*`, or a `lint-staged` key in `package.json`), and the three devDeps. This skill is **idempotent only if you check first** — `npx husky init` and a blind `.lintstagedrc` write will clobber a hook the project already relies on.
+
+- **Nothing present** → fresh install, proceed through the steps below.
+- **Partial or full setup present** → don't silently overwrite. Show the user what exists and ask whether to (a) leave it and only fill the gaps, or (b) replace it. The common case — an existing `.husky/pre-commit` with extra commands (e.g. a commitlint or secrets-scan line) — should be *merged into*, not replaced, so you don't drop a check they depend on.
+
 ### 1. Detect the package manager
 
 Check for `package-lock.json` (npm), `pnpm-lock.yaml` (pnpm), `yarn.lock` (yarn), `bun.lockb` (bun). Use whichever is present; default to npm if unclear. Use it consistently in every command below.
@@ -34,7 +41,7 @@ Before staging anything later, make sure `node_modules/` is gitignored — add i
 npx husky init
 ```
 
-Creates `.husky/` and adds a `prepare: "husky"` script to `package.json`.
+Creates `.husky/` and adds a `prepare: "husky"` script to `package.json`. If a `.husky/pre-commit` already exists (you found it in step 0), `husky init` overwrites it with a default — back up its contents first and fold any existing commands back into the file you write in step 4.
 
 ### 4. Write `.husky/pre-commit`
 
@@ -54,7 +61,7 @@ npm run test
 { "*": "prettier --ignore-unknown --write" }
 ```
 
-`--ignore-unknown` skips files Prettier can't parse (images, etc.).
+`--ignore-unknown` skips files Prettier can't parse (images, etc.). If a lint-staged config already exists (step 0), don't overwrite it — add the Prettier glob to what's there, preserving the project's existing rules.
 
 ### 6. Write `.prettierrc` (only if missing)
 

@@ -18,6 +18,13 @@ description: Set up Husky pre-commit hooks with lint-staged (Prettier), type che
 
 ## 단계
 
+### 0. 이미 있는 것부터 점검
+
+무엇이든 건드리기 전에 기존 설정을 살핀다: `.husky/` 디렉토리(특히 `.husky/pre-commit`), `prepare: "husky"` 스크립트, lint-staged 설정(`.lintstagedrc*` 또는 `package.json` 의 `lint-staged` 키), 그리고 세 devDep. 이 스킬은 **먼저 점검해야만 멱등**하다 — `npx husky init` 과 무작정 `.lintstagedrc` 쓰기는 프로젝트가 이미 의존하는 hook 을 덮어쓴다.
+
+- **아무것도 없음** → 신규 설치, 아래 단계 진행.
+- **일부/전체 설정 존재** → 슬쩍 덮어쓰지 않는다. 무엇이 있는지 사용자에게 보여주고 (a) 그대로 두고 빈 곳만 채울지, (b) 교체할지 묻는다. 흔한 경우 — 추가 명령(예: commitlint, 시크릿 스캔 줄)이 든 기존 `.husky/pre-commit` — 은 교체가 아니라 *병합* 해, 사용자가 의존하는 검사를 떨구지 않는다.
+
 ### 1. 패키지 매니저 감지
 
 `package-lock.json`(npm), `pnpm-lock.yaml`(pnpm), `yarn.lock`(yarn), `bun.lockb`(bun) 를 확인한다. 있는 것을 쓰고, 불분명하면 npm 기본. 아래 모든 명령에서 일관되게 쓴다.
@@ -34,7 +41,7 @@ description: Set up Husky pre-commit hooks with lint-staged (Prettier), type che
 npx husky init
 ```
 
-`.husky/` 를 만들고 `package.json` 에 `prepare: "husky"` 스크립트를 추가한다.
+`.husky/` 를 만들고 `package.json` 에 `prepare: "husky"` 스크립트를 추가한다. (0단계에서 찾은) `.husky/pre-commit` 이 이미 있으면 `husky init` 이 기본값으로 덮어쓴다 — 내용을 먼저 백업하고, 기존 명령들을 4단계에서 작성할 파일에 다시 접어 넣는다.
 
 ### 4. `.husky/pre-commit` 작성
 
@@ -54,7 +61,7 @@ npm run test
 { "*": "prettier --ignore-unknown --write" }
 ```
 
-`--ignore-unknown` 은 Prettier 가 파싱 못 하는 파일(이미지 등)을 건너뛴다.
+`--ignore-unknown` 은 Prettier 가 파싱 못 하는 파일(이미지 등)을 건너뛴다. (0단계에서) lint-staged 설정이 이미 있으면 덮어쓰지 않는다 — 기존 것에 Prettier glob 을 더해, 프로젝트의 기존 규칙을 보존한다.
 
 ### 6. `.prettierrc` 작성 (없을 때만)
 

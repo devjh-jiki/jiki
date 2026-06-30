@@ -12,6 +12,7 @@
   - `deprecated/` — 더 이상 안 씀
 - `mcp/` — 도구별(claude/cursor/vscode/opencode) MCP 설정 스니펫
 - `prompts/` — 단발성 복붙 프롬프트 (반복되면 skill 로 승격)
+- `commands/` — opencode 커스텀 슬래시 명령(`/<name>`). 여기서 버전관리하고, 사이드 프로젝트의 `.opencode/commands/` 로 심볼링크해 프로젝트별로만 활성화(전역 자동로드 회피). 보통 스킬을 래핑해 호출한다.
 - `learning/ai/` — AI 학습 로드맵·자료·기록
 - `snippets/` — 코드/설정 스니펫
 

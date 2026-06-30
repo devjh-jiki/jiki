@@ -27,11 +27,13 @@ Then use the Agent tool with `subagent_type=Explore` to walk the codebase. Don't
 - Where do tightly-coupled modules leak across their seams?
 - Which parts of the codebase are untested, or hard to test through their current interface?
 
-Apply the **deletion test** to anything you suspect is shallow: would deleting it concentrate complexity, or just move it? A "yes, concentrates" is the signal you want.
+Apply the **deletion test** to anything you suspect is shallow: would deleting it concentrate complexity, or just move it? A "yes, concentrates" is the signal you want. Note the common third case: the module's *own* contents are trivial (so deleting it looks harmless) but the real complexity it should own — an order-of-operations, an orchestration recipe — currently lives scattered across its callers. The fix there isn't "delete," it's **absorb**: pull the scattered orchestration *into* a deepened module so it has one home. Duplicated orchestration that has already drifted (two callers doing it slightly differently, one with a bug) is the textbook signal.
 
 ### 2. Present candidates as an HTML report
 
 Write a self-contained HTML file to the OS temp directory so nothing lands in the repo. Resolve the temp dir from `$TMPDIR`, falling back to `/tmp` (or `%TEMP%` on Windows), and write to `<tmpdir>/architecture-review-<timestamp>.html` so each run gets a fresh file. Open it for the user — `xdg-open <path>` on Linux, `open <path>` on macOS, `start <path>` on Windows — and tell them the absolute path.
+
+Scale report fidelity to the codebase. A sprawling system warrants the full visual treatment below; a handful of small files needs only a lean version of it (a card or two, a simple before/after) — don't spend more on the report than the finding is worth.
 
 The report uses **Tailwind via CDN** for layout and styling, and **Mermaid via CDN** for diagrams where a graph/flow/sequence reliably communicates the structure. Mix Mermaid with hand-crafted CSS/SVG visuals — use Mermaid when relationships are graph-shaped (call graphs, dependencies, sequences), and hand-built divs/SVG when you want something more editorial (mass diagrams, cross-sections, collapse animations). Each candidate gets a **before/after visualisation**. Be visual.
 
@@ -52,7 +54,7 @@ End the report with a **Top recommendation** section: which candidate you'd tack
 
 (The HTML scaffold above is deliberately described inline so there are no separate reference files to maintain — a single self-contained file with CDN Tailwind + Mermaid and one card per candidate is the whole spec.)
 
-Do NOT propose interfaces yet. After the file is written, ask the user: "Which of these would you like to explore?"
+Do NOT propose interfaces yet. After the file is written, ask the user: "Which of these would you like to explore?" (A short placeholder *name* for a candidate — "the priced-order module" — is fine for reference; what's deferred to the grilling step is the actual interface: the methods, signatures, and what sits behind the seam.)
 
 ### 3. Grilling loop
 

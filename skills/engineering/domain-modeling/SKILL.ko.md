@@ -61,7 +61,7 @@ description: 프로젝트의 도메인 모델 — 보편 언어(ubiquitous langu
 
 용어가 정리되면 바로 그 자리에서 `CONTEXT.md` 를 갱신한다. 모아 두지 말고 발생하는 대로 기록한다. [references/CONTEXT-FORMAT.ko.md](references/CONTEXT-FORMAT.ko.md) 의 포맷을 사용한다.
 
-`CONTEXT.md` 에는 구현 디테일이 전혀 없어야 한다. `CONTEXT.md` 를 명세, 메모장, 구현 결정 저장소로 다루지 않는다. 그것은 용어집일 뿐 그 이상이 아니다.
+`CONTEXT.md` 의 `## Language` 섹션은 용어집일 뿐 그 이상이 아니다 — 구현 디테일이 전혀 없어야 한다. 용어집을 명세, 메모장, 구현 결정 저장소로 다루지 않는다. (정해졌지만 되돌릴 수 있는 선택은 용어집 아래 별도 `## Decisions` 목록에 둘 수 있다 — references/CONTEXT-FORMAT.md 참고 — 그러나 용어 정의에는 절대 섞지 않는다.)
 
 ### ADR 은 아껴서 제안
 
@@ -72,6 +72,8 @@ description: 프로젝트의 도메인 모델 — 보편 언어(ubiquitous langu
 3. **실제 트레이드오프의 결과** — 진짜 대안들이 있었고 특정 이유로 하나를 골랐다
 
 셋 중 하나라도 빠지면 ADR 을 건너뛴다. [references/ADR-FORMAT.ko.md](references/ADR-FORMAT.ko.md) 의 포맷을 사용한다.
+
+의외이고 진짜 트레이드오프지만 *되돌리기 쉬운* 결정(튜닝 가능한 정책, 기본값, 관례)은 ADR 이 아니다 — 그렇다고 잃지 마라. `CONTEXT.md` 의 `## Decisions` 목록에 용어집과 분리해 기록한다. 나중에 되돌리기 어려운 것으로 드러나면 그때 ADR 로 승격한다.
 
 ## 오너 / 리더십 렌즈
 

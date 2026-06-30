@@ -36,6 +36,10 @@ All three of these must be true:
 
 If a decision is easy to reverse, skip it — you'll just reverse it. If it's not surprising, nobody will wonder why. If there was no real alternative, there's nothing to record beyond "we did the obvious thing."
 
+### Where reversible-but-settled decisions go
+
+The hardest calls are decisions that are surprising and a real trade-off but *easy to reverse* — tunable policy like retry limits, a dead-letter TTL, a default page size. These fail test #1, so they're not ADRs. Don't lose them either: record them as a short `## Decisions` list in the relevant `CONTEXT.md` (one line each: the choice + a few words of why). Keep the glossary (the `## Language` section) and the decisions list visually separate — the glossary still defines terms only, the decisions list holds settled-but-revisable choices. Promote a decision to an ADR only if it later turns out to be hard to reverse after all.
+
 ### What qualifies
 
 - **Architectural shape.** "We're using a monorepo." "The write model is event-sourced, the read model is projected into Postgres."

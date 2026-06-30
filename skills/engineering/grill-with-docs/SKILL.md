@@ -21,6 +21,7 @@ Run a relentless grilling interview that *also* maintains the project's docs as 
 
 - When a term gets pinned down, update the `CONTEXT.md` glossary right there (create it if it doesn't exist yet). Capture terms as they resolve — don't batch.
 - When the interview settles a decision that is **hard to reverse, surprising without context, and a real trade-off**, offer to record it as an ADR under `docs/adr/` (create the directory lazily).
+- When a decision is surprising and a real trade-off but **easy to reverse** (a retry limit, a TTL, a default), it's not an ADR — record it in a `## Decisions` list in `CONTEXT.md`, kept separate from the `## Language` glossary (see the `domain-modeling` skill's CONTEXT-FORMAT). Don't let the interview's settled-but-tunable choices evaporate just because they don't merit an ADR.
 - Use the project's existing domain vocabulary throughout the questions, and challenge any term that conflicts with the glossary.
 
 ## Flow

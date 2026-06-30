@@ -61,7 +61,7 @@ When the user states how something works, check whether the code agrees. If you 
 
 When a term is resolved, update `CONTEXT.md` right there. Don't batch these up — capture them as they happen. Use the format in [references/CONTEXT-FORMAT.md](references/CONTEXT-FORMAT.md).
 
-`CONTEXT.md` should be totally devoid of implementation details. Do not treat `CONTEXT.md` as a spec, a scratch pad, or a repository for implementation decisions. It is a glossary and nothing else.
+`CONTEXT.md`'s `## Language` section is a glossary and nothing else — totally devoid of implementation details. Do not treat the glossary as a spec, a scratch pad, or a repository for implementation decisions. (Settled-but-reversible choices may live in a separate `## Decisions` list below the glossary — see references/CONTEXT-FORMAT.md — but never mix them into term definitions.)
 
 ### Offer ADRs sparingly
 
@@ -72,6 +72,8 @@ Only offer to create an ADR when all three are true:
 3. **The result of a real trade-off** — there were genuine alternatives and you picked one for specific reasons
 
 If any of the three is missing, skip the ADR. Use the format in [references/ADR-FORMAT.md](references/ADR-FORMAT.md).
+
+A decision that is surprising and a real trade-off but *easy to reverse* (tunable policy, a default, a convention) is not an ADR — but don't lose it. Record it in a `## Decisions` list in `CONTEXT.md`, separate from the glossary. Promote it to an ADR only if it later proves hard to reverse.
 
 ## Owner / leadership lens
 

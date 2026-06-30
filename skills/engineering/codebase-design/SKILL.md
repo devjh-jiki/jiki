@@ -1,6 +1,6 @@
 ---
 name: codebase-design
-description: Shared vocabulary for designing deep modules. Use when the user wants to design or improve a module's interface, find deepening opportunities, decide where a seam goes, make code more testable or AI-navigable, or says "모듈 설계", "인터페이스 설계", "테스트하기 쉽게", "아키텍처 설계", or when another skill needs the deep-module vocabulary. Adapted from mattpocock/skills.
+description: Shared vocabulary for designing deep modules. Use when the user wants to design or improve a module's interface, find deepening opportunities, decide where a seam goes, judge whether a module is too shallow or over-abstracted, make code more testable or AI-navigable, or says "모듈 설계", "인터페이스 설계", "너무 얕은/깊은", "테스트하기 쉽게", "아키텍처 설계", or when another skill needs the deep-module vocabulary. This is for designing a module's shape and interface — for a large multi-module restructure of an existing codebase, hand off to improve-codebase-architecture (which uses this vocabulary). Adapted from mattpocock/skills.
 ---
 
 # Codebase Design
@@ -60,9 +60,10 @@ When designing an interface, ask:
 ## Principles
 
 - **Depth is a property of the interface, not the implementation.** A deep module can be internally composed of small, mockable, swappable parts — they just aren't part of the interface. A module can have **internal seams** (private to its implementation, used by its own tests) as well as the **external seam** at its interface.
-- **The deletion test.** Imagine deleting the module. If complexity vanishes, it was a pass-through. If complexity reappears across N callers, it was earning its keep.
+- **The deletion test.** Imagine deleting the module. If complexity vanishes, it was a pass-through. If complexity reappears across N callers, it was earning its keep. Apply it to the *interface* and the *implementation* separately: a one-member `RetryPolicy` interface can fail the test (delete it) while the backoff *logic* behind it passes (keep it). And when deletion's outcome depends on whether the module holds real policy (a dispatcher that might just forward, or might own fan-out/rate-limiting), inspect that behaviour before judging — the count of callers alone won't tell you.
 - **The interface is the test surface.** Callers and tests cross the same seam. If you want to test *past* the interface, the module is probably the wrong shape.
-- **One adapter means a hypothetical seam. Two adapters means a real one.** Don't introduce a seam unless something actually varies across it.
+- **One adapter means a hypothetical seam. Two adapters means a real one.** Don't introduce a seam unless something actually varies across it. Count *axes of variation*, not *number of implementations*: N implementations of one interface (three notification channels behind one `Channel`) still justify exactly one seam, not N.
+- **Depth can leak.** Depth is leverage at the interface — but an interface that inverts control (a streaming module that takes a caller-supplied callback/handler) can be deep in behaviour while *exporting* complexity to the caller (callback ordering, reentrancy). Count that exported complexity against the interface; a small type signature isn't automatically a small interface.
 
 ## Designing for testability
 
@@ -113,7 +114,7 @@ Good interfaces make testing natural:
 Two deeper moves, summarized inline so you don't need separate reference files:
 
 - **Deepening a cluster given its dependencies** — categorize a module's dependencies, keep seam discipline (test through the interface, don't reach past it), and prefer *replacing* an adapter over *layering* another shallow wrapper on top. If a project context doc (e.g. `CONTEXT.md`) exists, name modules after the concepts it defines.
-- **Design it twice** — before committing to an interface, sketch it several radically different ways (you can spin up parallel sub-agents to do this), then compare the candidates on depth, locality, and seam placement. The winner is rarely the first sketch.
+- **Design it twice** — before committing to an interface, sketch it several radically different ways (you can spin up parallel sub-agents to do this), then compare the candidates on depth, locality, and seam placement. The winner is rarely the first sketch. Two clarifications: candidates only count as "radically different" if the **seam is in a different place** (different interface, different thing crossing it) — not cosmetic variants; aim for ~3. And divergent sketching will *tempt* you to invent seams — so apply the one-vs-two-adapters and deletion tests **as a filter after** sketching, not during. Diverge first, then prune.
 
 ## Owner / leadership lens
 
@@ -121,7 +122,7 @@ For a developer who is also CEO/CTO/CFO/PM, module design is a capital-allocatio
 
 - **Depth is leverage, and leverage compounds.** A deep module pays back across every caller and every future feature — the same way a good hire or a reusable process does. Spend design effort where the payback is highest.
 - **Locality lowers your bus factor and your onboarding cost.** When change concentrates in one place, a new teammate (or future-you, or an agent) can be productive without holding the whole system in their head. That is a real org cost you control with interface design.
-- **Seams are optionality.** A clean seam lets you swap a vendor, change a pricing engine, or replace a slow path later without a rewrite — the engineering equivalent of not locking yourself into a single supplier.
+- **Seams are optionality.** A clean seam lets you swap a vendor, change a pricing engine, or replace a slow path later without a rewrite — the engineering equivalent of not locking yourself into a single supplier. But options have a premium: a speculative seam (one adapter, no second on the roadmap) is paid for *every day* in extra indirection, lower locality, and onboarding cost, while "extract the interface later" is a cheap, near-mechanical refactor done with full information once the second adapter actually exists. Buy the option when the second adapter is in hand, not six months early on spec.
 
 ## Attribution
 

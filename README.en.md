@@ -54,7 +54,7 @@ Skills are labeled by verification stage:
 | [product-spec-builder](./skills/business/product-spec-builder) | Available | Turn a rough idea into a buildable PRD. |
 | [tdd](./skills/engineering/tdd) | Available | Red-green-refactor TDD (adapted from mattpocock). |
 | [diagnosing-bugs](./skills/engineering/diagnosing-bugs) | Available | Disciplined bug diagnosis loop (adapted from mattpocock). |
-| [codebase-design](./skills/engineering/codebase-design) | Review | Vocabulary for designing deep modules (adapted from mattpocock). |
+| [codebase-design](./skills/engineering/codebase-design) | Available | Vocabulary for designing deep modules (adapted from mattpocock). |
 | [improve-codebase-architecture](./skills/engineering/improve-codebase-architecture) | Review | Scan for deepening opportunities + report (adapted from mattpocock). |
 | [to-prd](./skills/engineering/to-prd) | Review | Synthesize a conversation into a PRD (adapted from mattpocock). |
 | [to-issues](./skills/engineering/to-issues) | Review | Break a plan/PRD into vertical-slice issues (adapted from mattpocock). |

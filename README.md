@@ -61,6 +61,9 @@ npx skills@latest add devjh-jiki/jiki
 | [domain-modeling](./skills/engineering/domain-modeling) | Available | 도메인 모델·용어집·ADR 구축 (mattpocock 참고) |
 | [grill-with-docs](./skills/engineering/grill-with-docs) | Available | 문서까지 만드는 grilling (mattpocock 참고) |
 | [prototype](./skills/engineering/prototype) | Available | 설계 검증용 throwaway 프로토타입 (mattpocock 참고) |
+| [implement](./skills/engineering/implement) | Available | PRD/이슈/슬라이스를 커밋된 테스트 코드로 구현 (mattpocock 참고) |
+| [resolving-merge-conflicts](./skills/engineering/resolving-merge-conflicts) | Available | merge/rebase 충돌을 의도 복원으로 해소 (mattpocock 참고) |
+| [webapp-testing](./skills/engineering/webapp-testing) | Available | Playwright로 로컬 웹앱 테스트 (anthropics 참고) |
 | [handoff](./skills/productivity/handoff) | Available | 세션 인계 문서 생성 (mattpocock 참고) |
 | [writing-great-skills](./skills/productivity/writing-great-skills) | Available | 스킬을 잘 쓰는 법 레퍼런스 (mattpocock 참고) |
 | [git-guardrails](./skills/misc/git-guardrails) | Available | 위험한 git 명령 차단 hook (Claude Code 전용, mattpocock 참고) |

@@ -23,7 +23,7 @@
     {
       "name": "engineering-skills",
       "source": "./",
-      "description": "Engineering skills: TDD, bug diagnosis, deep-module & domain design, architecture improvement, PRD/issue synthesis, grill-with-docs, and prototyping (adapted from mattpocock/skills).",
+      "description": "Engineering skills: TDD, bug diagnosis, deep-module & domain design, architecture improvement, PRD/issue synthesis, grill-with-docs, prototyping, implementation, merge-conflict resolution, and webapp testing (adapted from mattpocock/skills & anthropics/skills).",
       "skills": [
         "./skills/engineering/tdd",
         "./skills/engineering/diagnosing-bugs",
@@ -33,7 +33,10 @@
         "./skills/engineering/to-prd",
         "./skills/engineering/to-issues",
         "./skills/engineering/grill-with-docs",
-        "./skills/engineering/prototype"
+        "./skills/engineering/prototype",
+        "./skills/engineering/implement",
+        "./skills/engineering/resolving-merge-conflicts",
+        "./skills/engineering/webapp-testing"
       ]
     },
     {

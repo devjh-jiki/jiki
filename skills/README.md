@@ -34,6 +34,7 @@ npx skills@latest add devjh-jiki/jiki
 - [to-issues](./engineering/to-issues/SKILL.md) — Break a plan/PRD into vertical-slice issues
 - [grill-with-docs](./engineering/grill-with-docs/SKILL.md) — Grilling that maintains glossary + ADRs as you go
 - [prototype](./engineering/prototype/SKILL.md) — Throwaway prototype to de-risk a design
+- [implement](./engineering/implement/SKILL.md) — Implement an agreed PRD/issues/slices into committed, tested code
 
 **Model-invoked** (the agent uses it automatically when it fits the task)
 
@@ -41,6 +42,8 @@ npx skills@latest add devjh-jiki/jiki
 - [diagnosing-bugs](./engineering/diagnosing-bugs/SKILL.md) — Disciplined diagnosis loop; tight red-capable feedback loop first
 - [codebase-design](./engineering/codebase-design/SKILL.md) — Vocabulary for designing deep modules
 - [domain-modeling](./engineering/domain-modeling/SKILL.md) — Actively build and sharpen the domain model (glossary + ADRs)
+- [resolving-merge-conflicts](./engineering/resolving-merge-conflicts/SKILL.md) — Resolve a merge/rebase conflict by recovering each side's intent
+- [webapp-testing](./engineering/webapp-testing/SKILL.md) — Drive/test a local web app with Playwright (reconnaissance-then-action)
 
 ### Productivity
 

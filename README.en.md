@@ -61,6 +61,9 @@ Skills are labeled by verification stage:
 | [domain-modeling](./skills/engineering/domain-modeling) | Available | Build domain model, glossary, ADRs (adapted from mattpocock). |
 | [grill-with-docs](./skills/engineering/grill-with-docs) | Available | Grilling that also produces docs (adapted from mattpocock). |
 | [prototype](./skills/engineering/prototype) | Available | Throwaway prototype to de-risk a design (adapted from mattpocock). |
+| [implement](./skills/engineering/implement) | Available | Implement a PRD/issues/slices into committed, tested code (adapted from mattpocock). |
+| [resolving-merge-conflicts](./skills/engineering/resolving-merge-conflicts) | Available | Resolve merge/rebase conflicts by recovering intent (adapted from mattpocock). |
+| [webapp-testing](./skills/engineering/webapp-testing) | Available | Test a local web app with Playwright (adapted from anthropics). |
 | [handoff](./skills/productivity/handoff) | Available | Create a session handoff doc (adapted from mattpocock). |
 | [writing-great-skills](./skills/productivity/writing-great-skills) | Available | Reference for writing great skills (adapted from mattpocock). |
 | [git-guardrails](./skills/misc/git-guardrails) | Available | Block dangerous git commands via a hook (Claude Code only, adapted from mattpocock). |

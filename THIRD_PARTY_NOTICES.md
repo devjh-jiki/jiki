@@ -19,6 +19,8 @@ Attributions below. Where code or prose was adapted, the upstream license applie
   - `skills/engineering/domain-modeling` ← engineering/domain-modeling
   - `skills/engineering/grill-with-docs` ← engineering/grill-with-docs
   - `skills/engineering/prototype` ← engineering/prototype
+  - `skills/engineering/implement` ← engineering/implement
+  - `skills/engineering/resolving-merge-conflicts` ← engineering/resolving-merge-conflicts
   - `skills/productivity/handoff` ← productivity/handoff
   - `skills/productivity/grill-me` ← productivity/grill-me
   - `skills/productivity/writing-great-skills` ← productivity/writing-great-skills
@@ -30,6 +32,11 @@ Attributions below. Where code or prose was adapted, the upstream license applie
 - **[Anthropic Agent Skills](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview)** —
   the `SKILL.md` format (YAML frontmatter `name` + `description`, progressive disclosure via `references/`)
   follows Anthropic's Agent Skills standard.
+
+- **[anthropics/skills](https://github.com/anthropics/skills)** (Apache-2.0) — `skills/engineering/webapp-testing`
+  is **adapted** from the upstream `webapp-testing` skill (core reconnaissance-then-action Playwright workflow
+  preserved; trimmed of the bundled `with_server.py` helper, with a runtime-portability note and an
+  owner/leadership lens added).
 
 - **[buYoung/skills](https://github.com/buYoung/skills)** (MIT) — the `biz-opportunity-scout` skill's
   framework selection (TAM/SAM/SOM, unit economics, competitive analysis, PMF indicators) and the

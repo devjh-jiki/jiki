@@ -34,6 +34,7 @@ npx skills@latest add devjh-jiki/jiki
 - [to-issues](./engineering/to-issues/SKILL.ko.md) — 계획/PRD 를 수직 슬라이스 이슈로 분해
 - [grill-with-docs](./engineering/grill-with-docs/SKILL.ko.md) — 진행하며 용어집 + ADR 까지 유지하는 grilling
 - [prototype](./engineering/prototype/SKILL.ko.md) — 설계 리스크를 줄이는 throwaway 프로토타입
+- [implement](./engineering/implement/SKILL.ko.md) — 합의된 PRD/이슈/슬라이스를 커밋된 테스트 코드로 구현
 
 **Model-invoked** (작업에 맞으면 에이전트가 자동 사용)
 
@@ -41,6 +42,8 @@ npx skills@latest add devjh-jiki/jiki
 - [diagnosing-bugs](./engineering/diagnosing-bugs/SKILL.ko.md) — 체계적 진단 루프; 단단한 red 가능 피드백 루프부터
 - [codebase-design](./engineering/codebase-design/SKILL.ko.md) — 깊은 모듈 설계 어휘
 - [domain-modeling](./engineering/domain-modeling/SKILL.ko.md) — 도메인 모델을 능동적으로 구축·정밀화 (용어집 + ADR)
+- [resolving-merge-conflicts](./engineering/resolving-merge-conflicts/SKILL.ko.md) — merge/rebase 충돌을 양쪽 의도 복원으로 해소
+- [webapp-testing](./engineering/webapp-testing/SKILL.ko.md) — Playwright 로 로컬 웹앱 구동·테스트 (정찰 후 행동)
 
 ### Productivity
 

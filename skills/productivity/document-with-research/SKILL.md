@@ -50,7 +50,7 @@ Decide the shape before writing prose. A document's structure is most of its qua
 - **Outline first.** Draft the heading hierarchy and confirm it carries the reader from "why am I here" to "I can act now" before you write a single paragraph. The outline is cheap to rearrange; prose is not.
 - **Decide what links to what.** A doc rarely stands alone. Note which existing docs this should link to and which should link back, so the set forms a navigable web rather than islands.
 
-For document-type templates (README, guide, reference, ADR, research brief) and linking patterns, read `references/markdown-quality.md`.
+For document-type templates (README, guide, reference, ADR, research brief) and linking patterns, read `references/markdown-quality.md`. When the doc is developer-facing — an integration guide, API/CLI docs, anything with code — also apply that file's "Developer-documentation craft" section: title by the task, ship complete copy-pasteable code that comments the *why*, recommend one path among several and say why, and layer quickstart → guide → reference.
 
 ### 4. Write
 

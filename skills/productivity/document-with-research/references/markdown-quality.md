@@ -128,6 +128,18 @@ A good doc set is a navigable web, not a pile of files.
 - **Anchor-link long docs.** A table of contents at the top with `#heading` anchors lets readers jump. GitHub auto-generates anchors from headings (lowercase, spaces → hyphens).
 - **Don't over-link.** Linking the same target five times in one section is noise; link it on first mention.
 
+## Developer-documentation craft
+
+Patterns that the best developer docs (Stripe, Twilio, the good parts of cloud-provider docs) share. They're platform-agnostic — they work in plain GitHub Markdown, no special syntax required. Apply them whenever the doc has code, an integration, or an API.
+
+- **Title by the task, not the noun.** "Build a checkout page" beats "Checkout API"; "Set up your dev environment" beats "Environment." The reader arrives with a job — name the job in the heading so they know they're in the right place. Reserve noun titles for pure reference pages where lookup, not doing, is the job.
+- **Code blocks must be complete and copy-pasteable.** A runnable snippet beats a fragment with `...` in the middle. If the reader can paste it and have it work (or work after filling one obvious blank), you've saved them a debugging session. Show the imports and setup, not just the interesting line.
+- **Comment the *why*, not the *what*.** `// Calculate the total on the server to prevent the client from manipulating the amount` teaches; `// calculate total` is noise. Inline comments are where docs explain the reasoning a reader couldn't infer from the code alone — use them for the non-obvious and the security-relevant.
+- **Never put real secrets in examples; flag it.** Use obvious placeholders (`<<YOUR_API_KEY>>`, `sk_test_...`) and add a one-line warning that keys don't belong in committed code. A doc that demonstrates an insecure pattern teaches it.
+- **When there are several ways, recommend one and say why.** "Use Checkout Sessions over Payment Intents for most integrations, because it needs far less code" is worth more than neutrally listing both. Lead with the recommended path; mention the alternative and the specific condition under which you'd switch. Don't make the reader reverse-engineer your opinion.
+- **Tell the reader how to try it safely.** A test/sandbox/dry-run path, sample data, or "this won't charge anything" note lowers the cost of following along. The reader is more likely to actually run your steps if step one isn't "risk something real."
+- **Layer by depth, link between layers.** Developer docs work as a ladder: a quickstart that gets *something* working in minutes, then a fuller guide, then exhaustive reference. Keep each rung at one depth and link up/down rather than cramming all three into one page. A quickstart that tries to be complete stops being quick.
+
 ## Readability checklist
 
 Run this as the target reader during **refine**.

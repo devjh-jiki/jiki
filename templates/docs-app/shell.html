@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="{{LANG}}" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{PAGE_TITLE}} — {{SITE_TITLE}}</title>
+{{DESCRIPTION_META}}
+{{FAVICON}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ROOT}}tokens.css">
+<link rel="stylesheet" href="{{ROOT}}assets/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="{{ROOT}}index.html">{{SITE_TITLE}}</a>
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle navigation" title="Menu">☰</button>
+    <input type="search" id="docsearch" placeholder="문서 검색…" aria-label="Search documentation" autocomplete="off">
+    <span class="spacer"></span>
+    {{TOPBAR_LINKS}}
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">◐</button>
+  </header>
+
+  <div class="shell">
+    <nav class="sidebar" id="sidebar" aria-label="Documentation navigation">
+      {{SIDEBAR}}
+    </nav>
+
+    <main class="content">
+      <article class="prose">
+        {{BREADCRUMBS}}
+        {{CONTENT}}
+        {{PAGER}}
+      </article>
+    </main>
+
+    <nav class="toc" aria-label="On this page">
+      <div class="toc-title">이 페이지</div>
+      {{TOC}}
+    </nav>
+  </div>
+
+  <div class="search-overlay" id="searchOverlay" hidden></div>
+
+  <script>window.__DOCS_ROOT__ = "{{ROOT}}";</script>
+  <script src="{{ROOT}}assets/app.js" defer></script>
+  {{MERMAID}}
+</body>
+</html>

@@ -73,6 +73,19 @@ docs-app/
 빌드 시 `search-index.json`(제목·breadcrumb·본문 발췌)을 생성한다. 상단 검색창은 이걸 fetch해서
 클라이언트 필터링한다. `⌘K`/`Ctrl K` 로 포커스, 방향키+Enter 로 이동.
 
+## 페이지 전환 (SPA 느낌, 프레임워크 없이)
+
+MPA(페이지당 독립 HTML) 구조를 유지하면서도 전환을 부드럽게 하는 두 가지 점진적 개선:
+
+- **Cross-document View Transitions** — `shell.html` 의 `<meta name="view-transition" content="same-origin">`
+  + `styles.css` 의 `@view-transition { navigation: auto }` 로 활성화. 지원 브라우저는 페이지 이동 시
+  본문을 크로스페이드한다. topbar/sidebar 는 `view-transition-name` 이 있어 전환 중 고정된다.
+  미지원 브라우저는 그냥 기존처럼 이동(폴백). `prefers-reduced-motion` 존중.
+- **Hover prefetch** — `app.js` 가 사이드바·본문 내부 링크에 마우스를 올리면(터치 시작 시) 대상 `.html`
+  을 `<link rel="prefetch">` 로 미리 받아둔다. 클릭 시 즉시 표시. URL당 1회만.
+
+둘 다 **런타임 의존성 0** 원칙을 지킨다(클라이언트 라우터·프레임워크 없음). 진짜 SPA 라우팅은 도입하지 않는다.
+
 ## 출력 배포
 
 `build/` 는 순수 정적 파일이라 GitHub Pages·Netlify·S3 어디든 그대로 올린다.

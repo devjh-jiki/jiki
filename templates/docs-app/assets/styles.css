@@ -7,6 +7,23 @@
    ============================================================ */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: var(--space-16); }
+
+/* ---- cross-document View Transitions (progressive enhancement) ----
+   Opt-in via <meta name="view-transition" content="same-origin"> in shell.html.
+   Supporting browsers cross-fade page navigations; others just navigate as before.
+   The topbar + sidebar are given stable names so they stay put (only content
+   cross-fades) — a subtle SPA-like feel with zero runtime JS. */
+@view-transition { navigation: auto; }
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 160ms;
+  animation-timing-function: ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) { animation: none !important; }
+}
 body {
   font-family: var(--font-body);
   font-size: var(--fs-body);
@@ -25,6 +42,7 @@ a:hover { color: var(--color-accent-hover); text-decoration: underline; }
   height: 56px; padding: 0 var(--space-6);
   background: var(--color-surface-raised);
   border-bottom: 1px solid var(--color-border);
+  view-transition-name: docs-topbar;
 }
 .brand { font-family: var(--font-body); font-size: var(--fs-h3); font-weight: 700; letter-spacing: -.01em; color: var(--color-text-primary); }
 .brand:hover { text-decoration: none; }
@@ -66,6 +84,7 @@ a:hover { color: var(--color-accent-hover); text-decoration: underline; }
   border-right: 1px solid var(--color-border);
   scrollbar-width: thin;
   scrollbar-color: var(--color-border-strong) transparent;
+  view-transition-name: docs-sidebar;
 }
 .sidebar::-webkit-scrollbar { width: 10px; }
 .sidebar::-webkit-scrollbar-thumb { background: var(--color-border-strong); border-radius: 999px; border: 3px solid var(--color-surface); background-clip: padding-box; }

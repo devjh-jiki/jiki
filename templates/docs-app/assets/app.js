@@ -94,4 +94,34 @@
       if ((e.metaKey || e.ctrlKey) && e.key === "k") { e.preventDefault(); input.focus(); }
     });
   }
+  /* ---- prefetch internal pages on hover/touch (progressive enhancement) ----
+     Warms the cache for the linked .html so a click navigates instantly.
+     Combined with cross-document View Transitions (CSS), this gives an
+     SPA-like feel without any client router. Each URL is prefetched once. */
+  var prefetched = Object.create(null);
+  function prefetch(href) {
+    if (!href || prefetched[href]) return;
+    var url;
+    try { url = new URL(href, location.href); } catch (e) { return; }
+    if (url.origin !== location.origin) return;          // internal only
+    if (!/\.html$/.test(url.pathname)) return;           // only doc pages
+    if (url.pathname === location.pathname) return;      // not the current page
+    prefetched[href] = true;
+    var link = document.createElement("link");
+    link.rel = "prefetch";
+    link.href = url.href;
+    document.head.appendChild(link);
+  }
+  function onHover(e) {
+    var a = e.target.closest ? e.target.closest("a[href]") : null;
+    if (a) prefetch(a.getAttribute("href"));
+  }
+  // delegate on the areas that hold navigation links
+  ["sidebar"].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) { el.addEventListener("mouseover", onHover); el.addEventListener("touchstart", onHover, { passive: true }); }
+  });
+  var main = document.querySelector(".content");
+  if (main) { main.addEventListener("mouseover", onHover); main.addEventListener("touchstart", onHover, { passive: true }); }
+
 })();

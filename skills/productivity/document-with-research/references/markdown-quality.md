@@ -14,7 +14,7 @@ Templates, linking patterns, and a readability checklist for producing high-qual
 
 ## Document-type templates
 
-Match the shape to the reader's job. These are starting points, not cages — drop sections that don't apply.
+Match the shape to the reader's job. These are starting points, not cages; drop sections that don't apply.
 
 ### README (project front door)
 
@@ -37,7 +37,7 @@ The 2–3 most common things people do, with examples.
 Only if needed. Table of options, defaults, what each does.
 
 ## Links
-Docs, contributing, license — point outward to deeper material.
+Docs, contributing, license: point outward to deeper material.
 ```
 
 ### How-to guide (task-oriented)
@@ -70,9 +70,9 @@ One-line scope.
 
 ## <Item> (e.g. function / endpoint / flag)
 - **Signature / syntax**
-- **Parameters** — table: name, type, required, description
+- **Parameters**: table with name, type, required, description
 - **Returns / response**
-- **Example** — copy-pasteable
+- **Example**: copy-pasteable
 - **Notes / errors**
 ```
 
@@ -86,7 +86,7 @@ Captures a hard-to-reverse decision and its trade-off, so future readers know *w
 **Date:** YYYY-MM-DD
 
 ## Context
-The forces at play — what made this decision necessary.
+The forces at play: what made this decision necessary.
 
 ## Decision
 What we chose, stated plainly.
@@ -103,7 +103,7 @@ The other options and why they lost.
 Turns research + verification into a trustworthy, sourced writeup.
 
 ```markdown
-# <Topic> — research brief
+# <Topic>: research brief
 **As of:** YYYY-MM-DD · **Confidence:** high/medium/mixed
 
 ## Summary
@@ -117,14 +117,14 @@ The claim, the evidence, the source (inline link). Note confidence and date if i
 What you couldn't confirm, and what it would take to confirm it.
 
 ## Sources
-Backup list — primary sources first, with publisher and date.
+Backup list: primary sources first, with publisher and date.
 ```
 
 ## Linking patterns
 
 A good doc set is a navigable web, not a pile of files.
 
-- **Link at the point of need.** When you mention a concept covered elsewhere, link it inline right there — don't make the reader hunt.
+- **Link at the point of need.** When you mention a concept covered elsewhere, link it inline right there; don't make the reader hunt.
 - **Link both ways for related docs.** If A links to B because B is the deeper dive, B should link back to A as context. One-way links create dead ends.
 - **Use relative links within a repo** (`./guide.md`, `../adr/0003.md`) so they survive cloning and don't break on a fork. Reserve absolute URLs for genuinely external sources.
 - **Give every doc a "next" or "related" pointer.** The reader who finishes one doc should know where to go. A short "See also" or "Next steps" section at the bottom does this.
@@ -133,11 +133,11 @@ A good doc set is a navigable web, not a pile of files.
 
 ## Developer-documentation craft
 
-Patterns that the best developer docs (Stripe, Twilio, the good parts of cloud-provider docs) share. They're platform-agnostic — they work in plain GitHub Markdown, no special syntax required. Apply them whenever the doc has code, an integration, or an API.
+Patterns that the best developer docs (Stripe, Twilio, the good parts of cloud-provider docs) share. They're platform-agnostic: they work in plain GitHub Markdown, no special syntax required. Apply them whenever the doc has code, an integration, or an API.
 
-- **Title by the task, not the noun.** "Build a checkout page" beats "Checkout API"; "Set up your dev environment" beats "Environment." The reader arrives with a job — name the job in the heading so they know they're in the right place. Reserve noun titles for pure reference pages where lookup, not doing, is the job.
+- **Title by the task, not the noun.** "Build a checkout page" beats "Checkout API"; "Set up your dev environment" beats "Environment." The reader arrives with a job, so name the job in the heading so they know they're in the right place. Reserve noun titles for pure reference pages where lookup, not doing, is the job.
 - **Code blocks must be complete and copy-pasteable.** A runnable snippet beats a fragment with `...` in the middle. If the reader can paste it and have it work (or work after filling one obvious blank), you've saved them a debugging session. Show the imports and setup, not just the interesting line.
-- **Comment the *why*, not the *what*.** `// Calculate the total on the server to prevent the client from manipulating the amount` teaches; `// calculate total` is noise. Inline comments are where docs explain the reasoning a reader couldn't infer from the code alone — use them for the non-obvious and the security-relevant.
+- **Comment the *why*, not the *what*.** `// Calculate the total on the server to prevent the client from manipulating the amount` teaches; `// calculate total` is noise. Inline comments are where docs explain the reasoning a reader couldn't infer from the code alone; use them for the non-obvious and the security-relevant.
 - **Never put real secrets in examples; flag it.** Use obvious placeholders (`<<YOUR_API_KEY>>`, `sk_test_...`) and add a one-line warning that keys don't belong in committed code. A doc that demonstrates an insecure pattern teaches it.
 - **When there are several ways, recommend one and say why.** "Use Checkout Sessions over Payment Intents for most integrations, because it needs far less code" is worth more than neutrally listing both. Lead with the recommended path; mention the alternative and the specific condition under which you'd switch. Don't make the reader reverse-engineer your opinion.
 - **Tell the reader how to try it safely.** A test/sandbox/dry-run path, sample data, or "this won't charge anything" note lowers the cost of following along. The reader is more likely to actually run your steps if step one isn't "risk something real."
@@ -145,18 +145,18 @@ Patterns that the best developer docs (Stripe, Twilio, the good parts of cloud-p
 
 ## Tone for technical docs
 
-A technical doc earns trust by being calm, specific, and consistent. The reader is trying to *do* or *understand* something — match that.
+A technical doc earns trust by being calm, specific, and consistent. The reader is trying to *do* or *understand* something, so match that.
 
 - **State, don't sell.** "Returns 404 when the resource is missing" beats "This powerful endpoint robustly handles missing resources!" Drop superlatives (powerful, seamless, robust, blazing-fast) and hype; let the facts carry the weight.
-- **Address the reader directly and consistently.** Pick one stance — usually imperative ("Run the migration") or second person ("You run the migration") — and hold it. Don't drift between "we," "you," "the user," and "one" in the same doc.
+- **Address the reader directly and consistently.** Pick one stance, usually imperative ("Run the migration") or second person ("You run the migration"), and hold it. Don't drift between "we," "you," "the user," and "one" in the same doc.
 - **Prefer the active voice and a concrete subject.** "The scheduler retries the job" tells the reader who acts; "the job gets retried" hides it.
 - **Be consistent with terms and casing.** One name per concept (don't alternate "user" / "account" / "member" for the same thing). Keep identifiers in code font (`retryCount`), prose terms in plain text. Match the casing of APIs, products, and codes exactly.
 - **Caveats are sentences, not decorations.** A real limitation deserves a clear sentence ("This doesn't support pagination beyond 1,000 rows") over a pile of bold and emoji. Reserve any visual alarm for genuine danger (data loss, security, billing/legal exposure).
 - **Quantify instead of intensifying.** "~12× slower (1.2s vs 100ms)" is information; "way slower" is not. When you have the number, use it; when you don't, say so.
 
-## Admonitions and visual emphasis — use sparingly
+## Admonitions and visual emphasis: use sparingly
 
-Callout boxes (Docusaurus `:::note/:::tip/:::caution/:::danger`, GitHub alerts) are powerful *because* they're rare. When every third paragraph is a colored box, the page turns into noise and the genuinely important warning gets lost in the wallpaper. They're also platform-specific syntax — they don't render on plain GitHub.
+Callout boxes (Docusaurus `:::note/:::tip/:::caution/:::danger`, GitHub alerts) are powerful *because* they're rare. When every third paragraph is a colored box, the page turns into noise and the genuinely important warning gets lost in the wallpaper. They're also platform-specific syntax: they don't render on plain GitHub.
 
 - **Reserve callouts for the exception, not the narrative.** Use them for what the reader *must not miss*: a destructive action, a billing/legal/security trap, a correction to a common misconception. Ordinary explanation, examples, and asides belong in normal prose, lists, or tables.
 - **A page with ten callouts has none.** If a doc is dense with admonitions, most of them are doing a job a sentence or a table row would do better. Demote them: keep the one or two real warnings, fold the rest into the body.
@@ -173,7 +173,7 @@ Run this as the target reader during **refine**.
 - [ ] Structure matches content: lists for parallel items, tables for comparisons, prose for reasoning. Nothing forced into the wrong shape.
 - [ ] Every claim that leans on a source has the source linked inline.
 - [ ] Concrete examples / commands / tables carry the weight, not abstract description.
-- [ ] No filler: throat-clearing intros, "in this section we will," redundant restatements — cut.
+- [ ] No filler: throat-clearing intros, "in this section we will," redundant restatements all get cut.
 - [ ] Headings are parallel in grammar and scannable as an outline on their own.
 - [ ] Jargon is defined on first use, or linked to where it's defined.
 - [ ] Tone is calm and specific: no hype/superlatives, consistent voice and terms, caveats written as sentences.
@@ -184,7 +184,7 @@ Run this as the target reader during **refine**.
 The things that silently break rendering or trust.
 
 - [ ] Code fences have language tags (```` ```python ````, ```` ```bash ````) for highlighting.
-- [ ] Every code block is copy-pasteable and actually correct — test commands where feasible.
+- [ ] Every code block is copy-pasteable and actually correct; test commands where feasible.
 - [ ] Tables use GFM pipe syntax and render (header row + separator row present).
 - [ ] Internal links resolve (relative paths correct); external links are live, not 404.
 - [ ] Heading levels are consistent and don't skip (no `#` jumping to `###`).
@@ -192,6 +192,7 @@ The things that silently break rendering or trust.
 - [ ] No platform-specific syntax unless that platform is the target (Obsidian `[[wikilinks]]`, Docusaurus `:::note` admonitions, etc.).
 - [ ] **No accidental strikethrough.** A `~` or `~~` around text triggers GFM strikethrough. A range like `2~15` renders as "2​~​15" with part struck through. Write numeric ranges with a hyphen/en-dash (`2-15`, `10-19분`) or the word ("2 to 15"); reserve `~` for "approximately" only where it can't touch another `~` and never wrap a span. If you truly need a literal tilde next to text, escape it (`2\~15`).
 - [ ] **Tildes for "approximately" don't pair up.** `~$47` alone is fine, but two on one line (`~$47 ... ~$52`) can be parsed as a strikethrough span on some renderers. Prefer "약 $47" / "approx. $47" / "≈ $47" in prose; keep bare `~` out of spans.
-- [ ] **Emphasis isn't a layout tool.** `**bold**` marks the one phrase that carries the sentence, not every other clause. If half a paragraph is bold, nothing is emphasized — cut it back to the load-bearing term. Don't bold whole sentences or stack `**` on list items by reflex.
+- [ ] **No em-dash (`—`, U+2014).** It reads as a machine-generated separator and, inside Mermaid node labels, can break the parse. Rewrite `Title — Subtitle` headings as `Title: Subtitle`, inline asides as commas/parentheses/split sentences, `[link](url) — desc` as `[link](url): desc`, source tags as `(Source, date)`, and empty table cells as a plain hyphen `-`. Hyphen `-`, en-dash `–`, and `~` are fine; only `—` is banned. Grep the doc for `—` as the final check.
+- [ ] **Emphasis isn't a layout tool.** `**bold**` marks the one phrase that carries the sentence, not every other clause. If half a paragraph is bold, nothing is emphasized; cut it back to the load-bearing term. Don't bold whole sentences or stack `**` on list items by reflex.
 - [ ] Long docs (past ~2 screens) have a table of contents.
 - [ ] Line-level: no trailing whitespace artifacts, consistent list markers, blank line around code blocks and tables so they render.

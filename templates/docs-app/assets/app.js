@@ -26,6 +26,33 @@
     });
   }
 
+  /* ---- collapsible sidebar groups ----
+     Groups start collapsed (build-time), except the branch containing the
+     current page, which is rendered with `.open`. Clicking a chevron toggles
+     its group. Clicking a non-link group title (a <span>) also toggles it, so
+     header-only sections are usable; link titles keep navigating. */
+  if (sidebar) {
+    function toggleGroup(group) {
+      var open = group.classList.toggle("open");
+      var btn = group.querySelector(":scope > .group-head > .group-toggle");
+      if (btn) btn.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+    sidebar.addEventListener("click", function (e) {
+      var btn = e.target.closest ? e.target.closest(".group-toggle") : null;
+      if (btn) {
+        e.preventDefault();
+        toggleGroup(btn.closest(".group"));
+        return;
+      }
+      // clicking a span (non-link) group title toggles its group
+      var span = e.target.closest ? e.target.closest("span.group-title") : null;
+      if (span) {
+        var g = span.closest(".group");
+        if (g) toggleGroup(g);
+      }
+    });
+  }
+
   /* ---- scroll-spy: highlight TOC entry for heading in view ---- */
   var heads = [].slice.call(document.querySelectorAll(".prose h2[id], .prose h3[id]"));
   var tocLinks = [].slice.call(document.querySelectorAll(".toc a"));

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* ============================================================
-   docs-app — static docs builder
+   docs-app: static docs builder
    Turns a tree of Markdown (with Docusaurus-style frontmatter,
    _category_.json grouping, ```mermaid blocks, and :::callouts)
    into a static, token-driven docs site. Zero runtime deps in the
@@ -258,16 +258,25 @@ for (const p of pages) if (!ordered.includes(p)) { ordered.push(p); if (!crumbMa
 
 // ---- render sidebar from nav tree (recursive, nestable) ----
 function sidebarHtml(current) {
+  // does this nav subtree contain the current page? (so its ancestor groups start open)
+  function containsCurrent(node) {
+    if (node.items) return node.items.some(containsCurrent) || (node.link && byId.get(node.link) === current);
+    if (node.doc && byId.has(node.doc)) return byId.get(node.doc) === current;
+    return false;
+  }
   function render2(nodes, level) {
     let out = "";
     for (const n of nodes) {
       if (n.items) {
         const linkPage = n.link ? byId.get(n.link) : null;
         const activeGroup = linkPage && linkPage === current ? " active" : "";
+        const isOpen = containsCurrent(n);
+        const openClass = isOpen ? " open" : "";
+        const toggle = `<button class="group-toggle" type="button" aria-expanded="${isOpen ? "true" : "false"}" aria-label="Toggle section"></button>`;
         const titleHtml = linkPage
           ? `<a class="group-title${activeGroup}" href="${relHref(current, linkPage)}">${esc(n.group)}</a>`
           : `<span class="group-title">${esc(n.group)}</span>`;
-        out += `<div class="group lvl-${level}">${titleHtml}<div class="group-items">${render2(n.items, level + 1)}</div></div>`;
+        out += `<div class="group lvl-${level}${openClass}"><div class="group-head">${titleHtml}${toggle}</div><div class="group-items">${render2(n.items, level + 1)}</div></div>`;
       } else if (n.doc && byId.has(n.doc)) {
         const p = byId.get(n.doc);
         const label = n.label || p.sidebarLabel;
@@ -286,7 +295,7 @@ function relHref(from, to) {
 }
 
 function tocHtml(toc) {
-  if (!toc.length) return '<div style="color:var(--color-text-secondary);font-size:var(--fs-caption)">—</div>';
+  if (!toc.length) return '<div style="color:var(--color-text-secondary);font-size:var(--fs-caption)">-</div>';
   return toc.map((h) => `<a class="${h.level === 3 ? "sub" : ""}" href="#${h.id}">${esc(h.text)}</a>`).join("\n");
 }
 

@@ -63,11 +63,15 @@ Skills are labeled by verification stage:
 | [grill-with-docs](./skills/engineering/grill-with-docs) | Available | Grilling that also produces docs (adapted from mattpocock). |
 | [prototype](./skills/engineering/prototype) | Available | Throwaway prototype to de-risk a design (adapted from mattpocock). |
 | [design-system](./skills/engineering/design-system) | Available | Design/implement/review a token-based UI design system (Astryx-based, any stack). |
+| [anti-slop-frontend](./skills/engineering/anti-slop-frontend) | Available | Stop AI-built frontends from looking templated: brief read, three dials, avoid LLM defaults, pre-flight (adapted from Leonxlnx/taste-skill). |
+| [lazy-code](./skills/engineering/lazy-code) | Available | Force the laziest working solution via a YAGNI ladder; lite/full/ultra (adapted from DietrichGebert/ponytail). |
 | [implement](./skills/engineering/implement) | Available | Implement a PRD/issues/slices into committed, tested code (adapted from mattpocock). |
 | [resolving-merge-conflicts](./skills/engineering/resolving-merge-conflicts) | Available | Resolve merge/rebase conflicts by recovering intent (adapted from mattpocock). |
 | [webapp-testing](./skills/engineering/webapp-testing) | Available | Test a local web app with Playwright (adapted from anthropics). |
 | [handoff](./skills/productivity/handoff) | Available | Create a session handoff doc (adapted from mattpocock). |
 | [writing-great-skills](./skills/productivity/writing-great-skills) | Available | Reference for writing great skills (adapted from mattpocock). |
+| [terse-output](./skills/productivity/terse-output) | Available | Ultra-compressed output that cuts tokens while keeping accuracy; lite/full/ultra (adapted from JuliusBrussee/caveman). |
+| [recency-research](./skills/productivity/recency-research) | Available | Research the last ~30 days of community signal on a topic (Reddit/HN/GitHub/X/web), engagement-scored (adapted from mvanhorn/last30days-skill). |
 | [git-guardrails](./skills/misc/git-guardrails) | Available | Block dangerous git commands via a hook (Claude Code only, adapted from mattpocock). |
 | [setup-pre-commit](./skills/misc/setup-pre-commit) | Available | Set up Husky pre-commit hooks (JS/TS only, adapted from mattpocock). |
 

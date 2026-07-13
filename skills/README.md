@@ -35,11 +35,13 @@ npx skills@latest add devjh-jiki/jiki
 - [grill-with-docs](./engineering/grill-with-docs/SKILL.md) — Grilling that maintains glossary + ADRs as you go
 - [prototype](./engineering/prototype/SKILL.md) — Throwaway prototype to de-risk a design
 - [design-system](./engineering/design-system/SKILL.md) — Design/implement/review a token-based UI design system (Astryx-based, any stack)
+- [anti-slop-frontend](./engineering/anti-slop-frontend/SKILL.md) — Stop AI-built marketing/landing/portfolio frontends from looking templated (read the brief, three dials, avoid LLM defaults, pre-flight)
 - [implement](./engineering/implement/SKILL.md) — Implement an agreed PRD/issues/slices into committed, tested code
 
 **Model-invoked** (the agent uses it automatically when it fits the task)
 
 - [tdd](./engineering/tdd/SKILL.md) — Red-green-refactor, one vertical slice at a time
+- [lazy-code](./engineering/lazy-code/SKILL.md) — Force the laziest solution that works (YAGNI ladder, stdlib/native before deps); lite/full/ultra
 - [diagnosing-bugs](./engineering/diagnosing-bugs/SKILL.md) — Disciplined diagnosis loop; tight red-capable feedback loop first
 - [codebase-design](./engineering/codebase-design/SKILL.md) — Vocabulary for designing deep modules
 - [domain-modeling](./engineering/domain-modeling/SKILL.md) — Actively build and sharpen the domain model (glossary + ADRs)
@@ -54,10 +56,12 @@ npx skills@latest add devjh-jiki/jiki
 - [grill-me](./productivity/grill-me/SKILL.md) — Relentless interview to stress-test a plan, design, decision, or business idea (inspired by mattpocock/skills)
 - [handoff](./productivity/handoff/SKILL.md) — Compact a conversation into a handoff doc for another agent
 - [writing-great-skills](./productivity/writing-great-skills/SKILL.md) — Reference for writing/editing skills well
+- [terse-output](./productivity/terse-output/SKILL.md) — Ultra-compressed output that cuts tokens while keeping accuracy; lite/full/ultra (inspired by JuliusBrussee/caveman)
 
 **Model-invoked**
 
 - [document-with-research](./productivity/document-with-research/SKILL.md) — Produce high-quality Markdown docs: research open data, verify claims, design structure, write, and refine existing material for readability and cross-document linking
+- [recency-research](./productivity/recency-research/SKILL.md) — Research the last ~30 days of community signal on a topic (Reddit, HN, GitHub, X, web), scored by engagement (inspired by mvanhorn/last30days-skill)
 
 ### Learning
 

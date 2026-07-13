@@ -35,11 +35,13 @@ npx skills@latest add devjh-jiki/jiki
 - [grill-with-docs](./engineering/grill-with-docs/SKILL.ko.md) — 진행하며 용어집 + ADR 까지 유지하는 grilling
 - [prototype](./engineering/prototype/SKILL.ko.md) — 설계 리스크를 줄이는 throwaway 프로토타입
 - [design-system](./engineering/design-system/SKILL.ko.md) — 토큰 기반 UI 디자인 시스템 설계/구현/리뷰 (Astryx 베이스, 모든 스택)
+- [anti-slop-frontend](./engineering/anti-slop-frontend/SKILL.ko.md) — AI가 만든 마케팅/랜딩/포트폴리오 프론트엔드가 템플릿처럼 안 보이게 (브리프 읽기, 세 다이얼, LLM 기본값 회피, 프리플라이트)
 - [implement](./engineering/implement/SKILL.ko.md) — 합의된 PRD/이슈/슬라이스를 커밋된 테스트 코드로 구현
 
 **Model-invoked** (작업에 맞으면 에이전트가 자동 사용)
 
 - [tdd](./engineering/tdd/SKILL.ko.md) — 레드-그린-리팩터, 수직 슬라이스 단위
+- [lazy-code](./engineering/lazy-code/SKILL.ko.md) — 실제로 동작하는 가장 게으른 해법 강제 (YAGNI 사다리, 의존성보다 표준 라이브러리/네이티브); lite/full/ultra
 - [diagnosing-bugs](./engineering/diagnosing-bugs/SKILL.ko.md) — 체계적 진단 루프; 단단한 red 가능 피드백 루프부터
 - [codebase-design](./engineering/codebase-design/SKILL.ko.md) — 깊은 모듈 설계 어휘
 - [domain-modeling](./engineering/domain-modeling/SKILL.ko.md) — 도메인 모델을 능동적으로 구축·정밀화 (용어집 + ADR)
@@ -54,10 +56,12 @@ npx skills@latest add devjh-jiki/jiki
 - [grill-me](./productivity/grill-me/SKILL.ko.md) — 계획·설계·의사결정·사업 아이디어를 스트레스 테스트하는 집요한 인터뷰 (mattpocock/skills 참고)
 - [handoff](./productivity/handoff/SKILL.ko.md) — 대화를 인계 문서로 압축해 다른 에이전트가 이어받게
 - [writing-great-skills](./productivity/writing-great-skills/SKILL.ko.md) — 스킬을 잘 쓰고 편집하는 법 레퍼런스
+- [terse-output](./productivity/terse-output/SKILL.ko.md) — 정확도는 유지하며 토큰을 줄이는 초압축 출력; lite/full/ultra (JuliusBrussee/caveman 참고)
 
 **Model-invoked**
 
 - [document-with-research](./productivity/document-with-research/SKILL.ko.md) — 고품질 마크다운 문서 산출: 오픈데이터 조사, 주장 검증, 구조 설계, 작성, 그리고 기존 자료를 가독성·문서 간 연결 관점에서 다듬기
+- [recency-research](./productivity/recency-research/SKILL.ko.md) — 어떤 주제의 최근 ~30일 커뮤니티 신호를 조사 (Reddit, HN, GitHub, X, 웹), 인게이지먼트로 점수화 (mvanhorn/last30days-skill 참고)
 
 ### Learning
 

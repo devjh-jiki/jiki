@@ -42,6 +42,33 @@ Attributions below. Where code or prose was adapted, the upstream license applie
   framework selection (TAM/SAM/SOM, unit economics, competitive analysis, PMF indicators) and the
   trust-level labeling approach (Available / Review / Private) are inspired by this repository.
 
+- **[DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail)** (MIT) — `skills/engineering/lazy-code`
+  is **adapted** from the `ponytail` skill: the YAGNI ladder, the lite/full/ultra intensity levels, and the
+  "lazy, not negligent" framing are preserved. Renamed and rewritten for this repo (the code-comment marker
+  `ponytail:` was changed to `lazy:`, Korean triggers were added, prose was condensed).
+
+- **[JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman)** (MIT) — `skills/productivity/terse-output`
+  is **adapted** from the `caveman` skill: the terse-communication rules, the intensity ladder, the auto-clarity
+  carve-outs, and the "shrink the mouth, not the brain" idea are preserved. Rewritten for this repo — the caveman
+  persona and the classical-Chinese (wenyan) levels were dropped in favor of plain terse prose in the user's own
+  language (Korean-first).
+
+- **[Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill)** (MIT) — `skills/engineering/anti-slop-frontend`
+  is **adapted** from the `design-taste-frontend` (taste-skill) skill: the brief-inference "design read", the three
+  dials (DESIGN_VARIANCE / MOTION_INTENSITY / VISUAL_DENSITY), the official-system-vs-aesthetic split, the AI-tell
+  catalogue, and the mechanical pre-flight check are preserved. Condensed into a shorter `SKILL.md` with the detailed
+  rules moved into `references/`; renamed and generalized for this repo.
+
+- **[mvanhorn/last30days-skill](https://github.com/mvanhorn/last30days-skill)** (MIT) — `skills/productivity/recency-research`
+  is a **lightweight reimplementation** of the `last30days` concept: multi-source community research, engagement-scored
+  synthesis, cross-source cluster merging, verbatim-community-quote weaving, and honest partial-coverage reporting. It
+  deliberately does NOT vendor the upstream Python engine, its API-key source integrations, or its saved-library /
+  watchlist features — the skill points users to the upstream tool for full power and otherwise runs on the host's own
+  web tools.
+
+A full snapshot of each upstream repo above is kept under `.upstream/<owner>-<repo>/` (fetched periodically by
+`.github/workflows/sync-upstream-skills.yml`) for reference and attribution tracking — not installed or distributed.
+
 ## Notes
 
 - This file is English-only by policy (see CLAUDE.md "한/영 문서 페어 규칙" exemptions).

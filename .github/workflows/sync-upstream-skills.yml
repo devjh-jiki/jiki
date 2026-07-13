@@ -30,6 +30,22 @@ jobs:
             repo: skills
             ref: main
             path: skills
+          - owner: DietrichGebert
+            repo: ponytail
+            ref: main
+            path: skills
+          - owner: JuliusBrussee
+            repo: caveman
+            ref: main
+            path: skills
+          - owner: Leonxlnx
+            repo: taste-skill
+            ref: main
+            path: skills
+          - owner: mvanhorn
+            repo: last30days-skill
+            ref: main
+            path: skills
           # 추가하고 싶은 검증된 레포를 여기 등록
           # - owner: anthropics
           #   repo: skills

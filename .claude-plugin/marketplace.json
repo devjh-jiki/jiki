@@ -12,19 +12,21 @@
     {
       "name": "writing-skills",
       "source": "./",
-      "description": "Writing & decision skills: polished Korean tech blog posts, high-quality Markdown documentation with research, decision/idea grilling, session handoffs, and writing great skills.",
+      "description": "Writing & decision skills: polished Korean tech blog posts, high-quality Markdown documentation with research, decision/idea grilling, session handoffs, writing great skills, terse token-efficient output, and recent-community research (adapted from mattpocock/skills, JuliusBrussee/caveman & mvanhorn/last30days-skill).",
       "skills": [
         "./skills/productivity/write-blog-post",
         "./skills/productivity/document-with-research",
         "./skills/productivity/grill-me",
         "./skills/productivity/handoff",
-        "./skills/productivity/writing-great-skills"
+        "./skills/productivity/writing-great-skills",
+        "./skills/productivity/terse-output",
+        "./skills/productivity/recency-research"
       ]
     },
     {
       "name": "engineering-skills",
       "source": "./",
-      "description": "Engineering skills: TDD, bug diagnosis, deep-module & domain design, architecture improvement, PRD/issue synthesis, grill-with-docs, prototyping, implementation, merge-conflict resolution, and webapp testing (adapted from mattpocock/skills & anthropics/skills).",
+      "description": "Engineering skills: TDD, bug diagnosis, deep-module & domain design, architecture improvement, PRD/issue synthesis, grill-with-docs, prototyping, implementation, merge-conflict resolution, webapp testing, lazy/YAGNI code minimization, and anti-slop frontend taste (adapted from mattpocock/skills, anthropics/skills, DietrichGebert/ponytail & Leonxlnx/taste-skill).",
       "skills": [
         "./skills/engineering/tdd",
         "./skills/engineering/diagnosing-bugs",
@@ -38,7 +40,9 @@
         "./skills/engineering/design-system",
         "./skills/engineering/implement",
         "./skills/engineering/resolving-merge-conflicts",
-        "./skills/engineering/webapp-testing"
+        "./skills/engineering/webapp-testing",
+        "./skills/engineering/lazy-code",
+        "./skills/engineering/anti-slop-frontend"
       ]
     },
     {

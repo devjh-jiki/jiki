@@ -13,10 +13,12 @@ with an added owner/leadership lens. See [THIRD_PARTY_NOTICES.md](../../THIRD_PA
 - [grill-with-docs](./grill-with-docs/SKILL.md) — Grilling interview that also maintains glossary + ADRs as you go (`grill-me` + `domain-modeling`).
 - [prototype](./prototype/SKILL.md) — Build a throwaway prototype to de-risk a design (logic terminal app, or UI variations).
 - [design-system](./design-system/SKILL.md) — Design, implement, and review a token-based UI design system, using Meta's Astryx as the default foundation (generalized to any stack); respects an existing system when present.
+- [anti-slop-frontend](./anti-slop-frontend/SKILL.md) — Stop AI-built marketing/landing/portfolio frontends from looking templated: read the brief, tune three dials, avoid the LLM defaults, run a mechanical pre-flight (adapted from Leonxlnx/taste-skill). Taste layer; for a systematic app-wide token system use `design-system`.
 
 **Model-invoked** (the agent uses it automatically when it fits)
 
 - [tdd](./tdd/SKILL.md) — Red-green-refactor, one vertical slice at a time; tests as a risk asset.
+- [lazy-code](./lazy-code/SKILL.md) — Force the laziest solution that works: YAGNI ladder, stdlib/native before dependencies, one line before fifty; lite/full/ultra (adapted from DietrichGebert/ponytail).
 - [diagnosing-bugs](./diagnosing-bugs/SKILL.md) — Disciplined diagnosis loop; build a tight red-capable feedback loop before theorizing.
 - [codebase-design](./codebase-design/SKILL.md) — Shared vocabulary for designing deep modules (interface, depth, seam, adapter, leverage, locality).
 - [domain-modeling](./domain-modeling/SKILL.md) — Actively build and sharpen the project's domain model (glossary + ADRs).

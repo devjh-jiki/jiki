@@ -63,11 +63,15 @@ npx skills@latest add devjh-jiki/jiki
 | [grill-with-docs](./skills/engineering/grill-with-docs) | Available | 문서까지 만드는 grilling (mattpocock 참고) |
 | [prototype](./skills/engineering/prototype) | Available | 설계 검증용 throwaway 프로토타입 (mattpocock 참고) |
 | [design-system](./skills/engineering/design-system) | Available | 토큰 기반 UI 디자인 시스템 설계·구현·리뷰 (Astryx 베이스, 모든 스택) |
+| [anti-slop-frontend](./skills/engineering/anti-slop-frontend) | Available | AI 티 나는 프론트엔드 방지: 브리프 읽기·세 다이얼·LLM 기본값 회피·프리플라이트 (Leonxlnx/taste-skill 참고) |
+| [lazy-code](./skills/engineering/lazy-code) | Available | YAGNI 사다리로 가장 게으른 해법 강제; lite/full/ultra (DietrichGebert/ponytail 참고) |
 | [implement](./skills/engineering/implement) | Available | PRD/이슈/슬라이스를 커밋된 테스트 코드로 구현 (mattpocock 참고) |
 | [resolving-merge-conflicts](./skills/engineering/resolving-merge-conflicts) | Available | merge/rebase 충돌을 의도 복원으로 해소 (mattpocock 참고) |
 | [webapp-testing](./skills/engineering/webapp-testing) | Available | Playwright로 로컬 웹앱 테스트 (anthropics 참고) |
 | [handoff](./skills/productivity/handoff) | Available | 세션 인계 문서 생성 (mattpocock 참고) |
 | [writing-great-skills](./skills/productivity/writing-great-skills) | Available | 스킬을 잘 쓰는 법 레퍼런스 (mattpocock 참고) |
+| [terse-output](./skills/productivity/terse-output) | Available | 정확도 유지하며 토큰 절감하는 초압축 출력; lite/full/ultra (JuliusBrussee/caveman 참고) |
+| [recency-research](./skills/productivity/recency-research) | Available | 최근 ~30일 커뮤니티 신호 리서치 (Reddit/HN/GitHub/X/웹), 인게이지먼트 점수화 (mvanhorn/last30days-skill 참고) |
 | [git-guardrails](./skills/misc/git-guardrails) | Available | 위험한 git 명령 차단 hook (Claude Code 전용, mattpocock 참고) |
 | [setup-pre-commit](./skills/misc/setup-pre-commit) | Available | Husky pre-commit hook 설치 (JS/TS 전용, mattpocock 참고) |
 

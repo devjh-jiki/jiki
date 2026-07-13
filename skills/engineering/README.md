@@ -22,3 +22,6 @@ with an added owner/leadership lens. See [THIRD_PARTY_NOTICES.md](../../THIRD_PA
 - [diagnosing-bugs](./diagnosing-bugs/SKILL.md) — Disciplined diagnosis loop; build a tight red-capable feedback loop before theorizing.
 - [codebase-design](./codebase-design/SKILL.md) — Shared vocabulary for designing deep modules (interface, depth, seam, adapter, leverage, locality).
 - [domain-modeling](./domain-modeling/SKILL.md) — Actively build and sharpen the project's domain model (glossary + ADRs).
+- [eval-harness](./eval-harness/SKILL.md) — Eval-driven development for non-deterministic work: define pass/fail criteria before building, measure reliability with pass@k / pass^k (adapted from affaan-m/ecc). For deterministic tests use `tdd`.
+- [verification-before-completion](./verification-before-completion/SKILL.md) — Never claim done without proof: run build/types/lint/tests/security/diff and read the output before declaring success (adapted from obra/superpowers + affaan-m/ecc).
+- [iterative-retrieval](./iterative-retrieval/SKILL.md) — Assemble just-enough context for a subagent via a dispatch→evaluate→refine loop with relevance scoring, learning the codebase's own terminology (adapted from affaan-m/ecc).

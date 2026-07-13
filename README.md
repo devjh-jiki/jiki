@@ -72,6 +72,11 @@ npx skills@latest add devjh-jiki/jiki
 | [writing-great-skills](./skills/productivity/writing-great-skills) | Available | 스킬을 잘 쓰는 법 레퍼런스 (mattpocock 참고) |
 | [terse-output](./skills/productivity/terse-output) | Available | 정확도 유지하며 토큰 절감하는 초압축 출력; lite/full/ultra (JuliusBrussee/caveman 참고) |
 | [recency-research](./skills/productivity/recency-research) | Available | 최근 ~30일 커뮤니티 신호 리서치 (Reddit/HN/GitHub/X/웹), 인게이지먼트 점수화 (mvanhorn/last30days-skill 참고) |
+| [eval-harness](./skills/engineering/eval-harness) | Available | 비결정적 작업의 eval-driven development: 기준 먼저 정의, pass@k/pass^k 로 측정 (affaan-m/ecc 참고) |
+| [verification-before-completion](./skills/engineering/verification-before-completion) | Available | 증거 없이 done 금지: build/types/lint/tests/security/diff 돌리고 출력 확인 (obra/superpowers + affaan-m/ecc 참고) |
+| [iterative-retrieval](./skills/engineering/iterative-retrieval) | Available | dispatch→evaluate→refine 루프로 서브에이전트에 충분한 컨텍스트 조립 (affaan-m/ecc 참고) |
+| [council](./skills/productivity/council) | Available | 애매한 결정에 4-보이스 council 을 병렬 서브에이전트로 소집, 앵커링 방지 (affaan-m/ecc 참고) |
+| [context-budget](./skills/productivity/context-budget) | Available | 에이전트/스킬/MCP/룰 상시 컨텍스트 오버헤드 감사·순위화 (affaan-m/ecc 참고) |
 | [git-guardrails](./skills/misc/git-guardrails) | Available | 위험한 git 명령 차단 hook (Claude Code 전용, mattpocock 참고) |
 | [setup-pre-commit](./skills/misc/setup-pre-commit) | Available | Husky pre-commit hook 설치 (JS/TS 전용, mattpocock 참고) |
 

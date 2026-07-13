@@ -47,6 +47,9 @@ npx skills@latest add devjh-jiki/jiki
 - [domain-modeling](./engineering/domain-modeling/SKILL.ko.md) — 도메인 모델을 능동적으로 구축·정밀화 (용어집 + ADR)
 - [resolving-merge-conflicts](./engineering/resolving-merge-conflicts/SKILL.ko.md) — merge/rebase 충돌을 양쪽 의도 복원으로 해소
 - [webapp-testing](./engineering/webapp-testing/SKILL.ko.md) — Playwright 로 로컬 웹앱 구동·테스트 (정찰 후 행동)
+- [eval-harness](./engineering/eval-harness/SKILL.ko.md) — 비결정적 작업의 eval-driven development: 기준을 먼저 정의하고 pass@k / pass^k 로 측정 (affaan-m/ecc 적응)
+- [verification-before-completion](./engineering/verification-before-completion/SKILL.ko.md) — 증거 없이 done 금지: build/types/lint/tests/security/diff 돌리고 출력 읽기 (obra/superpowers + affaan-m/ecc 적응)
+- [iterative-retrieval](./engineering/iterative-retrieval/SKILL.ko.md) — dispatch→evaluate→refine 루프와 관련도 채점으로 서브에이전트에 충분한 컨텍스트 조립 (affaan-m/ecc 적응)
 
 ### Productivity
 
@@ -62,6 +65,8 @@ npx skills@latest add devjh-jiki/jiki
 
 - [document-with-research](./productivity/document-with-research/SKILL.ko.md) — 고품질 마크다운 문서 산출: 오픈데이터 조사, 주장 검증, 구조 설계, 작성, 그리고 기존 자료를 가독성·문서 간 연결 관점에서 다듬기
 - [recency-research](./productivity/recency-research/SKILL.ko.md) — 어떤 주제의 최근 ~30일 커뮤니티 신호를 조사 (Reddit, HN, GitHub, X, 웹), 인게이지먼트로 점수화 (mvanhorn/last30days-skill 참고)
+- [council](./productivity/council/SKILL.ko.md) — 애매한 결정에 4-보이스 council(Architect/Skeptic/Pragmatist/Critic)을 병렬 서브에이전트로 소집, 앵커링 방지 (affaan-m/ecc 적응)
+- [context-budget](./productivity/context-budget/SKILL.ko.md) — 에이전트/스킬/MCP/룰의 상시 컨텍스트 오버헤드를 감사하고 뭘 자를지 순위화 (affaan-m/ecc 적응)
 
 ### Learning
 

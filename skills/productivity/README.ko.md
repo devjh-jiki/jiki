@@ -16,3 +16,5 @@
 
 - [document-with-research](./document-with-research/SKILL.ko.md) — 고품질 마크다운 문서 산출: 오픈데이터 조사, 주장 검증, 구조 설계, 작성, 그리고 기존 자료를 가독성·문서 간 연결 관점에서 다듬기
 - [recency-research](./recency-research/SKILL.ko.md) — 어떤 주제에 대해 사람들이 최근 ~30일 뭐라고 했는지를 커뮤니티 소스(Reddit, HN, GitHub, X, 웹)에서 인게이지먼트로 점수화해 조사; 경량 호스트-웹 워크플로 (mvanhorn/last30days-skill 각색)
+- [council](./council/SKILL.ko.md) — 애매한 결정에 4-보이스 council(Architect/Skeptic/Pragmatist/Critic)을 독립 병렬 서브에이전트로 소집해 이견을 합성; 앵커링 방지 (affaan-m/ecc 각색). 이미 가진 계획을 압박하려면 `grill-me`.
+- [context-budget](./context-budget/SKILL.ko.md) — 에이전트/스킬/MCP/룰/AGENTS.md 전반의 상시 컨텍스트 오버헤드를 감사하고 뭘 자를지 순위 목록 생성 (affaan-m/ecc 각색). 답변을 줄이려면 `terse-output`.

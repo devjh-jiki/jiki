@@ -72,6 +72,11 @@ Skills are labeled by verification stage:
 | [writing-great-skills](./skills/productivity/writing-great-skills) | Available | Reference for writing great skills (adapted from mattpocock). |
 | [terse-output](./skills/productivity/terse-output) | Available | Ultra-compressed output that cuts tokens while keeping accuracy; lite/full/ultra (adapted from JuliusBrussee/caveman). |
 | [recency-research](./skills/productivity/recency-research) | Available | Research the last ~30 days of community signal on a topic (Reddit/HN/GitHub/X/web), engagement-scored (adapted from mvanhorn/last30days-skill). |
+| [eval-harness](./skills/engineering/eval-harness) | Available | Eval-driven development for non-deterministic work: define criteria first, measure with pass@k/pass^k (adapted from affaan-m/ecc). |
+| [verification-before-completion](./skills/engineering/verification-before-completion) | Available | Never claim done without proof: run build/types/lint/tests/security/diff and read the output (adapted from obra/superpowers + affaan-m/ecc). |
+| [iterative-retrieval](./skills/engineering/iterative-retrieval) | Available | Assemble just-enough subagent context via a dispatch→evaluate→refine loop with relevance scoring (adapted from affaan-m/ecc). |
+| [council](./skills/productivity/council) | Available | Convene a four-voice council as parallel subagents for ambiguous decisions, anti-anchored (adapted from affaan-m/ecc). |
+| [context-budget](./skills/productivity/context-budget) | Available | Audit standing context overhead across agents/skills/MCP/rules and rank what to cut (adapted from affaan-m/ecc). |
 | [git-guardrails](./skills/misc/git-guardrails) | Available | Block dangerous git commands via a hook (Claude Code only, adapted from mattpocock). |
 | [setup-pre-commit](./skills/misc/setup-pre-commit) | Available | Set up Husky pre-commit hooks (JS/TS only, adapted from mattpocock). |
 

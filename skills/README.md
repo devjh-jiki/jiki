@@ -47,6 +47,9 @@ npx skills@latest add devjh-jiki/jiki
 - [domain-modeling](./engineering/domain-modeling/SKILL.md) — Actively build and sharpen the domain model (glossary + ADRs)
 - [resolving-merge-conflicts](./engineering/resolving-merge-conflicts/SKILL.md) — Resolve a merge/rebase conflict by recovering each side's intent
 - [webapp-testing](./engineering/webapp-testing/SKILL.md) — Drive/test a local web app with Playwright (reconnaissance-then-action)
+- [eval-harness](./engineering/eval-harness/SKILL.md) — Eval-driven development for non-deterministic work: define criteria first, measure with pass@k / pass^k (adapted from affaan-m/ecc)
+- [verification-before-completion](./engineering/verification-before-completion/SKILL.md) — Never claim done without proof: run build/types/lint/tests/security/diff and read the output (adapted from obra/superpowers + affaan-m/ecc)
+- [iterative-retrieval](./engineering/iterative-retrieval/SKILL.md) — Assemble just-enough context for a subagent via a dispatch→evaluate→refine loop with relevance scoring (adapted from affaan-m/ecc)
 
 ### Productivity
 
@@ -62,6 +65,8 @@ npx skills@latest add devjh-jiki/jiki
 
 - [document-with-research](./productivity/document-with-research/SKILL.md) — Produce high-quality Markdown docs: research open data, verify claims, design structure, write, and refine existing material for readability and cross-document linking
 - [recency-research](./productivity/recency-research/SKILL.md) — Research the last ~30 days of community signal on a topic (Reddit, HN, GitHub, X, web), scored by engagement (inspired by mvanhorn/last30days-skill)
+- [council](./productivity/council/SKILL.md) — Convene a four-voice council (Architect/Skeptic/Pragmatist/Critic) as parallel subagents for ambiguous decisions, anti-anchored (adapted from affaan-m/ecc)
+- [context-budget](./productivity/context-budget/SKILL.md) — Audit standing context overhead across agents/skills/MCP/rules and rank what to cut (adapted from affaan-m/ecc)
 
 ### Learning
 

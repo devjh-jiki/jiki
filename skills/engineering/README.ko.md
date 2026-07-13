@@ -22,3 +22,6 @@
 - [diagnosing-bugs](./diagnosing-bugs/SKILL.ko.md) — 체계적 진단 루프; 이론 전에 단단한 red 가능 피드백 루프부터.
 - [codebase-design](./codebase-design/SKILL.ko.md) — 깊은 모듈 설계 공용 어휘 (인터페이스, 깊이, seam, 어댑터, 레버리지, 지역성).
 - [domain-modeling](./domain-modeling/SKILL.ko.md) — 프로젝트 도메인 모델을 능동적으로 구축·정밀화 (용어집 + ADR).
+- [eval-harness](./eval-harness/SKILL.ko.md) — 비결정적 작업의 eval-driven development: 만들기 전에 pass/fail 기준을 정의하고 pass@k / pass^k 로 신뢰도 측정 (affaan-m/ecc 각색). 결정적 테스트는 `tdd`.
+- [verification-before-completion](./verification-before-completion/SKILL.ko.md) — 증거 없이 done 금지: 성공 선언 전에 build/types/lint/tests/security/diff 돌리고 출력 읽기 (obra/superpowers + affaan-m/ecc 각색).
+- [iterative-retrieval](./iterative-retrieval/SKILL.ko.md) — dispatch→evaluate→refine 루프와 관련도 채점으로 서브에이전트에 충분한 컨텍스트 조립, 코드베이스 고유 어휘를 학습 (affaan-m/ecc 각색).

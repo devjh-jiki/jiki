@@ -66,6 +66,24 @@ Attributions below. Where code or prose was adapted, the upstream license applie
   watchlist features — the skill points users to the upstream tool for full power and otherwise runs on the host's own
   web tools.
 
+- **[obra/superpowers](https://github.com/obra/superpowers)** (MIT) — this repo does NOT vendor the Superpowers
+  framework (it is a complete, infrastructure-backed SDLC methodology best installed directly as a plugin). Two things
+  draw on it: (1) `skills/engineering/verification-before-completion` takes its core principle ("evidence over claims,
+  never declare success without running verification") from the upstream `verification-before-completion` skill, merged
+  with ECC's `verification-loop` phases (see below); (2) the Superpowers plugin is installed separately in the user's
+  own OpenCode config, not in this repository.
+
+- **[affaan-m/ecc](https://github.com/affaan-m/ecc)** (MIT) — from ECC's large skill collection, five unique
+  pure-prompt concepts were extracted and rewritten for this repo (ECC's execution infrastructure — hooks, CLI,
+  SQLite state, slash commands — is deliberately NOT vendored, so only the tool-agnostic methodology was taken):
+  - `skills/engineering/eval-harness` ← `eval-harness` (eval-driven development, capability/regression split, four grader types, pass@k vs pass^k)
+  - `skills/engineering/verification-before-completion` ← `verification-loop` (the six-phase build→types→lint→tests→security→diff pipeline and VERIFICATION REPORT shape; combined with the superpowers principle above)
+  - `skills/engineering/iterative-retrieval` ← `iterative-retrieval` (the DISPATCH/EVALUATE/REFINE/LOOP context-assembly cycle with relevance scoring)
+  - `skills/productivity/council` ← `council` (four-voice decision council with parallel-subagent anti-anchoring)
+  - `skills/productivity/context-budget` ← `context-budget` (four-phase setup token-overhead audit)
+  Each rewrite dropped ECC-internal skill references and infrastructure hooks, generalized ECC-specific paths to
+  tool-agnostic terms, drew boundaries against neighbouring dev-hub skills, and added Korean triggers.
+
 A full snapshot of each upstream repo above is kept under `.upstream/<owner>-<repo>/` (fetched periodically by
 `.github/workflows/sync-upstream-skills.yml`) for reference and attribution tracking — not installed or distributed.
 

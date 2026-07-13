@@ -46,6 +46,14 @@ jobs:
             repo: last30days-skill
             ref: main
             path: skills
+          - owner: affaan-m
+            repo: ecc
+            ref: main
+            path: skills
+          - owner: obra
+            repo: superpowers
+            ref: main
+            path: skills
           # 추가하고 싶은 검증된 레포를 여기 등록
           # - owner: anthropics
           #   repo: skills

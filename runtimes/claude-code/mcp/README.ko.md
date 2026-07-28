@@ -1,4 +1,4 @@
-# Claude MCP 스니펫
+# Claude Code MCP 스니펫
 
 > English: [README.md](./README.md)
 

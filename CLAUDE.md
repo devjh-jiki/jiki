@@ -4,21 +4,23 @@
 
 ## 디렉토리
 
-- `skills/` — 에이전트 스킬. 버킷 폴더로 분류:
+- `skills/` — 런타임 중립 에이전트 스킬의 단일 원본. 버킷 폴더로 분류:
   - `engineering/` — 매일 하는 코드 작업
   - `productivity/` — 비코드 워크플로우 (블로그 작성, 학습 등)
   - `personal/` — 내 셋업 전용, 홍보 안 함
   - `in-progress/` — 아직 미완성 초안
   - `deprecated/` — 더 이상 안 씀
-- `mcp/` — 도구별(claude/cursor/vscode/opencode) MCP 설정 스니펫
+- `.agents/skills/` — Codex가 자동 발견하는 어댑터. `skills/`의 Codex 호환 스킬을 상대 심볼릭 링크로 연결한다.
+- `runtimes/` — Claude Code, Codex, OpenCode 등 런타임별 전용 스킬·명령·hook·MCP 설정
+- `mcp/` — 런타임 공통 MCP 인덱스. 실제 설정은 `runtimes/<runtime>/mcp/`에 둔다.
 - `prompts/` — 단발성 복붙 프롬프트 (반복되면 skill 로 승격)
-- `commands/` — opencode 커스텀 슬래시 명령(`/<name>`). 여기서 버전관리하고, 사이드 프로젝트의 `.opencode/commands/` 로 심볼링크해 프로젝트별로만 활성화(전역 자동로드 회피). 보통 스킬을 래핑해 호출한다.
+- `runtimes/opencode/commands/` — OpenCode 커스텀 슬래시 명령(`/<name>`). 사이드 프로젝트의 `.opencode/commands/`로 심볼링크해 프로젝트별로만 활성화한다.
 - `learning/ai/` — AI 학습 로드맵·자료·기록
 - `snippets/` — 코드/설정 스니펫
 
 ## Skill 규칙 (Anthropic Agent Skills 표준)
 
-모든 스킬은 `skills/<bucket>/<skill-name>/SKILL.md` 형태이며 YAML frontmatter 필수:
+공용 스킬은 `skills/<bucket>/<skill-name>/SKILL.md`, 런타임 전용 스킬은 `runtimes/<runtime>/skills/<skill-name>/SKILL.md` 형태이며 YAML frontmatter 필수:
 
 ```yaml
 ---
@@ -27,7 +29,9 @@ description: 무엇을 하는지 + 언제 쓰는지. 1024자 이내. 자동 트�
 ---
 ```
 
-- `engineering/`, `productivity/`, `misc/` 의 스킬은 루트 README 와 `.claude-plugin/plugin.json` 에 반드시 등재.
+- `engineering/`, `productivity/`, `misc/`의 공개 공용 스킬은 루트 README와 호환되는 런타임 manifest에 등재한다.
+- Codex 호환 공용 스킬은 `.agents/skills/<skill-name>` 상대 심볼릭 링크에도 등재한다.
+- 런타임 전용 스킬은 `runtimes/<runtime>/skills/`에 두고 해당 런타임에만 등재한다. 예: `runtimes/claude-code/skills/git-guardrails`.
 - `personal/`, `in-progress/`, `deprecated/` 는 어디에도 등재 금지.
 - 사용자-호출(user-invoked) 스킬은 `disable-model-invocation: true` 를 두고 사람만 `/명령`으로 실행.
 - 모델-호출(model-invoked) 스킬은 작업이 맞으면 에이전트가 자동으로 집어듦.
@@ -48,7 +52,7 @@ description: 무엇을 하는지 + 언제 쓰는지. 1024자 이내. 자동 트�
 - 에이전트가 읽고 실행하는 정본은 영어 `SKILL.md`. `SKILL.ko.md` 는 사람이 읽는 번역본이며, frontmatter 의 `name` 은 영어본과 동일하게 유지하되 한국어본은 에이전트 트리거 대상이 아니다.
 - CI(`.github/workflows/check-doc-pairs.yml`)가 쌍 누락을 검사한다. `X.md` 가 있으면 `X.ko.md` 도 있어야 한다(그 반대도). 누락 시 빌드 실패.
 - **예외 — 루트 README**: GitHub 첫 화면 가독성을 위해 루트만 한국어가 메인이다. `README.md`(한국어) + `README.en.md`(영어) 쌍으로 둔다. 이 둘은 `.ko.md` 규칙을 따르지 않는다.
-- 예외(번역 쌍 불필요): `CLAUDE.md`, `LICENSE`, `THIRD_PARTY_NOTICES.md`, 코드/스니펫 파일, `references/` 내부 보조 문서는 영어 단일 또는 한국어 단일 허용. 체크 대상은 `README` 와 `SKILL` 계열.
+- 예외(번역 쌍 불필요): `CLAUDE.md`, `LICENSE`, `THIRD_PARTY_NOTICES.md`, Changeset, 코드·실행 가능한 command template·template·스니펫 파일, `references/` 내부 보조 문서는 영어 단일 또는 한국어 단일 허용. 체크 대상은 `README`와 `SKILL` 계열.
 
 ## 신뢰도 라벨 (마켓플레이스 운영)
 

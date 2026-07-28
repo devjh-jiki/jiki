@@ -12,15 +12,18 @@
 
 | 영역 | 위치 | 설명 |
 |------|------|------|
-| Skills | [`skills/`](./skills) | 나만의 에이전트 스킬. 버저닝 + upstream 자동 동기화. Claude Code 플러그인으로 설치 가능 |
+| Skills | [`skills/`](./skills) | 나만의 에이전트 스킬. 버저닝 + upstream 자동 동기화. Claude Code와 Codex에서 사용 가능 |
+| Runtimes | [`runtimes/`](./runtimes) | Claude Code, Codex, OpenCode 등 런타임별 전용 어댑터와 설정 |
 | MCP | [`mcp/`](./mcp) | 도구별 MCP 세팅. 어디에나 복붙 |
 | Prompts | [`prompts/`](./prompts) | 자주 쓰는 프롬프트 명령어 |
 | Learning / AI | [`learning/ai/`](./learning/ai) | 프론트엔드 개발자 관점 AI 학습 로드맵 + 자료 + 기록 |
 | Snippets | [`snippets/`](./snippets) | 자주 쓰는 코드/설정 스니펫 |
 
-## 스킬 마켓플레이스
+## 스킬 설치
 
-스킬은 Claude Code 플러그인으로 설치할 수 있습니다.
+### Claude Code
+
+Claude Code 플러그인 마켓플레이스에서 설치할 수 있습니다.
 
 ```
 /plugin marketplace add devjh-jiki/jiki
@@ -29,11 +32,15 @@
 /plugin install business-skills@jiki-skills
 ```
 
-또는 skills CLI:
+### Codex 및 기타 에이전트
+
+skills CLI로 설치할 수 있습니다.
 
 ```bash
 npx skills@latest add devjh-jiki/jiki
 ```
+
+이 레포를 Codex에서 직접 열면 `.agents/skills/`의 상대 심볼릭 링크를 통해 Codex 호환 스킬을 자동으로 발견합니다. 레포 작업 규칙은 [`AGENTS.md`](./AGENTS.md)에 있습니다.
 
 ### 신뢰도 라벨
 
@@ -77,7 +84,7 @@ npx skills@latest add devjh-jiki/jiki
 | [iterative-retrieval](./skills/engineering/iterative-retrieval) | Available | dispatch→evaluate→refine 루프로 서브에이전트에 충분한 컨텍스트 조립 (affaan-m/ecc 참고) |
 | [council](./skills/productivity/council) | Available | 애매한 결정에 4-보이스 council 을 병렬 서브에이전트로 소집, 앵커링 방지 (affaan-m/ecc 참고) |
 | [context-budget](./skills/productivity/context-budget) | Available | 에이전트/스킬/MCP/룰 상시 컨텍스트 오버헤드 감사·순위화 (affaan-m/ecc 참고) |
-| [git-guardrails](./skills/misc/git-guardrails) | Available | 위험한 git 명령 차단 hook (Claude Code 전용, mattpocock 참고) |
+| [git-guardrails](./runtimes/claude-code/skills/git-guardrails) | Available | 위험한 git 명령 차단 hook (Claude Code 전용, mattpocock 참고) |
 | [setup-pre-commit](./skills/misc/setup-pre-commit) | Available | Husky pre-commit hook 설치 (JS/TS 전용, mattpocock 참고) |
 
 ## 관련 레포 (Organization)

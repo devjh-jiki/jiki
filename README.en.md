@@ -12,15 +12,18 @@ The goal is to eliminate "where did I write that down again?".
 
 | Area | Path | Description |
 |------|------|-------------|
-| Skills | [`skills/`](./skills) | My own agent skills. Versioned + upstream auto-sync. Installable as a Claude Code plugin. |
+| Skills | [`skills/`](./skills) | My own agent skills. Versioned + upstream auto-sync. Available in Claude Code and Codex. |
+| Runtimes | [`runtimes/`](./runtimes) | Runtime-specific adapters and configuration for Claude Code, Codex, OpenCode, and others. |
 | MCP | [`mcp/`](./mcp) | MCP setups per tool. Copy-paste anywhere. |
 | Prompts | [`prompts/`](./prompts) | Frequently used prompt commands. |
 | Learning / AI | [`learning/ai/`](./learning/ai) | AI learning roadmap + resources + log, from a frontend developer's view. |
 | Snippets | [`snippets/`](./snippets) | Frequently used code/config snippets. |
 
-## Skills marketplace
+## Install skills
 
-Skills are installable as a Claude Code plugin.
+### Claude Code
+
+Install the skills from the Claude Code plugin marketplace.
 
 ```
 /plugin marketplace add devjh-jiki/jiki
@@ -29,11 +32,15 @@ Skills are installable as a Claude Code plugin.
 /plugin install business-skills@jiki-skills
 ```
 
-Or with the skills CLI:
+### Codex and other agents
+
+Install with the skills CLI:
 
 ```bash
 npx skills@latest add devjh-jiki/jiki
 ```
+
+When this repository is opened directly in Codex, compatible skills are discovered automatically through the relative symlinks in `.agents/skills/`. Repository guidance lives in [`AGENTS.md`](./AGENTS.md).
 
 ### Trust levels
 
@@ -77,7 +84,7 @@ Skills are labeled by verification stage:
 | [iterative-retrieval](./skills/engineering/iterative-retrieval) | Available | Assemble just-enough subagent context via a dispatch→evaluate→refine loop with relevance scoring (adapted from affaan-m/ecc). |
 | [council](./skills/productivity/council) | Available | Convene a four-voice council as parallel subagents for ambiguous decisions, anti-anchored (adapted from affaan-m/ecc). |
 | [context-budget](./skills/productivity/context-budget) | Available | Audit standing context overhead across agents/skills/MCP/rules and rank what to cut (adapted from affaan-m/ecc). |
-| [git-guardrails](./skills/misc/git-guardrails) | Available | Block dangerous git commands via a hook (Claude Code only, adapted from mattpocock). |
+| [git-guardrails](./runtimes/claude-code/skills/git-guardrails) | Available | Block dangerous git commands via a hook (Claude Code only, adapted from mattpocock). |
 | [setup-pre-commit](./skills/misc/setup-pre-commit) | Available | Set up Husky pre-commit hooks (JS/TS only, adapted from mattpocock). |
 
 ## Related repos (Organization)

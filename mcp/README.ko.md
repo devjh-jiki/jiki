@@ -8,10 +8,11 @@
 
 | 도구 | 설정 파일 위치 | 폴더 |
 |------|----------------|------|
-| Claude Desktop / Code | `~/Library/Application Support/Claude/claude_desktop_config.json` 등 | [`claude/`](./claude) |
-| Cursor | `.cursor/mcp.json` (프로젝트) 또는 글로벌 | [`cursor/`](./cursor) |
-| VS Code | `.vscode/mcp.json` | [`vscode/`](./vscode) |
-| OpenCode | `opencode.json` | [`opencode/`](./opencode) |
+| Claude Desktop / Code | `~/Library/Application Support/Claude/claude_desktop_config.json` 등 | [`runtimes/claude-code/mcp/`](../runtimes/claude-code/mcp) |
+| Codex | `~/.codex/config.toml`(사용자) 또는 `.codex/config.toml`(신뢰한 프로젝트) | [`runtimes/codex/mcp/`](../runtimes/codex/mcp) |
+| Cursor | `.cursor/mcp.json` (프로젝트) 또는 글로벌 | [`runtimes/cursor/mcp/`](../runtimes/cursor/mcp) |
+| VS Code | `.vscode/mcp.json` | [`runtimes/vscode/mcp/`](../runtimes/vscode/mcp) |
+| OpenCode | `opencode.json` | [`runtimes/opencode/mcp/`](../runtimes/opencode/mcp) |
 
 ## 사용법
 

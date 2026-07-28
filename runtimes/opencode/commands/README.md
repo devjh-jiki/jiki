@@ -1,4 +1,4 @@
-# Commands
+# OpenCode Commands
 
 opencode custom commands. Each `*.md` here can be used as a `/<name>` slash command in the opencode TUI.
 
@@ -15,7 +15,7 @@ opencode discovers commands in `.opencode/commands/` (per-project) or `~/.config
 ```bash
 # run inside the side project's repo root
 mkdir -p .opencode/commands
-ln -sfn ~/Desktop/dev-hub/commands/design-system.md .opencode/commands/design-system.md
+ln -sfn /path/to/dev-hub/runtimes/opencode/commands/design-system.md .opencode/commands/design-system.md
 ```
 
 Then in opencode (TUI), in that project:

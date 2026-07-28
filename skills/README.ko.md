@@ -2,13 +2,15 @@
 
 > English: [README.md](./README.md)
 
-매일 쓰는 나만의 에이전트 스킬 모음. [Anthropic Agent Skills](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview) 표준을 따릅니다.
+매일 쓰는 나만의 에이전트 스킬 모음. 공개 [Agent Skills](https://agentskills.io) 표준을 따르며 Claude Code, Codex, 호환 런타임에서 함께 사용합니다.
 
 ## 설치
 
 ```bash
 npx skills@latest add devjh-jiki/jiki
 ```
+
+이 레포에서 작업할 때 Codex는 `.agents/skills/` 어댑터를 통해 호환 스킬을 자동으로 발견합니다.
 
 ## 버킷
 
@@ -87,8 +89,9 @@ npx skills@latest add devjh-jiki/jiki
 
 **Model-invoked**
 
-- [git-guardrails](./misc/git-guardrails/SKILL.ko.md) — 위험한 git 명령을 막는 Claude Code hook 설치 (Claude Code 전용)
 - [setup-pre-commit](./misc/setup-pre-commit/SKILL.ko.md) — lint-staged/Prettier/타입체크/테스트를 도는 Husky pre-commit hook 설치 (JS/TS 전용)
+
+Claude Code의 [git-guardrails](../runtimes/claude-code/skills/git-guardrails/SKILL.ko.md)처럼 런타임 전용인 스킬은 `runtimes/` 아래에 둡니다.
 
 ## upstream 동기화
 

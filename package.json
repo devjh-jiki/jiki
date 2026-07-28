@@ -2,7 +2,7 @@
   "name": "@dev-hub/skills",
   "version": "0.1.0",
   "private": true,
-  "description": "나만의 에이전트 스킬 모음 - 버저닝 + upstream 동기화",
+  "description": "공용 에이전트 스킬과 런타임별 어댑터 모음 - 버저닝 + upstream 동기화",
   "license": "MIT",
   "scripts": {
     "changeset": "changeset",

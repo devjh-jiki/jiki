@@ -1,4 +1,4 @@
-# Claude MCP Snippets
+# Claude Code MCP Snippets
 
 > 한국어: [README.ko.md](./README.ko.md)
 

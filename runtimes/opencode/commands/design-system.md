@@ -4,8 +4,8 @@ description: Load the design-system skill and apply it (design / implement / rev
 
 You are going to perform a design-system task. First, fully load the skill:
 
-Use your Read tool to read this file and follow it:
-`/Users/lsy6234naver.com/Desktop/dev-hub/skills/engineering/design-system/SKILL.md`
+Resolve the project command symlink (normally `.opencode/commands/design-system.md`) with `readlink`. Its target is `<dev-hub-root>/runtimes/opencode/commands/design-system.md`. From that checkout root, use your Read tool to read and follow:
+`<dev-hub-root>/skills/engineering/design-system/SKILL.md`
 
 Then read its `references/` files in the same directory as the skill directs (astryx-foundations, anti-slop-and-review, stacks, docs-template-guide), and use the bundled `assets/docs-template/` when the deliverable is a documentation site.
 

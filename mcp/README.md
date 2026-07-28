@@ -8,10 +8,11 @@ MCP (Model Context Protocol) server configs per tool. Organized to be **copy-pas
 
 | Tool | Config file location | Folder |
 |------|----------------|------|
-| Claude Desktop / Code | `~/Library/Application Support/Claude/claude_desktop_config.json`, etc. | [`claude/`](./claude) |
-| Cursor | `.cursor/mcp.json` (project) or global | [`cursor/`](./cursor) |
-| VS Code | `.vscode/mcp.json` | [`vscode/`](./vscode) |
-| OpenCode | `opencode.json` | [`opencode/`](./opencode) |
+| Claude Desktop / Code | `~/Library/Application Support/Claude/claude_desktop_config.json`, etc. | [`runtimes/claude-code/mcp/`](../runtimes/claude-code/mcp) |
+| Codex | `~/.codex/config.toml` (user) or `.codex/config.toml` (trusted project) | [`runtimes/codex/mcp/`](../runtimes/codex/mcp) |
+| Cursor | `.cursor/mcp.json` (project) or global | [`runtimes/cursor/mcp/`](../runtimes/cursor/mcp) |
+| VS Code | `.vscode/mcp.json` | [`runtimes/vscode/mcp/`](../runtimes/vscode/mcp) |
+| OpenCode | `opencode.json` | [`runtimes/opencode/mcp/`](../runtimes/opencode/mcp) |
 
 ## Usage
 

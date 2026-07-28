@@ -19,11 +19,13 @@ jobs:
           set -euo pipefail
           missing=0
 
-          # 제외: CLAUDE.md, LICENSE, THIRD_PARTY_NOTICES.md, .upstream, .git, node_modules
+          # 제외: CLAUDE.md, LICENSE, THIRD_PARTY_NOTICES.md, Changesets, 실행 가능한 command/template 자산, .upstream, .git, node_modules
           # 루트 README 는 한글 메인(README.md) + 영어(README.en.md) 로 별도 규칙 적용.
           is_exempt() {
             case "$1" in
               *CLAUDE.md|*/LICENSE|./LICENSE|*THIRD_PARTY_NOTICES.md) return 0;;
+              ./.changeset/*.md) return 0;;
+              */commands/*.md|./templates/*.md|./templates/*/*.md|./templates/*/*/*.md) return 0;;
               ./README.md|./README.en.md) return 0;;
               *.en.md) return 0;;
               *) return 1;;

@@ -35,7 +35,7 @@
     "./skills/engineering/implement/SKILL.md",
     "./skills/engineering/resolving-merge-conflicts/SKILL.md",
     "./skills/engineering/webapp-testing/SKILL.md",
-    "./skills/misc/git-guardrails/SKILL.md",
+    "./runtimes/claude-code/skills/git-guardrails/SKILL.md",
     "./skills/misc/setup-pre-commit/SKILL.md"
   ]
 }

@@ -2,13 +2,15 @@
 
 > 한국어: [README.ko.md](./README.ko.md)
 
-A collection of my own agent skills for daily use. Follows the [Anthropic Agent Skills](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview) standard.
+A collection of my own agent skills for daily use. Follows the open [Agent Skills](https://agentskills.io) standard and is shared across Claude Code, Codex, and compatible runtimes.
 
 ## Installation
 
 ```bash
 npx skills@latest add devjh-jiki/jiki
 ```
+
+Codex also discovers compatible skills from the repository's `.agents/skills/` adapter when working in this repository.
 
 ## Buckets
 
@@ -87,8 +89,9 @@ npx skills@latest add devjh-jiki/jiki
 
 **Model-invoked**
 
-- [git-guardrails](./misc/git-guardrails/SKILL.md) — Set up a Claude Code hook that blocks dangerous git commands (Claude Code only)
 - [setup-pre-commit](./misc/setup-pre-commit/SKILL.md) — Set up Husky pre-commit hooks with lint-staged/Prettier/typecheck/tests (JS/TS only)
+
+Runtime-specific skills such as Claude Code's [git-guardrails](../runtimes/claude-code/skills/git-guardrails/SKILL.md) live under `runtimes/`.
 
 ## Upstream sync
 

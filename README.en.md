@@ -30,6 +30,8 @@ Install the skills from the Claude Code plugin marketplace.
 /plugin install learning-skills@jiki-skills
 /plugin install writing-skills@jiki-skills
 /plugin install business-skills@jiki-skills
+/plugin install engineering-skills@jiki-skills
+/plugin install misc-skills@jiki-skills
 ```
 
 ### Codex and other agents

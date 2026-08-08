@@ -10,7 +10,6 @@ Claude Code-specific assets live here:
 Claude Code discovery and distribution entry points stay at the repository root:
 
 - [`CLAUDE.md`](../../CLAUDE.md)
-- [`.claude-plugin/plugin.json`](../../.claude-plugin/plugin.json)
 - [`.claude-plugin/marketplace.json`](../../.claude-plugin/marketplace.json)
 
 Shared skills continue to live under [`skills/`](../../skills).

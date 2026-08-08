@@ -30,6 +30,8 @@ Claude Code 플러그인 마켓플레이스에서 설치할 수 있습니다.
 /plugin install learning-skills@jiki-skills
 /plugin install writing-skills@jiki-skills
 /plugin install business-skills@jiki-skills
+/plugin install engineering-skills@jiki-skills
+/plugin install misc-skills@jiki-skills
 ```
 
 ### Codex 및 기타 에이전트

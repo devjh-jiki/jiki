@@ -35,7 +35,7 @@
       "name": "engineering-skills",
       "source": "./",
       "version": "0.1.0",
-      "description": "Engineering skills: TDD, bug diagnosis, deep-module & domain design, architecture improvement, PRD/issue synthesis, grill-with-docs, prototyping, implementation, merge-conflict resolution, webapp testing, lazy/YAGNI code minimization, anti-slop frontend taste, eval-driven development (pass@k), verification-before-completion gates, and iterative context retrieval (adapted from mattpocock/skills, anthropics/skills, DietrichGebert/ponytail, Leonxlnx/taste-skill, obra/superpowers & affaan-m/ecc).",
+      "description": "Engineering skills: TDD, bug diagnosis, deep-module & domain design, architecture improvement, PRD/issue synthesis, grill-with-docs, prototyping, implementation, merge-conflict resolution, webapp testing, lazy/YAGNI code minimization, anti-slop frontend taste, eval-driven development (pass@k), verification-before-completion gates, iterative context retrieval, and Go backend review with a project-canon adapter slot (adapted from mattpocock/skills, anthropics/skills, DietrichGebert/ponytail, Leonxlnx/taste-skill, obra/superpowers & affaan-m/ecc).",
       "author": {
         "name": "devjh-jiki",
         "url": "https://github.com/devjh-jiki"
@@ -59,7 +59,8 @@
         "./skills/engineering/anti-slop-frontend",
         "./skills/engineering/eval-harness",
         "./skills/engineering/verification-before-completion",
-        "./skills/engineering/iterative-retrieval"
+        "./skills/engineering/iterative-retrieval",
+        "./skills/engineering/go-backend-review"
       ]
     },
     {

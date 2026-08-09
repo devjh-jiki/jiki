@@ -84,6 +84,7 @@ Skills are labeled by verification stage:
 | [eval-harness](./skills/engineering/eval-harness) | Available | Eval-driven development for non-deterministic work: define criteria first, measure with pass@k/pass^k (adapted from affaan-m/ecc). |
 | [verification-before-completion](./skills/engineering/verification-before-completion) | Available | Never claim done without proof: run build/types/lint/tests/security/diff and read the output (adapted from obra/superpowers + affaan-m/ecc). |
 | [iterative-retrieval](./skills/engineering/iterative-retrieval) | Available | Assemble just-enough subagent context via a dispatch→evaluate→refine loop with relevance scoring (adapted from affaan-m/ecc). |
+| [go-backend-review](./skills/engineering/go-backend-review) | Review | Four-lens Go backend diff review above machine gates, with a project-canon adapter contract. |
 | [council](./skills/productivity/council) | Available | Convene a four-voice council as parallel subagents for ambiguous decisions, anti-anchored (adapted from affaan-m/ecc). |
 | [context-budget](./skills/productivity/context-budget) | Available | Audit standing context overhead across agents/skills/MCP/rules and rank what to cut (adapted from affaan-m/ecc). |
 | [git-guardrails](./runtimes/claude-code/skills/git-guardrails) | Available | Block dangerous git commands via a hook (Claude Code only, adapted from mattpocock). |

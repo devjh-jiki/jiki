@@ -12,7 +12,13 @@
     {
       "name": "writing-skills",
       "source": "./",
+      "version": "0.1.0",
       "description": "Writing & decision skills: polished Korean tech blog posts, high-quality Markdown documentation with research, decision/idea grilling, four-voice decision councils, session handoffs, writing great skills, terse token-efficient output, context-budget setup audits, and recent-community research (adapted from mattpocock/skills, JuliusBrussee/caveman, mvanhorn/last30days-skill & affaan-m/ecc).",
+      "author": {
+        "name": "devjh-jiki",
+        "url": "https://github.com/devjh-jiki"
+      },
+      "strict": false,
       "skills": [
         "./skills/productivity/write-blog-post",
         "./skills/productivity/document-with-research",
@@ -28,7 +34,13 @@
     {
       "name": "engineering-skills",
       "source": "./",
+      "version": "0.1.0",
       "description": "Engineering skills: TDD, bug diagnosis, deep-module & domain design, architecture improvement, PRD/issue synthesis, grill-with-docs, prototyping, implementation, merge-conflict resolution, webapp testing, lazy/YAGNI code minimization, anti-slop frontend taste, eval-driven development (pass@k), verification-before-completion gates, and iterative context retrieval (adapted from mattpocock/skills, anthropics/skills, DietrichGebert/ponytail, Leonxlnx/taste-skill, obra/superpowers & affaan-m/ecc).",
+      "author": {
+        "name": "devjh-jiki",
+        "url": "https://github.com/devjh-jiki"
+      },
+      "strict": false,
       "skills": [
         "./skills/engineering/tdd",
         "./skills/engineering/diagnosing-bugs",
@@ -53,7 +65,13 @@
     {
       "name": "learning-skills",
       "source": "./",
+      "version": "0.1.0",
       "description": "Learning coach skills: reverse-engineer open source and learn from technical books interactively.",
+      "author": {
+        "name": "devjh-jiki",
+        "url": "https://github.com/devjh-jiki"
+      },
+      "strict": false,
       "skills": [
         "./skills/learning/open-source-reverse-engineering-coach",
         "./skills/learning/technical-book-coach"
@@ -62,7 +80,13 @@
     {
       "name": "business-skills",
       "source": "./",
+      "version": "0.1.0",
       "description": "Founder/product/marketing skills: opportunity validation, marketing copy, product spec building.",
+      "author": {
+        "name": "devjh-jiki",
+        "url": "https://github.com/devjh-jiki"
+      },
+      "strict": false,
       "skills": [
         "./skills/business/biz-opportunity-scout",
         "./skills/business/marketing-copy",
@@ -72,7 +96,13 @@
     {
       "name": "misc-skills",
       "source": "./",
+      "version": "0.1.0",
       "description": "Environment setup skills: Claude Code git guardrails (block dangerous commands) and Husky pre-commit hooks (adapted from mattpocock/skills).",
+      "author": {
+        "name": "devjh-jiki",
+        "url": "https://github.com/devjh-jiki"
+      },
+      "strict": false,
       "skills": [
         "./runtimes/claude-code/skills/git-guardrails",
         "./skills/misc/setup-pre-commit"

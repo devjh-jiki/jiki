@@ -44,6 +44,26 @@ npx skills@latest add devjh-jiki/jiki
 
 When this repository is opened directly in Codex, compatible skills are discovered automatically through the relative symlinks in `.agents/skills/`. Repository guidance lives in [`AGENTS.md`](./AGENTS.md).
 
+### Recommended external plugin
+
+[`cathrynlavery/diagram-design`](https://github.com/cathrynlavery/diagram-design) creates architecture, flowchart, sequence, data-model, and other technical diagrams as standalone HTML/SVG/PNG. It is not copied into this repository. Install the upstream plugin directly so its update and verification workflow remains intact.
+
+Claude Code:
+
+```text
+/plugin marketplace add cathrynlavery/diagram-design
+/plugin install diagram-design@diagram-design
+```
+
+Codex:
+
+```bash
+codex plugin marketplace add cathrynlavery/diagram-design
+codex plugin add diagram-design@diagram-design
+```
+
+This plugin owns diagram artifacts. Use [`design-system`](./skills/engineering/design-system) for application UI tokens and components, then map those tokens into diagram-design's style guide when needed.
+
 ### Trust levels
 
 Skills are labeled by verification stage:

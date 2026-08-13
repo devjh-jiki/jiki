@@ -44,6 +44,26 @@ npx skills@latest add devjh-jiki/jiki
 
 이 레포를 Codex에서 직접 열면 `.agents/skills/`의 상대 심볼릭 링크를 통해 Codex 호환 스킬을 자동으로 발견합니다. 레포 작업 규칙은 [`AGENTS.md`](./AGENTS.md)에 있습니다.
 
+### 외부 추천 플러그인
+
+[`cathrynlavery/diagram-design`](https://github.com/cathrynlavery/diagram-design)은 아키텍처, 플로차트, 시퀀스, 데이터 모델 등 기술 다이어그램을 독립 HTML/SVG/PNG로 만드는 플러그인입니다. 이 레포에는 복사하지 않으며, 원본 플러그인을 직접 설치해 업데이트와 검증 체계를 그대로 따르는 방식을 권장합니다.
+
+Claude Code:
+
+```text
+/plugin marketplace add cathrynlavery/diagram-design
+/plugin install diagram-design@diagram-design
+```
+
+Codex:
+
+```bash
+codex plugin marketplace add cathrynlavery/diagram-design
+codex plugin add diagram-design@diagram-design
+```
+
+이 플러그인은 다이어그램 산출물 전용입니다. 앱 UI 토큰과 컴포넌트는 [`design-system`](./skills/engineering/design-system)을 사용하고, 필요할 때 그 토큰을 diagram-design의 스타일 가이드에 매핑하세요.
+
 ### 신뢰도 라벨
 
 스킬은 검증 단계로 표시합니다:
